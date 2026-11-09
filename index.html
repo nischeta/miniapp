@@ -322,19 +322,21 @@ function renderVisitDashboard() {
     <div class="metric"><small>Факт</small><b>${fact}</b></div>
     <div class="metric"><small>Выполнение</small><b>${pct.toFixed(1)}%</b><div class="progress"><span style="width:${Math.min(pct,100)}%"></span></div></div>`;
 
+  // Список сотрудников формируем только по тем, у кого есть записи в выбранном месяце.
+  // Поэтому новый сотрудник, появившийся в ноябре, не будет отображаться в октябре.
+  // При выборе отдельной недели показываем всех сотрудников месяца, а показатели
+  // считаем только за выбранную неделю.
+  const monthlyEmployees = new Set(
+    monthRows.map(r => String(r.merchandiser || "").trim()).filter(Boolean)
+  );
   const people = new Map();
+  monthlyEmployees.forEach(name => people.set(name, {name, plan:0, fact:0}));
   rows.forEach(r => {
     const key = String(r.merchandiser || "").trim();
-    if (!key) return;
-    if (!people.has(key)) people.set(key, {name:key, plan:0, fact:0});
+    if (!key || !people.has(key)) return;
     const person = people.get(key);
     person.plan += Number(r.plan) || 0;
     person.fact += Number(r.fact) || 0;
-  });
-  // Справочник гарантирует отображение действующих сотрудников, даже если у них нет строки визитов.
-  roster.forEach(e => {
-    const key = String(e.merchandiser || "").trim();
-    if (key && !people.has(key)) people.set(key, {name:key, plan:0, fact:0});
   });
 
   const groups = byId("cityGroups");
