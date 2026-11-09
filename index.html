@@ -34,6 +34,34 @@ h1{font-size:25px;line-height:1.2;margin:0 0 7px}p.lead{color:var(--muted);margi
 .pill{display:inline-block;border-radius:20px;background:#edf3ff;color:var(--blue);font-size:11px;font-weight:700;padding:5px 9px;margin-bottom:12px}
 @media(max-width:380px){.grid{grid-template-columns:1fr}.action{min-height:95px}.action .ico{margin-bottom:7px}}
 button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
+
+/* План визитов */
+.filters{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:14px 0}
+.filters label{font-size:11px;color:var(--muted);display:block;margin:0 0 5px}
+.filters select{width:100%;border:1px solid var(--line);border-radius:11px;background:#fff;padding:11px;color:var(--ink);font:inherit}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+.metric{background:#fff;border:1px solid var(--line);border-radius:13px;padding:12px 9px;min-width:0}
+.metric small{display:block;color:var(--muted);font-size:10px}
+.metric b{display:block;font-size:19px;margin-top:3px;white-space:nowrap}
+.progress{height:7px;background:#edf0f5;border-radius:9px;overflow:hidden;margin-top:8px}
+.progress span{display:block;height:100%;background:var(--blue);border-radius:9px}
+.city-group{background:#fff;border:1px solid var(--line);border-radius:14px;margin:10px 0;overflow:hidden}
+.city-head{display:flex;align-items:center;gap:9px;padding:13px;width:100%;border:0;background:#fff;text-align:left;font:inherit;color:var(--ink);cursor:pointer}
+.city-head b{font-size:14px}.city-head small{display:block;color:var(--muted);font-size:11px}
+.city-total{margin-left:auto;text-align:right;font-size:12px;font-weight:700}
+.city-total small{font-weight:400}
+.city-body{padding:0 12px 10px;border-top:1px solid var(--line)}
+.person{padding:11px 0;border-bottom:1px solid #eef1f5}
+.person:last-child{border-bottom:0}
+.person-name{font-size:13px;font-weight:650}
+.person-values{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:5px;color:var(--muted);font-size:11px}
+.person-values strong{color:var(--ink);font-weight:700}
+.percent{margin-left:auto;color:var(--blue);font-weight:750}
+.updated-note{font-size:12px;color:var(--muted);background:#f7f9fc;border:1px solid var(--line);border-radius:11px;padding:10px 12px;margin:10px 0 14px}.updated-note b{color:var(--ink);font-weight:700}
+.demo-note{font-size:11px;color:#91631b;background:#fff7e5;border:1px solid #f4e2b7;border-radius:10px;padding:9px 11px;margin:10px 0}
+.empty{padding:18px;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:360px){.summary{grid-template-columns:1fr 1fr}.metric:last-child{grid-column:span 2}}
+
 </style>
 </head>
 <body>
@@ -80,9 +108,26 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <p class="muted" style="font-size:12px">Реальные формы, расчёты и сохранение данных подключим на следующем этапе.</p>
 </section>
 
+
+<section id="visits" class="screen">
+  <button class="back" type="button" data-go="menu">← В рабочее меню</button>
+  <div class="crumb" id="visitsCrumb"></div>
+  <h1>План визитов</h1>
+  <p class="lead">План и фактическое выполнение по сотрудникам.</p>
+  <div class="demo-note">Тестовые данные из Excel · показатели пока не являются отчётными</div>
+  <div class="updated-note" id="visitsUpdatedAt">Последнее обновление данных: <b>ожидает первой загрузки Excel</b></div>
+  <div class="filters">
+    <div><label for="monthFilter">Месяц</label><select id="monthFilter"></select></div>
+    <div><label for="weekFilter">Неделя</label><select id="weekFilter"></select></div>
+  </div>
+  <div class="summary" id="visitSummary"></div>
+  <div id="cityGroups"></div>
+</section>
+
 <div class="footer">Asmia · Демонстрационный интерфейс · Данные пока не отправляются</div>
 </main>
 <script src="config.js"></script>
+<script src="visits-data.js"></script>
 <script>
 "use strict";
 let selectedProject = null;
@@ -171,6 +216,104 @@ function openSection(section) {
     "Раздел будет подключён на следующем этапе.";
   show("detail");
 }
+
+
+function openSection(section) {
+  selectedSection = section;
+  byId("detailCrumb").textContent = `${selectedProject.name} · ${selectedCity}`;
+  byId("detailTitle").textContent = section.name;
+  if (section.id === "visits") {
+    byId("visitsCrumb").textContent = `${selectedProject.name} · ${selectedCity}`;
+    renderVisitDashboard();
+    show("visits");
+    return;
+  }
+  byId("detailText").textContent = section.description || section.hint ||
+    "Раздел будет подключён на следующем этапе.";
+  show("detail");
+}
+
+function renderVisitsUpdatedAt() {
+  const target = byId("visitsUpdatedAt");
+  if (!target) return;
+  // Backend/import process must set this ISO timestamp only after a successful confirmed import.
+  const raw = window.VISIT_DATA_UPDATED_AT || window.VISIT_DATA_META?.updatedAt || null;
+  if (!raw) {
+    target.innerHTML = 'Последнее обновление данных: <b>ожидает первой загрузки Excel</b>';
+    return;
+  }
+  const date = new Date(raw);
+  if (Number.isNaN(date.getTime())) {
+    target.innerHTML = 'Последнее обновление данных: <b>дата не определена</b>';
+    return;
+  }
+  const formatted = new Intl.DateTimeFormat('ru-RU', {
+    day: '2-digit', month: '2-digit', year: 'numeric',
+    hour: '2-digit', minute: '2-digit'
+  }).format(date);
+  target.innerHTML = `Последнее обновление данных: <b>${formatted}</b>`;
+}
+
+function renderVisitDashboard() {
+  renderVisitsUpdatedAt();
+  const all = (window.VISIT_DATA || []).filter(r => r.project === selectedProject.name && r.city === selectedCity);
+  const monthSelect = byId("monthFilter");
+  const weekSelect = byId("weekFilter");
+  const months = [...new Set(all.map(r => `${r.year}-${r.month}`))].sort();
+  const previousMonth = monthSelect.value;
+  monthSelect.replaceChildren();
+  months.forEach(key => {
+    const [year, month] = key.split("-");
+    const opt = document.createElement("option");
+    opt.value = key;
+    opt.textContent = `${["","Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"][+month]} ${year}`;
+    monthSelect.append(opt);
+  });
+  if (months.includes(previousMonth)) monthSelect.value = previousMonth;
+  const selectedMonth = monthSelect.value;
+  const monthRows = all.filter(r => `${r.year}-${r.month}` === selectedMonth);
+  const weeks = [...new Set(monthRows.map(r => r.week))].sort((a,b)=>a-b);
+  const previousWeek = weekSelect.value;
+  weekSelect.replaceChildren();
+  const allOpt = document.createElement("option");
+  allOpt.value = "all"; allOpt.textContent = "Весь месяц"; weekSelect.append(allOpt);
+  weeks.forEach(w => {
+    const opt = document.createElement("option");
+    opt.value = String(w); opt.textContent = `${w}-я неделя`; weekSelect.append(opt);
+  });
+  if (previousWeek === "all" || weeks.includes(+previousWeek)) weekSelect.value = previousWeek;
+  const chosenWeek = weekSelect.value;
+  const rows = chosenWeek === "all" ? monthRows : monthRows.filter(r => r.week === +chosenWeek);
+  const plan = rows.reduce((s,r)=>s+r.plan,0);
+  const fact = rows.reduce((s,r)=>s+r.fact,0);
+  const pct = plan ? fact / plan * 100 : 0;
+  byId("visitSummary").innerHTML = `
+    <div class="metric"><small>План</small><b>${plan}</b></div>
+    <div class="metric"><small>Факт</small><b>${fact}</b></div>
+    <div class="metric"><small>Выполнение</small><b>${pct.toFixed(1)}%</b><div class="progress"><span style="width:${Math.min(pct,100)}%"></span></div></div>`;
+  const groups = byId("cityGroups");
+  groups.replaceChildren();
+  const cities = [...new Set(rows.map(r=>r.city))];
+  if (!rows.length) { groups.innerHTML = '<div class="card empty">Нет данных за выбранный период.</div>'; return; }
+  cities.forEach(city => {
+    const cityRows = rows.filter(r=>r.city===city);
+    const cp = cityRows.reduce((s,r)=>s+r.plan,0), cf = cityRows.reduce((s,r)=>s+r.fact,0);
+    const group = document.createElement("div"); group.className="city-group";
+    const head = document.createElement("button"); head.type="button"; head.className="city-head";
+    head.innerHTML = `<span>🏙️</span><span><b>${city}</b><small>${cityRows.length} сотрудников</small></span><span class="city-total">${cf}/${cp}<small>${cp?(cf/cp*100).toFixed(1):0}%</small></span><span class="chev">⌄</span>`;
+    const body = document.createElement("div"); body.className="city-body";
+    cityRows.forEach(r=>{
+      const person=document.createElement("div"); person.className="person";
+      const p=r.plan? r.fact/r.plan*100:0;
+      person.innerHTML=`<div class="person-name">${r.merchandiser}</div><div class="person-values"><span>План: <strong>${r.plan}</strong></span><span>Факт: <strong>${r.fact}</strong></span><span class="percent">${p.toFixed(1)}%</span></div><div class="progress"><span style="width:${Math.min(p,100)}%"></span></div>`;
+      body.append(person);
+    });
+    head.addEventListener("click",()=>{body.hidden=!body.hidden;head.querySelector(".chev").textContent=body.hidden?"›":"⌄";});
+    group.append(head,body); groups.append(group);
+  });
+}
+byId("monthFilter").addEventListener("change", renderVisitDashboard);
+byId("weekFilter").addEventListener("change", renderVisitDashboard);
 
 document.addEventListener("click", event => {
   const button = event.target.closest("button[data-action], button[data-go]");
