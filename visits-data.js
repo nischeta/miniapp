@@ -1,8 +1,8 @@
 // Файл формируется ботом Asmia после подтверждённой загрузки Excel.
 window.VISIT_DATA_META = {
-  "updatedAt": "2026-11-09T19:44:02+00:00",
+  "updatedAt": "2026-11-09T19:57:42+00:00",
   "sourceFile": "plan.xlsx",
-  "recordCount": 265,
+  "recordCount": 268,
   "employeeCount": 45
 };
 window.VISIT_DATA = [
@@ -2123,7 +2123,7 @@ window.VISIT_DATA = [
     "week": 45,
     "city": "Воронеж",
     "merchandiser": "Алексеева Елена Викторовна",
-    "plan": 4,
+    "plan": 7,
     "fact": 4
   },
   {
@@ -2133,26 +2133,6 @@ window.VISIT_DATA = [
     "week": 45,
     "city": "Воронеж",
     "merchandiser": "Мозговая Ольга Владимировна",
-    "plan": 17,
-    "fact": 17
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
-    "month": 11,
-    "week": 45,
-    "city": "Воронеж",
-    "merchandiser": "Неклюдов Никита Игоревич",
-    "plan": 15,
-    "fact": 15
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
-    "month": 11,
-    "week": 45,
-    "city": "Воронеж",
-    "merchandiser": "Неклюдова Анастасия Игоревна",
     "plan": 35,
     "fact": 35
   },
@@ -2161,10 +2141,30 @@ window.VISIT_DATA = [
     "year": 2026,
     "month": 11,
     "week": 45,
+    "city": "Воронеж",
+    "merchandiser": "Неклюдов Никита Игоревич",
+    "plan": 82,
+    "fact": 61
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 45,
+    "city": "Воронеж",
+    "merchandiser": "Неклюдова Анастасия Игоревна",
+    "plan": 101,
+    "fact": 91
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 45,
     "city": "Краснодар",
     "merchandiser": "Власова Анна Андреевна",
-    "plan": 7,
-    "fact": 7
+    "plan": 24,
+    "fact": 22
   },
   {
     "project": "Холдинг Аква",
@@ -2173,8 +2173,8 @@ window.VISIT_DATA = [
     "week": 45,
     "city": "Краснодар",
     "merchandiser": "Григорьева Анастасия Андреевна",
-    "plan": 7,
-    "fact": 7
+    "plan": 15,
+    "fact": 14
   },
   {
     "project": "Холдинг Аква",
@@ -2183,106 +2183,6 @@ window.VISIT_DATA = [
     "week": 45,
     "city": "Краснодар",
     "merchandiser": "Кандя Татьяна Юрьевна",
-    "plan": 9,
-    "fact": 9
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
-    "month": 11,
-    "week": 45,
-    "city": "Краснодар",
-    "merchandiser": "Кирячек Виталий Геннадьевич",
-    "plan": 2,
-    "fact": 2
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
-    "month": 11,
-    "week": 45,
-    "city": "Краснодар",
-    "merchandiser": "Кононенко Елена Вячеславовна",
-    "plan": 14,
-    "fact": 14
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
-    "month": 11,
-    "week": 45,
-    "city": "Краснодар",
-    "merchandiser": "кылосова Елена",
-    "plan": 1,
-    "fact": 1
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
-    "month": 11,
-    "week": 45,
-    "city": "Краснодар",
-    "merchandiser": "Мавлюкаева Ирина Владиславовна",
-    "plan": 13,
-    "fact": 13
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
-    "month": 11,
-    "week": 45,
-    "city": "Краснодар",
-    "merchandiser": "Савельева Дарья Николаевна",
-    "plan": 9,
-    "fact": 9
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
-    "month": 11,
-    "week": 45,
-    "city": "Краснодар",
-    "merchandiser": "Юстус Виктория Александровна",
-    "plan": 10,
-    "fact": 10
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
-    "month": 11,
-    "week": 45,
-    "city": "Ростов-на-Дону",
-    "merchandiser": "Агарков Олег Михайлович",
-    "plan": 6,
-    "fact": 6
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
-    "month": 11,
-    "week": 45,
-    "city": "Ростов-на-Дону",
-    "merchandiser": "Габранс Никита Юрьевич",
-    "plan": 23,
-    "fact": 23
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
-    "month": 11,
-    "week": 45,
-    "city": "Ростов-на-Дону",
-    "merchandiser": "Иванов Александр Олегович",
-    "plan": 20,
-    "fact": 20
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
-    "month": 11,
-    "week": 45,
-    "city": "Ростов-на-Дону",
-    "merchandiser": "Мещеряков Александр Иванович",
     "plan": 12,
     "fact": 12
   },
@@ -2291,19 +2191,9 @@ window.VISIT_DATA = [
     "year": 2026,
     "month": 11,
     "week": 45,
-    "city": "Ростов-на-Дону",
-    "merchandiser": "Омаров Влад Айдынович",
-    "plan": 43,
-    "fact": 43
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
-    "month": 11,
-    "week": 45,
-    "city": "Самара",
-    "merchandiser": "Голубева Инна Александровна",
-    "plan": 7,
+    "city": "Краснодар",
+    "merchandiser": "Кирячек Виталий Геннадьевич",
+    "plan": 34,
     "fact": 7
   },
   {
@@ -2311,8 +2201,8 @@ window.VISIT_DATA = [
     "year": 2026,
     "month": 11,
     "week": 45,
-    "city": "Самара",
-    "merchandiser": "Елуфериева Алина Александровна",
+    "city": "Краснодар",
+    "merchandiser": "Кононенко Елена Вячеславовна",
     "plan": 24,
     "fact": 24
   },
@@ -2321,10 +2211,130 @@ window.VISIT_DATA = [
     "year": 2026,
     "month": 11,
     "week": 45,
+    "city": "Краснодар",
+    "merchandiser": "кылосова Елена",
+    "plan": 28,
+    "fact": 11
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 45,
+    "city": "Краснодар",
+    "merchandiser": "Мавлюкаева Ирина Владиславовна",
+    "plan": 23,
+    "fact": 23
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 45,
+    "city": "Краснодар",
+    "merchandiser": "Савельева Дарья Николаевна",
+    "plan": 18,
+    "fact": 18
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 45,
+    "city": "Краснодар",
+    "merchandiser": "Юстус Виктория Александровна",
+    "plan": 21,
+    "fact": 19
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 45,
+    "city": "Краснодар",
+    "merchandiser": "Григорян Давид",
+    "plan": 6,
+    "fact": 3
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 45,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Агарков Олег Михайлович",
+    "plan": 20,
+    "fact": 19
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 45,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Габранс Никита Юрьевич",
+    "plan": 50,
+    "fact": 48
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 45,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "plan": 85,
+    "fact": 44
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 45,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Мещеряков Александр Иванович",
+    "plan": 40,
+    "fact": 40
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 45,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "plan": 76,
+    "fact": 74
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 45,
+    "city": "Самара",
+    "merchandiser": "Голубева Инна Александровна",
+    "plan": 16,
+    "fact": 13
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 45,
+    "city": "Самара",
+    "merchandiser": "Елуфериева Алина Александровна",
+    "plan": 68,
+    "fact": 55
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 45,
     "city": "Самара",
     "merchandiser": "Каткова Оксана Владимировна",
-    "plan": 1,
-    "fact": 1
+    "plan": 11,
+    "fact": 8
   },
   {
     "project": "Холдинг Аква",
@@ -2333,8 +2343,8 @@ window.VISIT_DATA = [
     "week": 45,
     "city": "Самара",
     "merchandiser": "Новинькова Алeна Александровна",
-    "plan": 3,
-    "fact": 3
+    "plan": 6,
+    "fact": 6
   },
   {
     "project": "Холдинг Аква",
@@ -2343,6 +2353,26 @@ window.VISIT_DATA = [
     "week": 45,
     "city": "Самара",
     "merchandiser": "Туманова Тамара Ивановна",
+    "plan": 23,
+    "fact": 20
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 45,
+    "city": "Саратов",
+    "merchandiser": "Иванова Мария",
+    "plan": 36,
+    "fact": 20
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 45,
+    "city": "Саратов",
+    "merchandiser": "Ивонцина Елена Сергеевна",
     "plan": 14,
     "fact": 14
   },
@@ -2352,29 +2382,9 @@ window.VISIT_DATA = [
     "month": 11,
     "week": 45,
     "city": "Саратов",
-    "merchandiser": "Иванова Мария",
-    "plan": 5,
-    "fact": 5
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
-    "month": 11,
-    "week": 45,
-    "city": "Саратов",
-    "merchandiser": "Ивонцина Елена Сергеевна",
-    "plan": 7,
-    "fact": 7
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
-    "month": 11,
-    "week": 45,
-    "city": "Саратов",
     "merchandiser": "Никифоров Сергей Сергеевич",
-    "plan": 4,
-    "fact": 4
+    "plan": 46,
+    "fact": 46
   },
   {
     "project": "Холдинг Аква",
@@ -2393,7 +2403,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Воронеж",
     "merchandiser": "Алексеева Елена Викторовна",
-    "plan": 10,
+    "plan": 7,
     "fact": 0
   },
   {
@@ -2403,7 +2413,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Воронеж",
     "merchandiser": "Мозговая Ольга Владимировна",
-    "plan": 53,
+    "plan": 35,
     "fact": 2
   },
   {
@@ -2413,7 +2423,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Воронеж",
     "merchandiser": "Неклюдов Никита Игоревич",
-    "plan": 149,
+    "plan": 82,
     "fact": 11
   },
   {
@@ -2423,7 +2433,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Воронеж",
     "merchandiser": "Неклюдова Анастасия Игоревна",
-    "plan": 169,
+    "plan": 103,
     "fact": 12
   },
   {
@@ -2433,8 +2443,8 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Краснодар",
     "merchandiser": "Власова Анна Андреевна",
-    "plan": 46,
-    "fact": 5
+    "plan": 27,
+    "fact": 0
   },
   {
     "project": "Холдинг Аква",
@@ -2443,7 +2453,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Краснодар",
     "merchandiser": "Григорьева Анастасия Андреевна",
-    "plan": 23,
+    "plan": 15,
     "fact": 0
   },
   {
@@ -2453,7 +2463,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Краснодар",
     "merchandiser": "Кандя Татьяна Юрьевна",
-    "plan": 15,
+    "plan": 12,
     "fact": 6
   },
   {
@@ -2463,7 +2473,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Краснодар",
     "merchandiser": "Кирячек Виталий Геннадьевич",
-    "plan": 70,
+    "plan": 38,
     "fact": 1
   },
   {
@@ -2473,7 +2483,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Краснодар",
     "merchandiser": "Кононенко Елена Вячеславовна",
-    "plan": 34,
+    "plan": 24,
     "fact": 11
   },
   {
@@ -2483,7 +2493,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Краснодар",
     "merchandiser": "кылосова Елена",
-    "plan": 55,
+    "plan": 28,
     "fact": 4
   },
   {
@@ -2493,7 +2503,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Краснодар",
     "merchandiser": "Мавлюкаева Ирина Владиславовна",
-    "plan": 33,
+    "plan": 23,
     "fact": 8
   },
   {
@@ -2503,7 +2513,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Краснодар",
     "merchandiser": "Савельева Дарья Николаевна",
-    "plan": 29,
+    "plan": 20,
     "fact": 6
   },
   {
@@ -2513,7 +2523,17 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Краснодар",
     "merchandiser": "Юстус Виктория Александровна",
-    "plan": 32,
+    "plan": 21,
+    "fact": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 46,
+    "city": "Краснодар",
+    "merchandiser": "Григорян Давид",
+    "plan": 6,
     "fact": 0
   },
   {
@@ -2523,7 +2543,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Ростов-на-Дону",
     "merchandiser": "Агарков Олег Михайлович",
-    "plan": 34,
+    "plan": 20,
     "fact": 3
   },
   {
@@ -2533,7 +2553,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Ростов-на-Дону",
     "merchandiser": "Габранс Никита Юрьевич",
-    "plan": 77,
+    "plan": 50,
     "fact": 5
   },
   {
@@ -2543,7 +2563,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Ростов-на-Дону",
     "merchandiser": "Иванов Александр Олегович",
-    "plan": 150,
+    "plan": 85,
     "fact": 8
   },
   {
@@ -2553,7 +2573,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Ростов-на-Дону",
     "merchandiser": "Мещеряков Александр Иванович",
-    "plan": 68,
+    "plan": 40,
     "fact": 5
   },
   {
@@ -2563,7 +2583,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Ростов-на-Дону",
     "merchandiser": "Омаров Влад Айдынович",
-    "plan": 109,
+    "plan": 76,
     "fact": 17
   },
   {
@@ -2573,7 +2593,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Самара",
     "merchandiser": "Голубева Инна Александровна",
-    "plan": 25,
+    "plan": 16,
     "fact": 3
   },
   {
@@ -2583,7 +2603,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Самара",
     "merchandiser": "Елуфериева Алина Александровна",
-    "plan": 120,
+    "plan": 76,
     "fact": 16
   },
   {
@@ -2593,7 +2613,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Самара",
     "merchandiser": "Каткова Оксана Владимировна",
-    "plan": 21,
+    "plan": 11,
     "fact": 0
   },
   {
@@ -2603,7 +2623,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Самара",
     "merchandiser": "Новинькова Алeна Александровна",
-    "plan": 9,
+    "plan": 6,
     "fact": 0
   },
   {
@@ -2613,8 +2633,18 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Самара",
     "merchandiser": "Туманова Тамара Ивановна",
-    "plan": 32,
+    "plan": 23,
     "fact": 4
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 46,
+    "city": "Самара",
+    "merchandiser": "Нечеухина Ирина Ивановна",
+    "plan": 10,
+    "fact": 1
   },
   {
     "project": "Холдинг Аква",
@@ -2623,7 +2653,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Саратов",
     "merchandiser": "Иванова Мария",
-    "plan": 69,
+    "plan": 38,
     "fact": 2
   },
   {
@@ -2633,7 +2663,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Саратов",
     "merchandiser": "Ивонцина Елена Сергеевна",
-    "plan": 21,
+    "plan": 14,
     "fact": 0
   },
   {
@@ -2643,7 +2673,7 @@ window.VISIT_DATA = [
     "week": 46,
     "city": "Саратов",
     "merchandiser": "Никифоров Сергей Сергеевич",
-    "plan": 88,
+    "plan": 46,
     "fact": 3
   },
   {
