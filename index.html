@@ -45,19 +45,18 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
 .metric b{display:block;font-size:19px;margin-top:3px;white-space:nowrap}
 .progress{height:7px;background:#edf0f5;border-radius:9px;overflow:hidden;margin-top:8px}
 .progress span{display:block;height:100%;background:var(--blue);border-radius:9px}
-.employee-section{margin-top:18px}
-.employee-heading{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin:0 2px 9px}
-.employee-heading b{font-size:15px}.employee-heading span{font-size:11px;color:var(--muted)}
-.employee-list{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 13px}
-.person{padding:12px 0;border-bottom:1px solid #eef1f5}
+.city-group{background:#fff;border:1px solid var(--line);border-radius:14px;margin:10px 0;overflow:hidden}
+.city-head{display:flex;align-items:center;gap:9px;padding:13px;width:100%;border:0;background:#fff;text-align:left;font:inherit;color:var(--ink);cursor:pointer}
+.city-head b{font-size:14px}.city-head small{display:block;color:var(--muted);font-size:11px}
+.city-total{margin-left:auto;text-align:right;font-size:12px;font-weight:700}
+.city-total small{font-weight:400}
+.city-body{padding:0 12px 10px;border-top:1px solid var(--line)}
+.person{padding:11px 0;border-bottom:1px solid #eef1f5}
 .person:last-child{border-bottom:0}
-.person-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.person-name{font-size:13px;font-weight:650;overflow-wrap:anywhere}
+.person-name{font-size:13px;font-weight:650}
 .person-values{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:5px;color:var(--muted);font-size:11px}
 .person-values strong{color:var(--ink);font-weight:700}
-.percent{margin-left:auto;color:var(--blue);font-weight:750;white-space:nowrap}
-.person .progress{margin-top:8px}
-.employee-empty{padding:17px 4px;text-align:center;color:var(--muted);font-size:12px}
+.percent{margin-left:auto;color:var(--blue);font-weight:750}
 .updated-note{font-size:12px;color:var(--muted);background:#f7f9fc;border:1px solid var(--line);border-radius:11px;padding:10px 12px;margin:10px 0 14px}.updated-note b{color:var(--ink);font-weight:700}
 .demo-note{font-size:11px;color:#91631b;background:#fff7e5;border:1px solid #f4e2b7;border-radius:10px;padding:9px 11px;margin:10px 0}
 .empty{padding:18px;text-align:center;color:var(--muted);font-size:13px}
@@ -70,7 +69,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
 <header class="top">
   <div class="logo">A</div>
   <div><div class="brand">Asmia</div><div class="sub">Рабочее мини-приложение</div></div>
-  <span class="status">● ДЕМО-РЕЖИМ</span>
+  <span class="status">● ДАННЫЕ ИЗ EXCEL</span>
 </header>
 
 <section id="projects" class="screen active">
@@ -104,7 +103,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <h1 id="detailTitle"></h1>
   <div class="card">
     <div class="placeholder" id="detailText"></div>
-    <span class="pill">ДЕМО-РЕЖИМ · ДАННЫХ ПОКА НЕТ</span>
+    <span class="pill">РАЗДЕЛ В РАЗРАБОТКЕ</span>
   </div>
   <p class="muted" style="font-size:12px">Реальные формы, расчёты и сохранение данных подключим на следующем этапе.</p>
 </section>
@@ -115,8 +114,8 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <div class="crumb" id="visitsCrumb"></div>
   <h1>План визитов</h1>
   <p class="lead">План и фактическое выполнение по сотрудникам.</p>
-  <div class="demo-note">Тестовые данные из Excel · показатели пока не являются отчётными</div>
-  <div class="updated-note" id="visitsUpdatedAt">Последнее обновление данных: <b>ожидает первой загрузки Excel</b></div>
+  <div class="updated-note">Показатели загружены из рабочего Excel-файла</div>
+  <div class="updated-note" id="visitsUpdatedAt">Последнее обновление данных: <b>ожидает загрузки Excel</b></div>
   <div class="filters">
     <div><label for="monthFilter">Месяц</label><select id="monthFilter"></select></div>
     <div><label for="weekFilter">Неделя</label><select id="weekFilter"></select></div>
@@ -125,10 +124,13 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <div id="cityGroups"></div>
 </section>
 
-<div class="footer">Asmia · Демонстрационный интерфейс · Данные пока не отправляются</div>
+<div class="footer">Asmia · План визитов · Источник данных: Excel</div>
 </main>
 <script src="config.js"></script>
-<script src="visits-data.js"></script>
+<script>
+// Запрашиваем актуальный набор данных без использования устаревшего кеша браузера.
+document.write('<script src="visits-data.js?ts=' + Date.now() + '"><\/script>');
+</script>
 <script>
 "use strict";
 let selectedProject = null;
@@ -240,7 +242,7 @@ function renderVisitsUpdatedAt() {
   // Backend/import process must set this ISO timestamp only after a successful confirmed import.
   const raw = window.VISIT_DATA_UPDATED_AT || window.VISIT_DATA_META?.updatedAt || null;
   if (!raw) {
-    target.innerHTML = 'Последнее обновление данных: <b>ожидает первой загрузки Excel</b>';
+    target.innerHTML = 'Последнее обновление данных: <b>ожидает загрузки Excel</b>';
     return;
   }
   const date = new Date(raw);
@@ -257,9 +259,8 @@ function renderVisitsUpdatedAt() {
 
 function renderVisitDashboard() {
   renderVisitsUpdatedAt();
-  const all = (window.VISIT_DATA || []).filter(r =>
-    r.project === selectedProject.name && r.city === selectedCity
-  );
+  const all = (window.VISIT_DATA || []).filter(r => r.project === selectedProject.name && r.city === selectedCity);
+  const roster = (window.VISIT_EMPLOYEES || []).filter(e => e.project === selectedProject.name && e.city === selectedCity);
   const monthSelect = byId("monthFilter");
   const weekSelect = byId("weekFilter");
   const months = [...new Set(all.map(r => `${r.year}-${r.month}`))].sort();
@@ -274,107 +275,78 @@ function renderVisitDashboard() {
   });
   if (months.includes(previousMonth)) monthSelect.value = previousMonth;
   const selectedMonth = monthSelect.value;
-  const monthRows = selectedMonth
-    ? all.filter(r => `${r.year}-${r.month}` === selectedMonth)
-    : [];
-  const weeks = [...new Set(monthRows.map(r => Number(r.week)))].sort((a,b)=>a-b);
+  const monthRows = selectedMonth ? all.filter(r => `${r.year}-${r.month}` === selectedMonth) : [];
+  const weeks = [...new Set(monthRows.map(r => r.week))].sort((a,b)=>a-b);
   const previousWeek = weekSelect.value;
   weekSelect.replaceChildren();
   const allOpt = document.createElement("option");
-  allOpt.value = "all";
-  allOpt.textContent = "Весь месяц";
-  weekSelect.append(allOpt);
+  allOpt.value = "all"; allOpt.textContent = "Весь месяц"; weekSelect.append(allOpt);
   weeks.forEach(w => {
     const opt = document.createElement("option");
-    opt.value = String(w);
-    opt.textContent = `${w}-я неделя`;
-    weekSelect.append(opt);
+    opt.value = String(w); opt.textContent = `${w}-я неделя`; weekSelect.append(opt);
   });
   if (previousWeek === "all" || weeks.includes(+previousWeek)) weekSelect.value = previousWeek;
   const chosenWeek = weekSelect.value;
-  const rows = chosenWeek === "all"
-    ? monthRows
-    : monthRows.filter(r => Number(r.week) === +chosenWeek);
-
-  const sum = (items, field) => items.reduce((total, row) => total + (Number(row[field]) || 0), 0);
-  const plan = sum(rows, "plan");
-  const fact = sum(rows, "fact");
+  const rows = chosenWeek === "all" ? monthRows : monthRows.filter(r => r.week === +chosenWeek);
+  const plan = rows.reduce((s,r)=>s+r.plan,0);
+  const fact = rows.reduce((s,r)=>s+r.fact,0);
   const pct = plan ? fact / plan * 100 : 0;
   byId("visitSummary").innerHTML = `
     <div class="metric"><small>План</small><b>${plan}</b></div>
     <div class="metric"><small>Факт</small><b>${fact}</b></div>
     <div class="metric"><small>Выполнение</small><b>${pct.toFixed(1)}%</b><div class="progress"><span style="width:${Math.min(pct,100)}%"></span></div></div>`;
 
-  // Справочник сотрудников может передаваться отдельно из листа Excel «Сотрудники».
-  // Если его пока нет, список строится по всем строкам VISIT_DATA, а не только по выбранной неделе.
-  const employeeSource = Array.isArray(window.VISIT_EMPLOYEES)
-    ? window.VISIT_EMPLOYEES
-    : all.map(r => ({project:r.project, city:r.city, merchandiser:r.merchandiser}));
-  const employeeNames = [...new Set(employeeSource
-    .filter(e => e.project === selectedProject.name && e.city === selectedCity)
-    .map(e => String(e.merchandiser || e.employee || e.name || "").trim())
-    .filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ru"));
-
-  const totalsByEmployee = new Map();
+  const people = new Map();
   rows.forEach(r => {
-    const name = String(r.merchandiser || "").trim();
-    if (!name) return;
-    const current = totalsByEmployee.get(name) || {plan:0, fact:0};
-    current.plan += Number(r.plan) || 0;
-    current.fact += Number(r.fact) || 0;
-    totalsByEmployee.set(name, current);
+    const key = String(r.merchandiser || "").trim();
+    if (!key) return;
+    if (!people.has(key)) people.set(key, {name:key, plan:0, fact:0});
+    const person = people.get(key);
+    person.plan += Number(r.plan) || 0;
+    person.fact += Number(r.fact) || 0;
+  });
+  // Справочник гарантирует отображение действующих сотрудников, даже если у них нет строки визитов.
+  roster.forEach(e => {
+    const key = String(e.merchandiser || "").trim();
+    if (key && !people.has(key)) people.set(key, {name:key, plan:0, fact:0});
   });
 
   const groups = byId("cityGroups");
   groups.replaceChildren();
-  const section = document.createElement("section");
-  section.className = "employee-section";
-  const heading = document.createElement("div");
-  heading.className = "employee-heading";
-  const headingTitle = document.createElement("b");
-  headingTitle.textContent = "Выполнение по сотрудникам";
-  const headingCount = document.createElement("span");
-  headingCount.textContent = `${employeeNames.length} сотрудников`;
-  heading.append(headingTitle, headingCount);
-  const list = document.createElement("div");
-  list.className = "employee-list";
-
-  if (!employeeNames.length) {
-    const empty = document.createElement("div");
-    empty.className = "employee-empty";
-    empty.textContent = "Список сотрудников пока не загружен из Excel.";
-    list.append(empty);
-  } else {
-    employeeNames.forEach(name => {
-      const totals = totalsByEmployee.get(name) || {plan:0, fact:0};
-      const employeePct = totals.plan ? totals.fact / totals.plan * 100 : 0;
-      const person = document.createElement("div");
-      person.className = "person";
-      const top = document.createElement("div");
-      top.className = "person-top";
-      const personName = document.createElement("div");
-      personName.className = "person-name";
-      personName.textContent = name;
-      const percent = document.createElement("span");
-      percent.className = "percent";
-      percent.textContent = `${employeePct.toFixed(1)}%`;
-      top.append(personName, percent);
-      const values = document.createElement("div");
-      values.className = "person-values";
-      values.innerHTML = `<span>План: <strong>${totals.plan}</strong></span><span>Факт: <strong>${totals.fact}</strong></span>`;
-      const progress = document.createElement("div");
-      progress.className = "progress";
-      const bar = document.createElement("span");
-      bar.style.width = `${Math.min(employeePct,100)}%`;
-      progress.append(bar);
-      person.append(top, values, progress);
-      list.append(person);
-    });
+  if (!people.size) {
+    groups.innerHTML = '<div class="card empty">Нет данных за выбранный период и сотрудников в справочнике.</div>';
+    return;
   }
-  section.append(heading, list);
-  groups.append(section);
+  const peopleList = [...people.values()].sort((a,b)=>a.name.localeCompare(b.name,"ru"));
+  const group = document.createElement("div"); group.className="city-group";
+  const head = document.createElement("button"); head.type="button"; head.className="city-head";
+  const icon = document.createElement("span"); icon.textContent="🏙️";
+  const label = document.createElement("span");
+  const cityName = document.createElement("b"); cityName.textContent=selectedCity;
+  const citySub = document.createElement("small"); citySub.textContent=`${peopleList.length} сотрудников`;
+  label.append(cityName,citySub);
+  const total = document.createElement("span"); total.className="city-total";
+  total.textContent=`${fact}/${plan} `;
+  const totalPct = document.createElement("small"); totalPct.textContent=`${pct.toFixed(1)}%`; total.append(totalPct);
+  const chev = document.createElement("span"); chev.className="chev"; chev.textContent="⌄";
+  head.append(icon,label,total,chev);
+  const body = document.createElement("div"); body.className="city-body";
+  peopleList.forEach(r=>{
+    const person=document.createElement("div"); person.className="person";
+    const p=r.plan? r.fact/r.plan*100:0;
+    const name=document.createElement("div"); name.className="person-name"; name.textContent=r.name;
+    const values=document.createElement("div"); values.className="person-values";
+    const planEl=document.createElement("span"); planEl.append("План: "); const planStrong=document.createElement("strong"); planStrong.textContent=r.plan; planEl.append(planStrong);
+    const factEl=document.createElement("span"); factEl.append("Факт: "); const factStrong=document.createElement("strong"); factStrong.textContent=r.fact; factEl.append(factStrong);
+    const percent=document.createElement("span"); percent.className="percent"; percent.textContent=`${p.toFixed(1)}%`;
+    values.append(planEl,factEl,percent);
+    const progress=document.createElement("div"); progress.className="progress";
+    const bar=document.createElement("span"); bar.style.width=`${Math.min(p,100)}%`; progress.append(bar);
+    person.append(name,values,progress); body.append(person);
+  });
+  head.addEventListener("click",()=>{body.hidden=!body.hidden;chev.textContent=body.hidden?"›":"⌄";});
+  group.append(head,body); groups.append(group);
 }
-
 byId("monthFilter").addEventListener("change", renderVisitDashboard);
 byId("weekFilter").addEventListener("change", renderVisitDashboard);
 
