@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f3f5f9">
+<title>Asmia — мини-приложение</title>
+<style>
+:root{--bg:#f3f5f9;--card:#fff;--ink:#182230;--muted:#758195;--blue:#2869e8;--line:#e7ebf1;--green:#168653;--shadow:0 8px 28px #14213b0c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.app{max-width:520px;min-height:100dvh;margin:auto;padding:env(safe-area-inset-top) 16px calc(22px + env(safe-area-inset-bottom));display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:12px;padding:20px 2px 24px}
+.logo{width:46px;height:46px;border-radius:15px;background:linear-gradient(145deg,#4387fa,#1746b5);color:white;display:grid;place-items:center;font-weight:850;font-size:22px;box-shadow:0 6px 16px #2869e833}
+.brand{font-weight:800;font-size:21px;letter-spacing:.1px}.sub{font-size:12px;color:var(--muted);margin-top:1px}
+.status{margin-left:auto;color:var(--green);font-size:11px;font-weight:700;background:#e7f6ee;padding:6px 9px;border-radius:20px}
+.screen{display:none;animation:show .18s ease}.screen.active{display:block}
+@keyframes show{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}
+h1{font-size:25px;line-height:1.2;margin:0 0 7px}p.lead{color:var(--muted);margin:0 0 20px}
+.choice{width:100%;display:flex;align-items:center;gap:14px;text-align:left;padding:17px;border:1px solid var(--line);border-radius:15px;background:#fff;margin:10px 0;color:var(--ink);font:inherit;cursor:pointer;box-shadow:var(--shadow);transition:transform .12s,border-color .12s}
+.choice:active,.action:active,.back:active{transform:scale(.99)}
+.symbol{width:44px;height:44px;flex:none;border-radius:13px;background:#edf3ff;color:var(--blue);display:grid;place-items:center;font-size:22px;font-weight:700}
+.choice b{display:block;font-size:16px}.choice small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+.chev{margin-left:auto;color:#9aa5b5;font-size:22px}
+.back{border:0;background:transparent;color:var(--blue);font:600 14px system-ui;padding:0;margin:0 0 17px;cursor:pointer}
+.crumb{font-size:12px;color:var(--muted);margin-bottom:9px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.action{border:1px solid var(--line);border-radius:15px;background:#fff;padding:17px 14px;text-align:left;min-height:126px;cursor:pointer;color:var(--ink);box-shadow:var(--shadow);font:inherit;transition:transform .12s,border-color .12s}
+.action .ico{font-size:25px;display:block;margin-bottom:13px;color:var(--blue);font-weight:750}
+.action b{display:block;font-size:14px}.action small{display:block;color:var(--muted);font-size:11px;margin-top:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:17px;margin:12px 0;box-shadow:var(--shadow)}
+.muted{color:var(--muted)}.placeholder{border:1px dashed #cbd5e2;background:#fafbfd;border-radius:14px;padding:18px;color:var(--muted);font-size:13px}
+.footer{margin-top:auto;padding:28px 0 5px;text-align:center;color:#9aa4b3;font-size:11px}
+.pill{display:inline-block;border-radius:20px;background:#edf3ff;color:var(--blue);font-size:11px;font-weight:700;padding:5px 9px;margin-bottom:12px}
+@media(max-width:380px){.grid{grid-template-columns:1fr}.action{min-height:95px}.action .ico{margin-bottom:7px}}
+button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
+</style>
+</head>
+<body>
+<main class="app">
+<header class="top">
+  <div class="logo">A</div>
+  <div><div class="brand">Asmia</div><div class="sub">Рабочее мини-приложение</div></div>
+  <span class="status">● ДЕМО-РЕЖИМ</span>
+</header>
+
+<section id="projects" class="screen active">
+  <span class="pill">ШАГ 1 ИЗ 3</span>
+  <h1>Выберите проект</h1>
+  <p class="lead">Сначала выберите компанию, в которой работаете.</p>
+  <div id="projectList"></div>
+</section>
+
+<section id="cities" class="screen">
+  <button class="back" type="button" data-go="projects">← К выбору проекта</button>
+  <div class="crumb" id="projectCrumb"></div>
+  <span class="pill">ШАГ 2 ИЗ 3</span>
+  <h1>Выберите город</h1>
+  <p class="lead">Список городов зависит от выбранного проекта.</p>
+  <div id="cityList"></div>
+</section>
+
+<section id="menu" class="screen">
+  <button class="back" type="button" data-go="cities">← К выбору города</button>
+  <div class="crumb" id="selectedCrumb"></div>
+  <span class="pill">ШАГ 3 ИЗ 3</span>
+  <h1>Рабочее меню</h1>
+  <p class="lead">Выберите нужный раздел.</p>
+  <div class="grid" id="sectionGrid"></div>
+</section>
+
+<section id="detail" class="screen">
+  <button class="back" type="button" data-go="menu">← В рабочее меню</button>
+  <div class="crumb" id="detailCrumb"></div>
+  <h1 id="detailTitle"></h1>
+  <div class="card">
+    <div class="placeholder" id="detailText"></div>
+    <span class="pill">ДЕМО-РЕЖИМ · ДАННЫХ ПОКА НЕТ</span>
+  </div>
+  <p class="muted" style="font-size:12px">Реальные формы, расчёты и сохранение данных подключим на следующем этапе.</p>
+</section>
+
+<div class="footer">Asmia · Демонстрационный интерфейс · Данные пока не отправляются</div>
+</main>
+<script src="config.js"></script>
+<script>
+"use strict";
+let selectedProject = null;
+let selectedCity = null;
+let selectedSection = null;
+const byId = id => document.getElementById(id);
+
+function makeChoice(title, subtitle, symbol, action, value) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "choice";
+  button.dataset.action = action;
+  button.dataset.value = value;
+  const icon = document.createElement("span");
+  icon.className = "symbol";
+  icon.textContent = symbol;
+  const text = document.createElement("span");
+  const bold = document.createElement("b");
+  bold.textContent = title;
+  const small = document.createElement("small");
+  small.textContent = subtitle;
+  text.append(bold, small);
+  const arrow = document.createElement("span");
+  arrow.className = "chev";
+  arrow.textContent = "›";
+  button.append(icon, text, arrow);
+  return button;
+}
+
+function show(screenId) {
+  document.querySelectorAll(".screen").forEach(screen => {
+    screen.classList.toggle("active", screen.id === screenId);
+  });
+  window.scrollTo({top: 0, behavior: "auto"});
+}
+
+function renderProjects() {
+  const list = byId("projectList");
+  list.replaceChildren();
+  CONFIG.projects.forEach(project => {
+    const count = project.cities.length;
+    const word = count === 1 ? "город" : (count < 5 ? "города" : "городов");
+    const symbol = project.id === "holding_aqua" ? "💧" : "📊";
+    list.append(makeChoice(project.name, `${count} рабочих ${word}`, symbol, "project", project.id));
+  });
+}
+
+function renderCities() {
+  byId("projectCrumb").textContent = selectedProject.name;
+  const list = byId("cityList");
+  list.replaceChildren();
+  selectedProject.cities.forEach(city => {
+    list.append(makeChoice(city, selectedProject.name, "🏙️", "city", city));
+  });
+}
+
+function renderMenu() {
+  byId("selectedCrumb").textContent = `${selectedProject.name} · ${selectedCity}`;
+  const grid = byId("sectionGrid");
+  grid.replaceChildren();
+  CONFIG.sections.forEach(section => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "action";
+    button.dataset.action = "section";
+    button.dataset.value = section.id;
+    const icon = document.createElement("span");
+    icon.className = "ico";
+    icon.textContent = section.id === "visits" ? "📍" :
+      section.id === "rejected" ? "⚠️" :
+      section.id === "salary" ? "💰" : "➕";
+    const title = document.createElement("b");
+    title.textContent = section.name;
+    const hint = document.createElement("small");
+    hint.textContent = section.hint;
+    button.append(icon, title, hint);
+    grid.append(button);
+  });
+}
+
+function openSection(section) {
+  selectedSection = section;
+  byId("detailCrumb").textContent = `${selectedProject.name} · ${selectedCity}`;
+  byId("detailTitle").textContent = section.name;
+  byId("detailText").textContent = section.description || section.hint ||
+    "Раздел будет подключён на следующем этапе.";
+  show("detail");
+}
+
+document.addEventListener("click", event => {
+  const button = event.target.closest("button[data-action], button[data-go]");
+  if (!button) return;
+  if (button.dataset.go) {
+    show(button.dataset.go);
+    return;
+  }
+  const action = button.dataset.action;
+  const value = button.dataset.value;
+  if (action === "project") {
+    selectedProject = CONFIG.projects.find(project => project.id === value);
+    if (!selectedProject) return;
+    selectedCity = null;
+    renderCities();
+    show("cities");
+  } else if (action === "city") {
+    selectedCity = value;
+    renderMenu();
+    show("menu");
+  } else if (action === "section") {
+    const section = CONFIG.sections.find(item => item.id === value);
+    if (section) openSection(section);
+  }
+});
+
+renderProjects();
+</script>
+</body>
+</html>
