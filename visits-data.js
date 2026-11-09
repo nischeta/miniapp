@@ -1,7 +1,7 @@
-// Исходные данные из Excel. Следующие обновления публикуются ботом Asmia.
+// Файл формируется ботом Asmia после подтверждённой загрузки Excel.
 window.VISIT_DATA_META = {
-  "updatedAt": "2026-11-09T12:43:04+00:00",
-  "sourceFile": "План_визитов_Asmia_шаблон_с_сотрудниками.xlsx",
+  "updatedAt": "2026-11-09T17:02:02+00:00",
+  "sourceFile": "plan.xlsx",
   "recordCount": 44,
   "employeeCount": 44
 };
@@ -14,7 +14,7 @@ window.VISIT_DATA = [
     "city": "Воронеж",
     "merchandiser": "Мозговая Ольга Владимировна",
     "plan": 35,
-    "fact": 20
+    "fact": 30
   },
   {
     "project": "Холдинг Аква",
@@ -24,7 +24,7 @@ window.VISIT_DATA = [
     "city": "Воронеж",
     "merchandiser": "Неклюдова Анастасия Игоревна",
     "plan": 101,
-    "fact": 20
+    "fact": 30
   },
   {
     "project": "Холдинг Аква",
@@ -34,7 +34,7 @@ window.VISIT_DATA = [
     "city": "Воронеж",
     "merchandiser": "Неклюдов Никита Игоревич",
     "plan": 82,
-    "fact": 20
+    "fact": 30
   },
   {
     "project": "Холдинг Аква",
@@ -44,7 +44,7 @@ window.VISIT_DATA = [
     "city": "Воронеж",
     "merchandiser": "Алексеева Елена Викторовна",
     "plan": 7,
-    "fact": 20
+    "fact": 30
   },
   {
     "project": "Холдинг Аква",
@@ -54,7 +54,7 @@ window.VISIT_DATA = [
     "city": "Краснодар",
     "merchandiser": "Власова Анна Андреевна",
     "plan": 27,
-    "fact": 20
+    "fact": 30
   },
   {
     "project": "Холдинг Аква",
@@ -64,7 +64,7 @@ window.VISIT_DATA = [
     "city": "Краснодар",
     "merchandiser": "Григорьева Анастасия Андреевна",
     "plan": 15,
-    "fact": 20
+    "fact": 30
   },
   {
     "project": "Холдинг Аква",
@@ -74,7 +74,7 @@ window.VISIT_DATA = [
     "city": "Краснодар",
     "merchandiser": "Кирячек Виталий Геннадьевич",
     "plan": 38,
-    "fact": 20
+    "fact": 30
   },
   {
     "project": "Холдинг Аква",
@@ -84,7 +84,7 @@ window.VISIT_DATA = [
     "city": "Краснодар",
     "merchandiser": "Кононенко Елена Вячеславовна",
     "plan": 24,
-    "fact": 20
+    "fact": 30
   },
   {
     "project": "Холдинг Аква",
@@ -94,7 +94,7 @@ window.VISIT_DATA = [
     "city": "Краснодар",
     "merchandiser": "Мавлюкаева Ирина Владиславовна",
     "plan": 23,
-    "fact": 20
+    "fact": 30
   },
   {
     "project": "Холдинг Аква",
@@ -104,7 +104,7 @@ window.VISIT_DATA = [
     "city": "Краснодар",
     "merchandiser": "Савельева Дарья Николаевна",
     "plan": 20,
-    "fact": 20
+    "fact": 30
   },
   {
     "project": "Холдинг Аква",
@@ -114,7 +114,7 @@ window.VISIT_DATA = [
     "city": "Краснодар",
     "merchandiser": "Юстус Виктория Александровна",
     "plan": 21,
-    "fact": 20
+    "fact": 30
   },
   {
     "project": "Холдинг Аква",
@@ -124,7 +124,7 @@ window.VISIT_DATA = [
     "city": "Краснодар",
     "merchandiser": "Кандя Татьяна Юрьевна",
     "plan": 12,
-    "fact": 20
+    "fact": 30
   },
   {
     "project": "Холдинг Аква",
@@ -134,7 +134,7 @@ window.VISIT_DATA = [
     "city": "Краснодар",
     "merchandiser": "кылосова Елена",
     "plan": 28,
-    "fact": 20
+    "fact": 30
   },
   {
     "project": "Холдинг Аква",
@@ -144,7 +144,7 @@ window.VISIT_DATA = [
     "city": "Краснодар",
     "merchandiser": "Григорян Давид",
     "plan": 6,
-    "fact": 20
+    "fact": 30
   },
   {
     "project": "Холдинг Аква",
