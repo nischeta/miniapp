@@ -257,6 +257,14 @@ function renderVisitsUpdatedAt() {
   target.innerHTML = `Последнее обновление данных: <b>${formatted}</b>`;
 }
 
+function getCurrentISOWeek(date = new Date()) {
+  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+  const day = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - day);
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+  return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+}
+
 function renderVisitDashboard() {
   renderVisitsUpdatedAt();
   const all = (window.VISIT_DATA || []).filter(r => r.project === selectedProject.name && r.city === selectedCity);
@@ -265,6 +273,9 @@ function renderVisitDashboard() {
   const weekSelect = byId("weekFilter");
   const months = [...new Set(all.map(r => `${r.year}-${r.month}`))].sort();
   const previousMonth = monthSelect.value;
+  const now = new Date();
+  const currentMonthKey = `${now.getFullYear()}-${now.getMonth() + 1}`;
+  const currentWeek = getCurrentISOWeek(now);
   monthSelect.replaceChildren();
   months.forEach(key => {
     const [year, month] = key.split("-");
@@ -273,7 +284,14 @@ function renderVisitDashboard() {
     opt.textContent = `${["","Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"][+month]} ${year}`;
     monthSelect.append(opt);
   });
-  if (months.includes(previousMonth)) monthSelect.value = previousMonth;
+  if (months.includes(previousMonth)) {
+    monthSelect.value = previousMonth;
+  } else if (months.includes(currentMonthKey)) {
+    monthSelect.value = currentMonthKey;
+  } else if (months.length) {
+    // Если за текущий месяц данных ещё нет, открываем самый поздний доступный месяц.
+    monthSelect.value = months[months.length - 1];
+  }
   const selectedMonth = monthSelect.value;
   const monthRows = selectedMonth ? all.filter(r => `${r.year}-${r.month}` === selectedMonth) : [];
   const weeks = [...new Set(monthRows.map(r => r.week))].sort((a,b)=>a-b);
@@ -285,7 +303,15 @@ function renderVisitDashboard() {
     const opt = document.createElement("option");
     opt.value = String(w); opt.textContent = `${w}-я неделя`; weekSelect.append(opt);
   });
-  if (previousWeek === "all" || weeks.includes(+previousWeek)) weekSelect.value = previousWeek;
+  if (previousMonth === selectedMonth && (previousWeek === "all" || weeks.includes(+previousWeek))) {
+    // Сохраняем ручной выбор сотрудника при повторной отрисовке.
+    weekSelect.value = previousWeek;
+  } else if (selectedMonth === currentMonthKey && weeks.includes(currentWeek)) {
+    weekSelect.value = String(currentWeek);
+  } else {
+    // Для прошлых месяцев или если текущая неделя ещё не загружена — весь месяц.
+    weekSelect.value = "all";
+  }
   const chosenWeek = weekSelect.value;
   const rows = chosenWeek === "all" ? monthRows : monthRows.filter(r => r.week === +chosenWeek);
   const plan = rows.reduce((s,r)=>s+r.plan,0);
