@@ -62,6 +62,18 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
 .empty{padding:18px;text-align:center;color:var(--muted);font-size:13px}
 @media(max-width:360px){.summary{grid-template-columns:1fr 1fr}.metric:last-child{grid-column:span 2}}
 
+
+/* Отклонённые визиты */
+.rejected-summary{background:#fff;border:1px solid var(--line);border-radius:15px;padding:14px;margin:12px 0;display:flex;align-items:center;justify-content:space-between}
+.rejected-summary small{display:block;color:var(--muted);font-size:12px}.rejected-summary b{font-size:27px;color:var(--ink)}
+.rejected-person{width:100%;display:flex;align-items:center;gap:10px;padding:14px 13px;border:0;border-bottom:1px solid #eef1f5;background:#fff;text-align:left;color:var(--ink);font:inherit;cursor:pointer}
+.rejected-person:first-child{border-radius:14px 14px 0 0}.rejected-person:last-child{border-bottom:0;border-radius:0 0 14px 14px}
+.rejected-person-name{font-size:13px;font-weight:650;flex:1}.rejected-count{font-size:14px;font-weight:800;color:var(--blue);background:#edf3ff;border-radius:18px;padding:5px 10px;white-space:nowrap}
+.rejected-list{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:10px 0}
+.rejected-visit{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin:10px 0;box-shadow:var(--shadow)}
+.rejected-visit-date{font-size:14px;font-weight:750;margin-bottom:9px}.rejected-visit-row{font-size:12px;margin:5px 0;color:var(--muted);overflow-wrap:anywhere}.rejected-visit-row b{color:var(--ink);font-weight:650}.rejected-comment{margin-top:10px;padding:10px;background:#fff7e9;border-radius:10px;color:#74501b;font-size:12px;overflow-wrap:anywhere}
+.rejected-subhead{display:flex;align-items:center;gap:10px;margin:8px 0 12px}.rejected-subhead button{border:0;background:transparent;color:var(--blue);font:600 13px system-ui;padding:5px 0;cursor:pointer}
+
 </style>
 </head>
 <body>
@@ -122,6 +134,29 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   </div>
   <div class="summary" id="visitSummary"></div>
   <div id="cityGroups"></div>
+</section>
+
+
+<section id="rejected" class="screen">
+  <button class="back" type="button" data-go="menu">← В рабочее меню</button>
+  <div class="crumb" id="rejectedCrumb"></div>
+  <h1>Отклонённые визиты</h1>
+  <p class="lead">Количество отклонений и причины по каждому сотруднику.</p>
+  <div class="updated-note" id="rejectedUpdatedAt">Последнее обновление данных: <b>ожидает загрузки Excel</b></div>
+  <div class="filters">
+    <div><label for="rejectedMonthFilter">Месяц</label><select id="rejectedMonthFilter"></select></div>
+    <div><label for="rejectedWeekFilter">Неделя</label><select id="rejectedWeekFilter"></select></div>
+  </div>
+  <div class="rejected-summary"><div><small>Отклонённых визитов</small><b id="rejectedTotal">0</b></div><span style="font-size:25px">⚠️</span></div>
+  <div id="rejectedEmployeeView">
+    <h2 style="font-size:16px;margin:18px 0 8px">Сотрудники</h2>
+    <div id="rejectedEmployees" class="rejected-list"></div>
+  </div>
+  <div id="rejectedDetailView" hidden>
+    <div class="rejected-subhead"><button type="button" id="rejectedBackToEmployees">← К списку сотрудников</button></div>
+    <h2 id="rejectedEmployeeName" style="font-size:17px;margin:4px 0 12px"></h2>
+    <div id="rejectedVisitsList"></div>
+  </div>
 </section>
 
 <div class="footer">Asmia · План визитов · Источник данных: Excel</div>
@@ -235,6 +270,14 @@ function openSection(section) {
     byId("visitsCrumb").textContent = `${selectedProject.name} · ${selectedCity}`;
     renderVisitDashboard();
     show("visits");
+    return;
+  }
+  if (section.id === "rejected") {
+    byId("rejectedCrumb").textContent = `${selectedProject.name} · ${selectedCity === ALL_CITIES ? "Все города" : selectedCity}`;
+    byId("rejectedEmployeeView").hidden = false;
+    byId("rejectedDetailView").hidden = true;
+    renderRejectedDashboard();
+    show("rejected");
     return;
   }
   byId("detailText").textContent = section.description || section.hint ||
@@ -398,6 +441,84 @@ function renderVisitDashboard() {
     groups.innerHTML = '<div class="card empty">Нет данных за выбранный период.</div>';
   }
 }
+function renderRejectedUpdatedAt() {
+  const target = byId("rejectedUpdatedAt");
+  const raw = window.VISIT_DATA_META?.updatedAt || null;
+  if (!raw) { target.innerHTML = 'Последнее обновление данных: <b>ожидает загрузки Excel</b>'; return; }
+  const date = new Date(raw);
+  target.innerHTML = Number.isNaN(date.getTime()) ? 'Последнее обновление данных: <b>дата не определена</b>' :
+    `Последнее обновление данных: <b>${new Intl.DateTimeFormat('ru-RU',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}).format(date)}</b>`;
+}
+
+function renderRejectedDashboard() {
+  renderRejectedUpdatedAt();
+  const all = (window.REJECTED_VISITS || []).filter(r => r.project === selectedProject.name &&
+    (selectedCity === ALL_CITIES || r.city === selectedCity));
+  const monthSelect = byId("rejectedMonthFilter"), weekSelect = byId("rejectedWeekFilter");
+  const months = [...new Set(all.map(r => `${r.year}-${r.month}`))].sort();
+  const previousMonth = monthSelect.value;
+  const now = new Date(), currentMonthKey = `${now.getFullYear()}-${now.getMonth()+1}`;
+  monthSelect.replaceChildren();
+  months.forEach(key => {
+    const [year,month] = key.split("-"); const opt=document.createElement("option");
+    opt.value=key; opt.textContent=`${["","Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"][+month]} ${year}`;
+    monthSelect.append(opt);
+  });
+  if (months.includes(previousMonth)) monthSelect.value=previousMonth;
+  else if (months.includes(currentMonthKey)) monthSelect.value=currentMonthKey;
+  else if (months.length) monthSelect.value=months[months.length-1];
+  const selectedMonth=monthSelect.value;
+  const monthRows=selectedMonth ? all.filter(r=>`${r.year}-${r.month}`===selectedMonth) : [];
+  const weeks=[...new Set(monthRows.map(r=>Number(r.week)))].sort((a,b)=>a-b);
+  const previousWeek=weekSelect.value; weekSelect.replaceChildren();
+  const allOpt=document.createElement("option"); allOpt.value="all"; allOpt.textContent="Весь месяц"; weekSelect.append(allOpt);
+  weeks.forEach(w=>{const opt=document.createElement("option");opt.value=String(w);opt.textContent=`${w}-я неделя`;weekSelect.append(opt);});
+  if (previousMonth===selectedMonth && (previousWeek==="all" || weeks.includes(+previousWeek))) weekSelect.value=previousWeek;
+  else if (selectedMonth===currentMonthKey && weeks.includes(getCurrentISOWeek(now))) weekSelect.value=String(getCurrentISOWeek(now));
+  else weekSelect.value="all";
+  const rows=weekSelect.value==="all" ? monthRows : monthRows.filter(r=>Number(r.week)===Number(weekSelect.value));
+  byId("rejectedTotal").textContent=String(rows.length);
+  const peopleMap=new Map();
+  rows.forEach(r=>{
+    const key=`${r.city}|||${r.merchandiser}`;
+    if(!peopleMap.has(key)) peopleMap.set(key,{city:r.city,name:r.merchandiser,count:0,rows:[]});
+    const person=peopleMap.get(key); person.count++; person.rows.push(r);
+  });
+  const people=[...peopleMap.values()].sort((a,b)=>a.name.localeCompare(b.name,"ru"));
+  const list=byId("rejectedEmployees"); list.replaceChildren();
+  if(!people.length){const empty=document.createElement("div");empty.className="empty";empty.textContent=all.length ? "Нет отклонённых визитов за выбранный период." : "Нет данных об отклонённых визитах за выбранный месяц.";list.append(empty);}
+  people.forEach(person=>{
+    const btn=document.createElement("button");btn.type="button";btn.className="rejected-person";
+    const name=document.createElement("span");name.className="rejected-person-name";
+    name.textContent=selectedCity===ALL_CITIES ? `${person.name} · ${person.city}` : person.name;
+    const count=document.createElement("span");count.className="rejected-count";count.textContent=`${person.count} откл.`;
+    const arrow=document.createElement("span");arrow.className="chev";arrow.textContent="›";
+    btn.append(name,count,arrow);btn.addEventListener("click",()=>openRejectedEmployee(person));list.append(btn);
+  });
+  // Если пользователь меняет период, возвращаем его к списку сотрудников.
+  byId("rejectedEmployeeView").hidden=false; byId("rejectedDetailView").hidden=true;
+}
+
+function openRejectedEmployee(person) {
+  byId("rejectedEmployeeName").textContent=person.name;
+  const list=byId("rejectedVisitsList");list.replaceChildren();
+  person.rows.sort((a,b)=>new Date(b.visitDate)-new Date(a.visitDate)).forEach(r=>{
+    const card=document.createElement("article");card.className="rejected-visit";
+    const date=document.createElement("div");date.className="rejected-visit-date";
+    date.textContent=new Intl.DateTimeFormat("ru-RU",{day:"2-digit",month:"long",year:"numeric",hour:"2-digit",minute:"2-digit"}).format(new Date(r.visitDate));
+    const network=document.createElement("div");network.className="rejected-visit-row";network.innerHTML="Торговая сеть: <b></b>";network.querySelector("b").textContent=r.network||"—";
+    const address=document.createElement("div");address.className="rejected-visit-row";address.innerHTML="Адрес: <b></b>";address.querySelector("b").textContent=r.address||"—";
+    const comment=document.createElement("div");comment.className="rejected-comment";comment.textContent=r.comment||"Комментарий не указан";
+    card.append(date,network,address,comment);list.append(card);
+  });
+  byId("rejectedEmployeeView").hidden=true;byId("rejectedDetailView").hidden=false;
+  window.scrollTo({top:0,behavior:"auto"});
+}
+
+byId("rejectedMonthFilter").addEventListener("change",renderRejectedDashboard);
+byId("rejectedWeekFilter").addEventListener("change",renderRejectedDashboard);
+byId("rejectedBackToEmployees").addEventListener("click",()=>{byId("rejectedDetailView").hidden=true;byId("rejectedEmployeeView").hidden=false;});
+
 byId("monthFilter").addEventListener("change", renderVisitDashboard);
 byId("weekFilter").addEventListener("change", renderVisitDashboard);
 
