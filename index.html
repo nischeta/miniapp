@@ -74,6 +74,87 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
 .rejected-visit-date{font-size:14px;font-weight:750;margin-bottom:9px}.rejected-visit-row{font-size:12px;margin:5px 0;color:var(--muted);overflow-wrap:anywhere}.rejected-visit-row b{color:var(--ink);font-weight:650}.rejected-comment{margin-top:10px;padding:10px;background:#fff7e9;border-radius:10px;color:#74501b;font-size:12px;overflow-wrap:anywhere}
 .rejected-subhead{display:flex;align-items:center;gap:10px;margin:8px 0 12px}.rejected-subhead button{border:0;background:transparent;color:var(--blue);font:600 13px system-ui;padding:5px 0;cursor:pointer}
 
+
+/* Аналитика покрытия торговых точек */
+.coverage-hint{font-size:12px;color:var(--muted);margin:4px 0 12px}
+.coverage-city{background:#fff;border:1px solid var(--line);border-radius:14px;margin:10px 0;padding:13px}
+.coverage-city-head{display:flex;align-items:center;justify-content:space-between;gap:8px;font-weight:700;font-size:14px}
+.coverage-city-values{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:11px;margin-top:7px}
+.coverage-city-values b{color:var(--ink)}
+.coverage-empty{background:#fff;border:1px dashed #cbd5e2;border-radius:14px;padding:18px;color:var(--muted);font-size:13px;text-align:center;margin:12px 0}
+
+
+
+/* Адаптация для компьютеров и широких экранов */
+@media (min-width: 769px) {
+  body {font-size:16px}
+  .app {max-width:1440px; width:100%; min-height:100vh; padding:24px 40px 28px}
+  .top {padding:10px 0 30px; margin-bottom:8px; border-bottom:1px solid var(--line)}
+  .logo {width:52px;height:52px;border-radius:16px;font-size:25px}
+  .brand {font-size:25px}
+  .sub {font-size:13px}
+  .status {padding:12px 22px; min-height:48px}
+  .screen {width:100%; max-width:none}
+  h1 {font-size:32px; margin-bottom:10px}
+  p.lead {font-size:15px; margin-bottom:24px}
+  .pill {font-size:11px; padding:6px 11px; margin-bottom:14px}
+  .back {font-size:14px; margin-bottom:20px}
+  .crumb {font-size:13px; margin-bottom:12px}
+  #projectList {display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px;max-width:1100px}
+  #cityList {display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;max-width:1300px}
+  .choice {margin:0; min-height:104px; padding:22px; border-radius:17px; gap:17px}
+  .choice b {font-size:17px}
+  .choice small {font-size:13px}
+  .symbol {width:50px;height:50px;font-size:24px}
+  .grid {grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .action {min-height:150px;padding:22px;border-radius:17px}
+  .action .ico {font-size:29px;margin-bottom:18px}
+  .action b {font-size:16px}
+  .action small {font-size:13px}
+  .card {padding:22px;border-radius:18px;margin:14px 0}
+  .filters {grid-template-columns:repeat(2,minmax(220px,300px));gap:14px;margin:18px 0}
+  .filters label {font-size:12px}
+  .filters select {padding:12px 14px;min-height:46px}
+  .summary {grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0 20px}
+  .metric {padding:17px 18px;border-radius:15px}
+  .metric small {font-size:12px}
+  .metric b {font-size:25px}
+  .progress {height:8px}
+  #cityGroups, #coverageCityGroups {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+  .city-group,.coverage-city {margin:0;border-radius:16px}
+  .city-head {padding:17px;font-size:15px}
+  .city-head b {font-size:15px}
+  .city-body {padding:0 17px 14px}
+  .person {padding:13px 0}
+  .person-name {font-size:14px}
+  .person-values {font-size:12px}
+  .updated-note {font-size:13px;padding:12px 15px;max-width:100%}
+  .coverage-hint {font-size:13px}
+  .coverage-city {padding:17px}
+  .coverage-city-head {font-size:15px}
+  .coverage-city-values {font-size:12px}
+  .rejected-summary {max-width:520px;padding:18px 20px}
+  #rejectedEmployees {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px;border:0;background:transparent;overflow:visible}
+  .rejected-person {border:1px solid var(--line);border-radius:13px!important;margin:0 0 10px;padding:16px;box-shadow:var(--shadow)}
+  #rejectedVisitsList {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+  .rejected-visit {margin:0;padding:17px}
+  .rejected-visit-date {font-size:15px}
+  .rejected-visit-row,.rejected-comment {font-size:13px}
+  #instructions .card {max-width:1000px}
+  #instructions .card p {font-size:14px!important}
+  .footer {padding-top:36px;font-size:12px}
+}
+@media (min-width: 1200px) {
+  .app {padding-left:56px;padding-right:56px}
+  .grid {grid-template-columns:repeat(4,minmax(0,1fr))}
+  #cityGroups, #coverageCityGroups {grid-template-columns:repeat(3,minmax(0,1fr))}
+  #rejectedEmployees, #rejectedVisitsList {grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (min-width: 769px) and (max-width: 980px) {
+  .app {padding-left:24px;padding-right:24px}
+  #cityGroups, #coverageCityGroups {grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
@@ -193,6 +274,22 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   </div>
 </section>
 
+
+<section id="analytics" class="screen">
+  <button class="back" type="button" data-go="menu">← В рабочее меню</button>
+  <div class="crumb" id="analyticsCrumb"></div>
+  <h1>Аналитика покрытия</h1>
+  <p class="lead">Охват торговых точек по базе проекта.</p>
+  <div class="updated-note" id="analyticsUpdatedAt">Последнее обновление данных: <b>ожидает загрузки Excel</b></div>
+  <div class="filters">
+    <div><label for="coverageMonthFilter">Месяц</label><select id="coverageMonthFilter"></select></div>
+    <div><label for="coverageWeekFilter">Неделя</label><select id="coverageWeekFilter"></select></div>
+  </div>
+  <div class="coverage-hint">«Весь месяц» считает каждую торговую точку один раз за месяц, даже если она встречается в нескольких недельных строках.</div>
+  <div class="summary" id="coverageSummary"></div>
+  <div id="coverageCityGroups"></div>
+</section>
+
 <div class="footer">Asmia · План визитов · Источник данных: Excel</div>
 </main>
 <script src="https://st.max.ru/js/max-web-app.js"></script>
@@ -285,6 +382,15 @@ function renderMenu() {
     button.append(icon, title, hint);
     grid.append(button);
   });
+  const analyticsButton = document.createElement("button");
+  analyticsButton.type = "button";
+  analyticsButton.className = "action";
+  analyticsButton.dataset.action = "analytics";
+  const analyticsIcon = document.createElement("span"); analyticsIcon.className = "ico"; analyticsIcon.textContent = "📊";
+  const analyticsTitle = document.createElement("b"); analyticsTitle.textContent = "Аналитика";
+  const analyticsHint = document.createElement("small"); analyticsHint.textContent = "Покрытие базы торговых точек";
+  analyticsButton.append(analyticsIcon, analyticsTitle, analyticsHint);
+  grid.append(analyticsButton);
 }
 
 function openSection(section) {
@@ -476,6 +582,90 @@ function renderVisitDashboard() {
     groups.innerHTML = '<div class="card empty">Нет данных за выбранный период.</div>';
   }
 }
+function renderCoverageDashboard() {
+  const meta = window.VISIT_DATA_META || {};
+  const updatedTarget = byId("analyticsUpdatedAt");
+  if (meta.updatedAt) {
+    const d = new Date(meta.updatedAt);
+    updatedTarget.innerHTML = Number.isNaN(d.getTime()) ? 'Последнее обновление данных: <b>дата не определена</b>' :
+      `Последнее обновление данных: <b>${new Intl.DateTimeFormat('ru-RU',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}).format(d)}</b>`;
+  } else updatedTarget.innerHTML = 'Последнее обновление данных: <b>ожидает загрузки Excel</b>';
+
+  const source = (window.TT_COVERAGE_DATA || []).filter(r => r.project === selectedProject.name &&
+    (selectedCity === ALL_CITIES || r.city === selectedCity));
+  const monthSelect = byId("coverageMonthFilter"), weekSelect = byId("coverageWeekFilter");
+  const months = [...new Set(source.map(r => `${r.year}-${r.month}`))].sort();
+  const previousMonth = monthSelect.value;
+  const now = new Date(), currentMonthKey = `${now.getFullYear()}-${now.getMonth()+1}`;
+  const monthNames = ["","Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+  monthSelect.replaceChildren();
+  months.forEach(key => {
+    const [year, month] = key.split("-"); const opt = document.createElement("option");
+    opt.value = key; opt.textContent = `${monthNames[+month]} ${year}`; monthSelect.append(opt);
+  });
+  if (months.includes(previousMonth)) monthSelect.value = previousMonth;
+  else if (months.includes(currentMonthKey)) monthSelect.value = currentMonthKey;
+  else if (months.length) monthSelect.value = months[months.length - 1];
+  const selectedMonth = monthSelect.value;
+  const monthRows = selectedMonth ? source.filter(r => `${r.year}-${r.month}` === selectedMonth) : [];
+  const weeks = [...new Set(monthRows.map(r => Number(r.week)).filter(Number.isFinite))].sort((a,b)=>a-b);
+  const previousWeek = weekSelect.value; weekSelect.replaceChildren();
+  const allOpt = document.createElement("option"); allOpt.value = "all"; allOpt.textContent = "Весь месяц"; weekSelect.append(allOpt);
+  weeks.forEach(w => { const opt = document.createElement("option"); opt.value = String(w); opt.textContent = `${w}-я неделя`; weekSelect.append(opt); });
+  if (previousMonth === selectedMonth && (previousWeek === "all" || weeks.includes(+previousWeek))) weekSelect.value = previousWeek;
+  else if (selectedMonth === currentMonthKey && weeks.includes(getCurrentISOWeek(now))) weekSelect.value = String(getCurrentISOWeek(now));
+  else weekSelect.value = "all";
+
+  const selectedWeek = weekSelect.value;
+  const rawRows = selectedWeek === "all" ? monthRows : monthRows.filter(r => Number(r.week) === Number(selectedWeek));
+  // Дедупликация по проекту, городу и ID ТТ. В помесячном режиме статус «Посещена» сохраняется,
+  // если точка была посещена хотя бы в одной недельной записи выбранного месяца.
+  const unique = new Map();
+  rawRows.forEach(r => {
+    const key = `${r.project}|||${r.city}|||${String(r.ttId).trim().toLowerCase()}`;
+    if (!unique.has(key)) unique.set(key, {...r, active: !!r.active, visited: !!r.visited});
+    else {
+      const item = unique.get(key);
+      item.active = item.active || !!r.active;
+      item.visited = item.visited || !!r.visited;
+    }
+  });
+  const entries = [...unique.values()];
+  const active = entries.filter(r => r.active);
+  const visited = active.filter(r => r.visited);
+  const percent = active.length ? visited.length / active.length * 100 : 0;
+  byId("coverageSummary").innerHTML = `
+    <div class="metric"><small>Всего уникальных ТТ</small><b>${entries.length}</b></div>
+    <div class="metric"><small>Активная база</small><b>${active.length}</b></div>
+    <div class="metric"><small>Посещено активных</small><b>${visited.length}</b><div class="progress"><span style="width:${Math.min(percent,100)}%"></span></div><small style="margin-top:5px">${percent.toFixed(1)}% покрытия</small></div>`;
+
+  const container = byId("coverageCityGroups"); container.replaceChildren();
+  if (!entries.length) {
+    const empty = document.createElement("div"); empty.className = "coverage-empty";
+    empty.textContent = "За выбранный период нет данных по базе торговых точек. Добавь строки на лист «База ТТ» и загрузи Excel.";
+    container.append(empty); return;
+  }
+  const cityNames = selectedCity === ALL_CITIES ? selectedProject.cities : [selectedCity];
+  cityNames.forEach(city => {
+    const cityRows = entries.filter(r => r.city === city);
+    if (!cityRows.length) return;
+    const cityActive = cityRows.filter(r => r.active);
+    const cityVisited = cityActive.filter(r => r.visited);
+    const pct = cityActive.length ? cityVisited.length / cityActive.length * 100 : 0;
+    const card = document.createElement("article"); card.className = "coverage-city";
+    const head = document.createElement("div"); head.className = "coverage-city-head";
+    const name = document.createElement("span"); name.textContent = city;
+    const rate = document.createElement("span"); rate.textContent = `${pct.toFixed(1)}%`;
+    head.append(name, rate);
+    const values = document.createElement("div"); values.className = "coverage-city-values";
+    [["Всего",cityRows.length],["Активных",cityActive.length],["Посещено",cityVisited.length]].forEach(([label,value])=>{
+      const span=document.createElement("span"); span.textContent=`${label}: `; const b=document.createElement("b"); b.textContent=value; span.append(b); values.append(span);
+    });
+    const bar = document.createElement("div"); bar.className = "progress"; const fill = document.createElement("span"); fill.style.width = `${Math.min(pct,100)}%`; bar.append(fill);
+    card.append(head, values, bar); container.append(card);
+  });
+}
+
 function renderRejectedUpdatedAt() {
   const target = byId("rejectedUpdatedAt");
   const raw = window.VISIT_DATA_META?.updatedAt || null;
@@ -554,6 +744,9 @@ byId("rejectedMonthFilter").addEventListener("change",renderRejectedDashboard);
 byId("rejectedWeekFilter").addEventListener("change",renderRejectedDashboard);
 byId("rejectedBackToEmployees").addEventListener("click",()=>{byId("rejectedDetailView").hidden=true;byId("rejectedEmployeeView").hidden=false;});
 
+byId("coverageMonthFilter").addEventListener("change", renderCoverageDashboard);
+byId("coverageWeekFilter").addEventListener("change", renderCoverageDashboard);
+
 byId("monthFilter").addEventListener("change", renderVisitDashboard);
 byId("weekFilter").addEventListener("change", renderVisitDashboard);
 
@@ -586,6 +779,10 @@ document.addEventListener("click", event => {
   } else if (action === "section") {
     const section = CONFIG.sections.find(item => item.id === value);
     if (section) openSection(section);
+  } else if (action === "analytics") {
+    byId("analyticsCrumb").textContent = `${selectedProject.name} · ${selectedCity === ALL_CITIES ? "Все города" : selectedCity}`;
+    renderCoverageDashboard();
+    show("analytics");
   }
 });
 
