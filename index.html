@@ -137,12 +137,8 @@ document.write('<script src="visits-data.js?ts=' + Date.now() + '"><\/script>');
 let selectedProject = null;
 let selectedCity = null;
 let selectedSection = null;
-// Вставляется числовой MAX ID единственного администратора.
-// Пока ID не задан, сводный пункт «Все города» не показывается.
-const ADMIN_MAX_IDS = ["ВСТАВИТЬ_ID_АДМИНИСТРАТОРА"];
+// Сводный режим «Все города» пока доступен всем пользователям.
 const ALL_CITIES = "__all_cities__";
-const maxUserId = String(window.WebApp?.initDataUnsafe?.user?.id ?? "");
-const isAdmin = Boolean(maxUserId && ADMIN_MAX_IDS.includes(maxUserId));
 const byId = id => document.getElementById(id);
 
 function makeChoice(title, subtitle, symbol, action, value) {
@@ -189,9 +185,7 @@ function renderCities() {
   byId("projectCrumb").textContent = selectedProject.name;
   const list = byId("cityList");
   list.replaceChildren();
-  if (isAdmin) {
-    list.append(makeChoice("Все города", "Сводные данные по всем городам", "🌍", "city", ALL_CITIES));
-  }
+  list.append(makeChoice("Все города", "Сводные данные по всем городам проекта", "🌍", "city", ALL_CITIES));
   selectedProject.cities.forEach(city => {
     list.append(makeChoice(city, selectedProject.name, "🏙️", "city", city));
   });
@@ -423,7 +417,6 @@ document.addEventListener("click", event => {
     renderCities();
     show("cities");
   } else if (action === "city") {
-    if (value === ALL_CITIES && !isAdmin) return;
     selectedCity = value;
     renderMenu();
     show("menu");
