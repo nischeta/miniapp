@@ -13,7 +13,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-ap
 .top{display:flex;align-items:center;gap:12px;padding:20px 2px 24px}
 .logo{width:46px;height:46px;border-radius:15px;background:linear-gradient(145deg,#4387fa,#1746b5);color:white;display:grid;place-items:center;font-weight:850;font-size:22px;box-shadow:0 6px 16px #2869e833}
 .brand{font-weight:800;font-size:21px;letter-spacing:.1px}.sub{font-size:12px;color:var(--muted);margin-top:1px}
-.status{margin-left:auto;color:var(--green);font-size:11px;font-weight:700;background:#e7f6ee;padding:6px 9px;border-radius:20px}
+.status{margin-left:auto;border:0;color:var(--blue);font-size:14px;font-weight:800;background:#eaf1ff;padding:12px 17px;min-height:46px;border-radius:22px;cursor:pointer;font-family:inherit;white-space:nowrap;box-shadow:0 2px 7px #2869e814}.status:active{transform:scale(.98)}
 .screen{display:none;animation:show .18s ease}.screen.active{display:block}
 @keyframes show{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}
 h1{font-size:25px;line-height:1.2;margin:0 0 7px}p.lead{color:var(--muted);margin:0 0 20px}
@@ -81,7 +81,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
 <header class="top">
   <div class="logo">A</div>
   <div><div class="brand">Asmia</div><div class="sub">Рабочее мини-приложение</div></div>
-  <span class="status">● ДАННЫЕ ИЗ EXCEL</span>
+  <button class="status" id="openInstructions" type="button" aria-label="Открыть инструкцию">Инструкция</button>
 </header>
 
 <section id="projects" class="screen active">
@@ -107,6 +107,40 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <h1>Рабочее меню</h1>
   <p class="lead">Выберите нужный раздел.</p>
   <div class="grid" id="sectionGrid"></div>
+</section>
+
+<section id="instructions" class="screen">
+  <button class="back" id="instructionsBack" type="button">← Назад</button>
+  <span class="pill">КРАТКОЕ РУКОВОДСТВО</span>
+  <h1>Как пользоваться приложением</h1>
+  <p class="lead">Основные действия и просмотр рабочих показателей.</p>
+
+  <article class="card">
+    <h2 style="font-size:16px;margin:0 0 8px">1. Выберите проект</h2>
+    <p class="muted" style="margin:0;font-size:13px">На первом экране выберите компанию: «Холдинг Аква» или «Перспектива СМ».</p>
+  </article>
+  <article class="card">
+    <h2 style="font-size:16px;margin:0 0 8px">2. Выберите город</h2>
+    <p class="muted" style="margin:0;font-size:13px">Выберите нужный город. После этого приложение покажет рабочее меню с данными выбранного проекта и города.</p>
+  </article>
+  <article class="card">
+    <h2 style="font-size:16px;margin:0 0 8px">3. Выполнение визитов</h2>
+    <p class="muted" style="margin:0;font-size:13px">Откройте раздел «Выполнение визитов». Здесь доступны план, факт и процент выполнения по сотрудникам.</p>
+    <p style="font-size:13px;margin:9px 0 0"><b>Месяц</b> — выберите нужный месяц. По умолчанию устанавливается текущий месяц.</p>
+    <p style="font-size:13px;margin:6px 0 0"><b>Неделя</b> — выберите конкретную неделю или «Весь месяц».</p>
+    <p class="muted" style="font-size:12px;margin:8px 0 0">Нажмите на строку города, чтобы раскрыть список сотрудников и посмотреть показатели каждого.</p>
+  </article>
+  <article class="card">
+    <h2 style="font-size:16px;margin:0 0 8px">4. Отклонённые визиты</h2>
+    <p class="muted" style="margin:0;font-size:13px">В этом разделе отображается количество отклонённых визитов за выбранный период.</p>
+    <p style="font-size:13px;margin:9px 0 0"><b>Месяц и неделя</b> — используйте фильтры, чтобы выбрать нужный период.</p>
+    <p class="muted" style="font-size:12px;margin:8px 0 0">Нажмите на сотрудника, чтобы увидеть его отклонённые визиты: дату, торговую сеть, адрес торговой точки и комментарий с причиной.</p>
+  </article>
+  <article class="card">
+    <h2 style="font-size:16px;margin:0 0 8px">5. Возврат в меню</h2>
+    <p class="muted" style="margin:0;font-size:13px">Используйте ссылку «В рабочее меню» или кнопки возврата в верхней части экрана. Чтобы сменить город или проект, вернитесь к соответствующему шагу выбора.</p>
+  </article>
+  <div class="placeholder" style="margin:12px 0">Данные обновляются после загрузки нового Excel-файла ответственным администратором. Если показатели не появились или отображаются некорректно, сообщите администратору.</div>
 </section>
 
 <section id="detail" class="screen">
@@ -172,6 +206,7 @@ document.write('<script src="visits-data.js?ts=' + Date.now() + '"><\/script>');
 let selectedProject = null;
 let selectedCity = null;
 let selectedSection = null;
+let instructionsReturnScreen = "projects";
 // Сводный режим «Все города» пока доступен всем пользователям.
 const ALL_CITIES = "__all_cities__";
 const byId = id => document.getElementById(id);
@@ -521,6 +556,13 @@ byId("rejectedBackToEmployees").addEventListener("click",()=>{byId("rejectedDeta
 
 byId("monthFilter").addEventListener("change", renderVisitDashboard);
 byId("weekFilter").addEventListener("change", renderVisitDashboard);
+
+byId("openInstructions").addEventListener("click", () => {
+  const active = document.querySelector(".screen.active");
+  instructionsReturnScreen = active ? active.id : "projects";
+  show("instructions");
+});
+byId("instructionsBack").addEventListener("click", () => show(instructionsReturnScreen));
 
 document.addEventListener("click", event => {
   const button = event.target.closest("button[data-action], button[data-go]");
