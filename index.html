@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f3f5f9">
-<title>Asmia — мини-приложение</title>
+<title>Asmia — мини-приложение v15</title>
 <style>
 :root{--bg:#f3f5f9;--card:#fff;--ink:#182230;--muted:#758195;--blue:#2869e8;--line:#e7ebf1;--green:#168653;--shadow:0 8px 28px #14213b0c}
 *{box-sizing:border-box}
@@ -155,6 +155,42 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   #cityGroups, #coverageCityGroups {grid-template-columns:1fr}
 }
 
+
+/* Аналитика v15 */
+.analytics-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:14px 0 12px}
+.analytics-tab{border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--muted);padding:11px 5px;font:700 12px system-ui;cursor:pointer}
+.analytics-tab.active{background:#eaf1ff;border-color:#b9cdfb;color:var(--blue)}
+.analytics-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}
+.analytics-filters label,.analytics-thresholds label{display:block;font-size:11px;color:var(--muted);margin-bottom:4px}
+.analytics-filters select,.analytics-thresholds input{width:100%;min-width:0;border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px 9px;color:var(--ink);font:13px system-ui}
+.analytics-kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}
+.analytics-kpi{background:#fff;border:1px solid var(--line);border-radius:13px;padding:12px;min-width:0}
+.analytics-kpi small{display:block;color:var(--muted);font-size:11px;line-height:1.35}
+.analytics-kpi b{display:block;font-size:23px;line-height:1.25;margin-top:5px;overflow-wrap:anywhere}
+.analytics-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin:11px 0}
+.analytics-card h2{font-size:15px;margin:0 0 11px}
+.analytics-muted{color:var(--muted);font-size:11px}
+.analytics-bars{display:flex;flex-direction:column;gap:11px}
+.analytics-bar-row{width:100%;border:0;background:transparent;text-align:left;padding:0;color:inherit;font:inherit;cursor:pointer}
+.analytics-bar-head{display:flex;justify-content:space-between;gap:8px;font-size:12px;margin-bottom:5px}
+.analytics-bar-head b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.analytics-track{height:9px;background:#edf0f5;border-radius:20px;overflow:hidden}
+.analytics-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,#6b9af3,#2869e8)}
+.analytics-fill.good{background:linear-gradient(90deg,#58bf91,#168653)}
+.analytics-fill.warn{background:linear-gradient(90deg,#f2c46d,#d68a20)}
+.analytics-empty{padding:17px;text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:12px;font-size:13px}
+.analytics-thresholds{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.analytics-alert{font-size:12px;padding:9px 10px;border-radius:9px;background:#fff6e8;margin:6px 0;color:#805314}
+.analytics-alert.good{background:#eaf7f0;color:#176b45}
+.analytics-table-wrap{overflow-x:auto}
+.analytics-table{width:100%;border-collapse:collapse;font-size:12px;white-space:nowrap}
+.analytics-table th,.analytics-table td{padding:9px 7px;border-bottom:1px solid var(--line);text-align:left}
+.analytics-table th{color:var(--muted);font-weight:600}
+.analytics-actions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.analytics-action{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;color:var(--blue);font:700 12px system-ui;cursor:pointer}
+.analytics-drill{font-size:12px;color:var(--blue);margin-top:8px}
+@media(min-width:600px){.analytics-filters{grid-template-columns:repeat(3,minmax(0,1fr))}.analytics-kpis{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
 </style>
 </head>
 <body>
@@ -218,7 +254,11 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
     <p class="muted" style="font-size:12px;margin:8px 0 0">Нажмите на сотрудника, чтобы увидеть его отклонённые визиты: дату, торговую сеть, адрес торговой точки и комментарий с причиной.</p>
   </article>
   <article class="card">
-    <h2 style="font-size:16px;margin:0 0 8px">5. Возврат в меню</h2>
+    <h2 style="font-size:16px;margin:0 0 8px">5. Аналитика</h2>
+    <p class="muted" style="margin:0;font-size:13px">В разделе «Аналитика» доступны покрытие торговых точек, выполнение визитов и отклонения. Используйте фильтры проекта, года, периода, недели, города и сотрудника. Нажатие на строки диаграмм позволяет перейти к детализации. Отчёт можно скачать в формате CSV, который открывается в Excel.</p>
+  </article>
+  <article class="card">
+    <h2 style="font-size:16px;margin:0 0 8px">6. Возврат в меню</h2>
     <p class="muted" style="margin:0;font-size:13px">Используйте ссылку «В рабочее меню» или кнопки возврата в верхней части экрана. Чтобы сменить город или проект, вернитесь к соответствующему шагу выбора.</p>
   </article>
   <div class="placeholder" style="margin:12px 0">Данные обновляются после загрузки нового Excel-файла ответственным администратором. Если показатели не появились или отображаются некорректно, сообщите администратору.</div>
@@ -278,19 +318,37 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
 <section id="analytics" class="screen">
   <button class="back" type="button" data-go="menu">← В рабочее меню</button>
   <div class="crumb" id="analyticsCrumb"></div>
-  <h1>Аналитика покрытия</h1>
-  <p class="lead">Охват торговых точек по базе проекта.</p>
+  <h1>Аналитика</h1>
+  <p class="lead">Показатели проекта, динамика и сравнение результатов.</p>
   <div class="updated-note" id="analyticsUpdatedAt">Последнее обновление данных: <b>ожидает загрузки Excel</b></div>
-  <div class="filters">
-    <div><label for="coverageMonthFilter">Месяц</label><select id="coverageMonthFilter"></select></div>
-    <div><label for="coverageWeekFilter">Неделя</label><select id="coverageWeekFilter"></select></div>
+  <div class="analytics-filters">
+    <div><label for="aProject">Проект</label><select id="aProject"></select></div>
+    <div><label for="aYear">Год</label><select id="aYear"></select></div>
+    <div><label for="aMonth">Период</label><select id="aMonth"></select></div>
+    <div><label for="aWeek">Неделя</label><select id="aWeek"></select></div>
+    <div><label for="aCity">Город</label><select id="aCity"></select></div>
+    <div><label for="aEmployee">Сотрудник</label><select id="aEmployee"></select></div>
   </div>
-  <div class="coverage-hint">«Весь месяц» считает каждую торговую точку один раз за месяц, даже если она встречается в нескольких недельных строках.</div>
-  <div class="summary" id="coverageSummary"></div>
-  <div id="coverageCityGroups"></div>
+  <div class="analytics-kpis" id="analyticsPulse"></div>
+  <div class="analytics-tabs" role="tablist" aria-label="Виды аналитики">
+    <button type="button" class="analytics-tab active" data-analytics-tab="coverage">Покрытие ТТ</button>
+    <button type="button" class="analytics-tab" data-analytics-tab="visits">Визиты</button>
+    <button type="button" class="analytics-tab" data-analytics-tab="rejected">Отклонения</button>
+  </div>
+  <div id="analyticsPanel"></div>
+  <div class="analytics-card">
+    <h2>Зоны внимания</h2>
+    <div class="analytics-thresholds">
+      <div><label for="aPlanThreshold">Минимум выполнения плана, %</label><input id="aPlanThreshold" type="number" min="0" max="300" value="80"></div>
+      <div><label for="aCoverageThreshold">Минимум покрытия ТТ, %</label><input id="aCoverageThreshold" type="number" min="0" max="100" value="70"></div>
+    </div>
+    <div id="analyticsAlerts" style="margin-top:10px"></div>
+  </div>
+  <div class="analytics-actions"><button type="button" class="analytics-action" id="analyticsExport">Скачать отчёт для Excel</button><button type="button" class="analytics-action" id="analyticsReset">Сбросить фильтры</button></div>
+  <div class="analytics-muted">Показатели рассчитываются по загруженным данным. Для годового покрытия в сводных карточках используется последний доступный месячный снимок базы, а график показывает помесячную динамику.</div>
 </section>
 
-<div class="footer">Asmia · План визитов · Источник данных: Excel</div>
+<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel</div>
 </main>
 <script src="https://st.max.ru/js/max-web-app.js"></script>
 <script src="config.js"></script>
@@ -388,7 +446,7 @@ function renderMenu() {
   analyticsButton.dataset.action = "analytics";
   const analyticsIcon = document.createElement("span"); analyticsIcon.className = "ico"; analyticsIcon.textContent = "📊";
   const analyticsTitle = document.createElement("b"); analyticsTitle.textContent = "Аналитика";
-  const analyticsHint = document.createElement("small"); analyticsHint.textContent = "Покрытие базы торговых точек";
+  const analyticsHint = document.createElement("small"); analyticsHint.textContent = "Покрытие, визиты и отклонения по проекту";
   analyticsButton.append(analyticsIcon, analyticsTitle, analyticsHint);
   grid.append(analyticsButton);
 }
@@ -666,6 +724,164 @@ function renderCoverageDashboard() {
   });
 }
 
+
+// -------------------- Аналитика v15 --------------------
+let analyticsTab = "coverage";
+let analyticsFiltersInitialized = false;
+const A_MONTHS = ["","Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+const aVal = id => byId(id)?.value || "all";
+const aNum = value => Number(value) || 0;
+const aEsc = value => String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+const aMonthKey = r => `${Number(r.year)}-${Number(r.month)}`;
+const aProjectNames = () => (CONFIG?.projects || []).map(p=>p.name);
+function aAllData(){return {visits:window.VISIT_DATA||[], rejected:window.REJECTED_VISITS||[], coverage:window.TT_COVERAGE_DATA||[], employees:window.VISIT_EMPLOYEES||[]};}
+function aSelectedProjectNames(){return aVal("aProject")==="__all_projects__"?aProjectNames():[aVal("aProject")];}
+function aFilteredBase(){
+ const d=aAllData(), projects=aSelectedProjectNames(), year=aVal("aYear"), month=aVal("aMonth"), week=aVal("aWeek"), city=aVal("aCity"), employee=aVal("aEmployee");
+ const common=r=>projects.includes(r.project)&& (year==="all"||String(r.year)===year) && (month==="all"||String(r.month)===month) && (week==="all"||String(r.week)===week) && (city==="all"||r.city===city) && (employee==="all"||r.merchandiser===employee);
+ return {visits:d.visits.filter(common), rejected:d.rejected.filter(common), coverage:d.coverage.filter(r=>projects.includes(r.project)&&(year==="all"||String(r.year)===year)&&(month==="all"||String(r.month)===month)&&(week==="all"||String(r.week)===week)&&(city==="all"||r.city===city)), rawCoverage:d.coverage.filter(r=>projects.includes(r.project)&&(year==="all"||String(r.year)===year)&&(city==="all"||r.city===city))};
+}
+function aUniqueCoverage(rows){const map=new Map(); rows.forEach(r=>{const key=[r.project,r.city,String(r.ttId).trim().toLowerCase()].join("|||");if(!map.has(key))map.set(key,{...r,active:!!r.active,visited:!!r.visited});else{const x=map.get(key);x.active=x.active||!!r.active;x.visited=x.visited||!!r.visited;}});return [...map.values()];}
+function aAggregateVisits(rows){return rows.reduce((o,r)=>{o.plan+=aNum(r.plan);o.fact+=aNum(r.fact);return o;},{plan:0,fact:0});}
+function aPct(n,d){return d?100*n/d:0;}
+function aKpi(label,value,note=""){return `<div class="analytics-kpi"><small>${aEsc(label)}</small><b>${aEsc(value)}</b>${note?`<small>${aEsc(note)}</small>`:""}</div>`;}
+function aBars(items,{valueKey="value",format=v=>String(v),max=null,kind="",on="city"}={}){
+ if(!items.length)return '<div class="analytics-empty">Нет данных за выбранный период.</div>';
+ const ceiling=max??Math.max(1,...items.map(x=>aNum(x[valueKey])));
+ return `<div class="analytics-bars">${items.map(x=>{const v=aNum(x[valueKey]),w=Math.max(0,Math.min(100,v/ceiling*100));return `<button class="analytics-bar-row" type="button" data-a-drill="${on}" data-a-value="${aEsc(x.key)}"><div class="analytics-bar-head"><span>${aEsc(x.label)}</span><b>${aEsc(format(v))}</b></div><div class="analytics-track"><div class="analytics-fill ${kind}" style="width:${w}%"></div></div></button>`}).join("")}</div>`;
+}
+function aCard(title,body,subtitle=""){return `<div class="analytics-card"><h2>${aEsc(title)}</h2>${body}${subtitle?`<div class="analytics-muted" style="margin-top:9px">${aEsc(subtitle)}</div>`:""}</div>`;}
+function aGroupBy(rows,keyFn,initial){const map=new Map();rows.forEach(r=>{const k=keyFn(r);if(!map.has(k))map.set(k,initial());map.get(k).rows.push(r);});return map;}
+function aPopulateSelect(id,items,selected,labelAll="Все") {const el=byId(id),old=selected??el.value;el.replaceChildren();const all=document.createElement("option");all.value="all";all.textContent=labelAll;el.append(all);items.forEach(x=>{const op=document.createElement("option");op.value=String(x.value);op.textContent=x.label;el.append(op);});el.value=[...el.options].some(o=>o.value===old)?old:"all";}
+function aInitFilters(){
+ const d=aAllData(), old={project:aVal("aProject"),year:aVal("aYear"),month:aVal("aMonth"),week:aVal("aWeek"),city:aVal("aCity"),employee:aVal("aEmployee")};
+ const projects=aProjectNames();aPopulateSelect("aProject",[{value:"__all_projects__",label:"Все проекты"},...projects.map(x=>({value:x,label:x}))],old.project==="all"?selectedProject?.name:old.project,"Выбранный проект");
+ if(!aVal("aProject")||aVal("aProject")==="all")byId("aProject").value=selectedProject?.name||"__all_projects__";
+ const pnames=aSelectedProjectNames();const years=[...new Set([...d.visits,...d.rejected,...d.coverage].filter(r=>pnames.includes(r.project)).map(r=>String(r.year)))].sort();
+ aPopulateSelect("aYear",years.map(x=>({value:x,label:x})),old.year,"Все годы");
+ if(!analyticsFiltersInitialized&&aVal("aYear")==="all"&&years.length){const now=String(new Date().getFullYear());byId("aYear").value=years.includes(now)?now:years[years.length-1];}
+ const year=aVal("aYear");const months=[...new Set([...d.visits,...d.rejected,...d.coverage].filter(r=>pnames.includes(r.project)&&(year==="all"||String(r.year)===year)).map(r=>String(r.month)))].sort((a,b)=>+a-+b);
+ aPopulateSelect("aMonth",months.map(x=>({value:x,label:A_MONTHS[+x]})),old.month,"Весь год");
+ const chosenMonth=aVal("aMonth");const weeks=[...new Set([...d.visits,...d.rejected,...d.coverage].filter(r=>pnames.includes(r.project)&&(year==="all"||String(r.year)===year)&&(chosenMonth==="all"||String(r.month)===chosenMonth)).map(r=>String(r.week)))].sort((a,b)=>+a-+b);
+ aPopulateSelect("aWeek",weeks.map(x=>({value:x,label:`${x}-я неделя`})),old.week,"Все недели");
+ const citySet=[...new Set([...d.visits,...d.rejected,...d.coverage].filter(r=>pnames.includes(r.project)).map(r=>r.city).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ru"));
+ aPopulateSelect("aCity",citySet.map(x=>({value:x,label:x})),old.city,"Все города");
+ const cities=aVal("aCity"), people=[...new Set([...d.visits,...d.rejected,...d.employees].filter(r=>pnames.includes(r.project)&&(cities==="all"||r.city===cities)).map(r=>r.merchandiser).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ru"));
+ aPopulateSelect("aEmployee",people.map(x=>({value:x,label:x})),old.employee,"Все сотрудники");
+ analyticsFiltersInitialized = true;
+}
+function aCoverageMonthRows(rows,year,month){return rows.filter(r=>(year==="all"||String(r.year)===year)&&(month==="all"||String(r.month)===month));}
+function aLatestCoverageMonth(rows){const keys=[...new Set(rows.map(aMonthKey))].sort((a,b)=>{const [ay,am]=a.split("-").map(Number),[by,bm]=b.split("-").map(Number);return ay-by||am-bm;});return keys[keys.length-1]||null;}
+function aCoverageStats(rows){const u=aUniqueCoverage(rows),active=u.filter(r=>r.active),visited=active.filter(r=>r.visited);return {total:u.length,active:active.length,visited:visited.length,pct:aPct(visited.length,active.length),entries:u};}
+function aRenderPulse(base){
+ const visits=aAggregateVisits(base.visits), rejected=base.rejected.length;
+ const covRows=base.rawCoverage, selectedMonth=aVal("aMonth"), last=selectedMonth==="all"?aLatestCoverageMonth(covRows):(aVal("aYear")==="all"?aLatestCoverageMonth(covRows.filter(r=>String(r.month)===selectedMonth)):`${aVal("aYear")}-${selectedMonth}`), cov=last?aCoverageStats(covRows.filter(r=>aMonthKey(r)===last)):aCoverageStats(base.coverage);
+ byId("analyticsPulse").innerHTML=[aKpi("Выполнение плана",`${aPct(visits.fact,visits.plan).toFixed(1)}%`,`${visits.fact} из ${visits.plan}`),aKpi("Покрытие ТТ",`${cov.pct.toFixed(1)}%`,`${cov.visited} из ${cov.active} активных ТТ`),aKpi("Фактические визиты",visits.fact),aKpi("Отклонения",rejected)].join("");
+}
+function aMonthlyCoverage(rows){const map=new Map();rows.forEach(r=>{const k=aMonthKey(r);if(!map.has(k))map.set(k,[]);map.get(k).push(r);});return [...map.entries()].sort((a,b)=>{const [ay,am]=a[0].split("-").map(Number),[by,bm]=b[0].split("-").map(Number);return ay-by||am-bm;}).map(([key,rs])=>{const s=aCoverageStats(rs);return {key,label:`${A_MONTHS[+key.split("-")[1]]} ${key.split("-")[0]}`,value:s.pct,extra:`${s.visited}/${s.active}`};});}
+function aMonthlyVisits(rows){const map=new Map();rows.forEach(r=>{const k=aMonthKey(r);if(!map.has(k))map.set(k,{plan:0,fact:0});const x=map.get(k);x.plan+=aNum(r.plan);x.fact+=aNum(r.fact);});return [...map.entries()].sort((a,b)=>{const [ay,am]=a[0].split("-").map(Number),[by,bm]=b[0].split("-").map(Number);return ay-by||am-bm;}).map(([key,x])=>({key,label:`${A_MONTHS[+key.split("-")[1]]} ${key.split("-")[0]}`,value:x.fact,extra:`${x.fact}/${x.plan}`}));}
+function aMonthlyRejected(rows){const map=new Map();rows.forEach(r=>{const k=aMonthKey(r);map.set(k,(map.get(k)||0)+1);});return [...map.entries()].sort((a,b)=>{const [ay,am]=a[0].split("-").map(Number),[by,bm]=b[0].split("-").map(Number);return ay-by||am-bm;}).map(([key,value])=>({key,label:`${A_MONTHS[+key.split("-")[1]]} ${key.split("-")[0]}`,value}));}
+function aCityCoverage(rows){const map=aGroupBy(rows,r=>r.city,()=>({rows:[]}));return [...map.entries()].map(([city,x])=>{const s=aCoverageStats(x.rows);return {key:city,label:city,value:s.pct,extra:`${s.visited}/${s.active}`};}).sort((a,b)=>b.value-a.value);}
+function aVisitGroups(rows,key){const map=new Map();rows.forEach(r=>{const k=key(r);if(!map.has(k))map.set(k,{plan:0,fact:0,rows:[]});const x=map.get(k);x.plan+=aNum(r.plan);x.fact+=aNum(r.fact);x.rows.push(r);});return [...map.entries()].map(([k,x])=>({key:k,label:k,value:aPct(x.fact,x.plan),plan:x.plan,fact:x.fact})).sort((a,b)=>b.value-a.value);}
+function aRejectedGroups(rows,key){const map=new Map();rows.forEach(r=>{const k=key(r);map.set(k,(map.get(k)||0)+1);});return [...map.entries()].map(([k,v])=>({key:k,label:k,value:v})).sort((a,b)=>b.value-a.value);}
+function aCoverageYearComparison(base){
+ const year=Number(aVal("aYear"));if(!year)return "";const d=aAllData(),projects=aSelectedProjectNames(),city=aVal("aCity");
+ const rows=d.coverage.filter(r=>projects.includes(r.project)&&(city==="all"||r.city===city)&&(Number(r.year)===year||Number(r.year)===year-1));
+ const latestFor=y=>{const subset=rows.filter(r=>Number(r.year)===y);const key=aLatestCoverageMonth(subset);return key?aCoverageStats(subset.filter(r=>aMonthKey(r)===key)):aCoverageStats([]);};
+ const cur=latestFor(year),prev=latestFor(year-1),delta=cur.pct-prev.pct;
+ const body='<div class="analytics-kpis">'+aKpi(String(year),cur.pct.toFixed(1)+'%',cur.visited+' из '+cur.active+' активных ТТ')+aKpi(String(year-1),prev.pct.toFixed(1)+'%',prev.visited+' из '+prev.active+' активных ТТ')+aKpi("Разница",(delta>=0?"+":"")+delta.toFixed(1)+' п.п.')+'</div>';
+ return aCard('Сравнение покрытия: '+year+' и '+(year-1),body,'Сравниваются последние доступные месячные снимки каждого года.');
+}
+function aYearComparison(base){const d=aAllData(), projects=aSelectedProjectNames(), year=Number(aVal("aYear"));if(!year||!Number.isFinite(year))return "";const rows=d.visits.filter(r=>projects.includes(r.project)&&(aVal("aCity")==="all"||r.city===aVal("aCity"))&&(aVal("aEmployee")==="all"||r.merchandiser===aVal("aEmployee"))&&(Number(r.year)===year||Number(r.year)===year-1));const months=new Map();rows.forEach(r=>{const k=`${r.year}-${r.month}`;if(!months.has(k))months.set(k,{plan:0,fact:0});const x=months.get(k);x.plan+=aNum(r.plan);x.fact+=aNum(r.fact);});const current=[...months.entries()].filter(([k])=>k.startsWith(year+"-")).reduce((s,[,v])=>s+v.fact,0);const prev=[...months.entries()].filter(([k])=>k.startsWith((year-1)+"-")).reduce((s,[,v])=>s+v.fact,0);return aCard(`Сравнение визитов: ${year} и ${year-1}`,`<div class="analytics-kpis">${aKpi(String(year),current)}${aKpi(String(year-1),prev)}${aKpi("Разница",current-prev,current>=prev?"Рост к прошлому году":"Снижение к прошлому году")}</div>`);}
+function aProjectCoverageCompare(rows){
+ if(aVal("aProject")!=="__all_projects__")return "";
+ const projects=aProjectNames();const items=projects.map(project=>{const pr=rows.filter(r=>r.project===project),key=aLatestCoverageMonth(pr),stats=key?aCoverageStats(pr.filter(r=>aMonthKey(r)===key)):aCoverageStats([]);return {key:project,label:project,value:stats.pct};});
+ return aCard("Сравнение проектов по покрытию",aBars(items,{format:v=>v.toFixed(1)+"%",kind:"good",on:"none"}));
+}
+function aProjectVisitCompare(rows){
+ if(aVal("aProject")!=="__all_projects__")return "";
+ const items=aVisitGroups(rows,r=>r.project);
+ return aCard("Сравнение проектов по визитам",aBars(items,{format:v=>v.toFixed(1)+"%",kind:"good",on:"none"}));
+}
+function aProjectRejectedCompare(rows){
+ if(aVal("aProject")!=="__all_projects__")return "";
+ const items=aRejectedGroups(rows,r=>r.project);
+ return aCard("Сравнение проектов по отклонениям",aBars(items,{format:v=>String(v),kind:"warn",on:"none"}));
+}
+function aRenderCoverage(base){
+ const periodRows=base.coverage, allYearRows=base.rawCoverage, month=aVal("aMonth");
+ const currentKey=month==="all"?aLatestCoverageMonth(allYearRows):null;
+ const snapshotRows=month==="all"?(currentKey?allYearRows.filter(r=>aMonthKey(r)===currentKey):periodRows):periodRows;
+ const stats=aCoverageStats(snapshotRows);
+ const cityRows=aCityCoverage(snapshotRows);
+ const monthly=aMonthlyCoverage(allYearRows);
+ let html=aProjectCoverageCompare(allYearRows)+aCard("Покрытие торговой базы",`<div class="analytics-kpis">${aKpi("Всего уникальных ТТ",stats.total)}${aKpi("Активная база",stats.active)}${aKpi("Посещено ТТ",stats.visited)}${aKpi("Покрытие",`${stats.pct.toFixed(1)}%`)}</div>`,month==="all"&&currentKey?`Сводные показатели по последнему снимку: ${A_MONTHS[+currentKey.split("-")[1]]} ${currentKey.split("-")[0]}`:"Уникальные торговые точки выбранного периода");
+ html+=aCard("Покрытие по городам",aBars(cityRows,{format:v=>`${v.toFixed(1)}%`,kind:"good"}));
+ html+=aCard("Динамика покрытия по месяцам",aBars(monthly,{format:v=>`${v.toFixed(1)}%`,kind:"good",on:"month"}),"Каждая ТТ учитывается один раз в пределах месяца.");
+ html+=aCoverageYearComparison(base);
+ html+=aCard("Детализация базы",`<div class="analytics-table-wrap"><table class="analytics-table"><thead><tr><th>Город</th><th>Всего</th><th>Активных</th><th>Посещено</th><th>Покрытие</th></tr></thead><tbody>${cityRows.map(c=>{const rs=stats.entries.filter(r=>r.city===c.key),active=rs.filter(r=>r.active),visited=active.filter(r=>r.visited);return `<tr><td>${aEsc(c.label)}</td><td>${rs.length}</td><td>${active.length}</td><td>${visited.length}</td><td>${aPct(visited.length,active.length).toFixed(1)}%</td></tr>`}).join("")}</tbody></table></div>`);
+ byId("analyticsPanel").innerHTML=html;
+}
+function aRenderVisits(base){
+ const sums=aAggregateVisits(base.visits),pct=aPct(sums.fact,sums.plan),cities=aVisitGroups(base.visits,r=>r.city),people=aVisitGroups(base.visits,r=>`${r.merchandiser} · ${r.city}`),monthly=aMonthlyVisits(base.visits);
+ let html=aProjectVisitCompare(base.visits)+aCard("Выполнение плана визитов",`<div class="analytics-kpis">${aKpi("План",sums.plan)}${aKpi("Факт",sums.fact)}${aKpi("Выполнение",`${pct.toFixed(1)}%`)}${aKpi("Не выполнено",Math.max(0,sums.plan-sums.fact))}</div>`);
+ html+=aCard("План и факт по городам",`<div class="analytics-table-wrap"><table class="analytics-table"><thead><tr><th>Город</th><th>План</th><th>Факт</th><th>Выполнение</th></tr></thead><tbody>${cities.map(x=>`<tr><td>${aEsc(x.label)}</td><td>${x.plan}</td><td>${x.fact}</td><td>${x.value.toFixed(1)}%</td></tr>`).join("")}</tbody></table></div>`);
+ html+=aCard("Рейтинг городов",aBars(cities,{format:v=>`${v.toFixed(1)}%`,kind:"good"}));
+ html+=aCard("Рейтинг сотрудников",aBars(people,{format:v=>`${v.toFixed(1)}%`,kind:"good",on:"employee"}));
+ html+=aCard("Динамика фактических визитов",aBars(monthly,{format:v=>String(v)}),"Подпись под столбцом отражает факт/план.");
+ html+=aYearComparison(base);
+ byId("analyticsPanel").innerHTML=html;
+}
+function aRenderRejected(base){
+ const rows=base.rejected,visits=aAggregateVisits(base.visits),ratio=aPct(rows.length,visits.fact),cities=aRejectedGroups(rows,r=>r.city),people=aRejectedGroups(rows,r=>`${r.merchandiser} · ${r.city}`),monthly=aMonthlyRejected(rows);
+ const reasons=new Map();rows.forEach(r=>{const t=String(r.comment||"").trim();if(t)reasons.set(t,(reasons.get(t)||0)+1);});const topReasons=[...reasons.entries()].sort((a,b)=>b[1]-a[1]).slice(0,8).map(([label,value])=>({key:label,label,value}));
+ let html=aProjectRejectedCompare(rows)+aCard("Отклонённые визиты",`<div class="analytics-kpis">${aKpi("Количество отклонений",rows.length)}${aKpi("Фактические визиты",visits.fact)}${aKpi("Доля отклонений",`${ratio.toFixed(1)}%`)}</div>`,`Доля = количество отклонённых записей / фактические визиты. Это ориентировочное соотношение, не доля уникальных визитов.`);
+ html+=aCard("Отклонения по городам",aBars(cities,{format:v=>String(v),kind:"warn"}));
+ html+=aCard("Отклонения по сотрудникам",aBars(people,{format:v=>String(v),kind:"warn",on:"employee"}));
+ html+=aCard("Динамика отклонений",aBars(monthly,{format:v=>String(v),kind:"warn",on:"month"}));
+ html+=aCard("Частые комментарии / причины",topReasons.length?aBars(topReasons,{format:v=>String(v),kind:"warn",on:"reason"}):'<div class="analytics-empty">Комментарии с причинами пока отсутствуют.</div>',"Группировка выполняется по точному тексту комментария.");
+ html+=aCard("Список отклонений",rows.length?`<div class="analytics-table-wrap"><table class="analytics-table"><thead><tr><th>Дата</th><th>Город</th><th>Сотрудник</th><th>Сеть</th><th>Комментарий</th></tr></thead><tbody>${rows.slice().sort((a,b)=>String(b.visitDate).localeCompare(String(a.visitDate))).slice(0,150).map(r=>`<tr><td>${aEsc(r.visitDate||"—")}</td><td>${aEsc(r.city)}</td><td>${aEsc(r.merchandiser)}</td><td>${aEsc(r.network||"—")}</td><td>${aEsc(r.comment||"—")}</td></tr>`).join("")}</tbody></table></div>${rows.length>150?`<div class="analytics-muted">Показаны первые 150 из ${rows.length} записей. Полный набор доступен в выгрузке.</div>`:""}`:'<div class="analytics-empty">Нет отклонённых визитов.</div>');
+ byId("analyticsPanel").innerHTML=html;
+}
+function aRenderAlerts(base){
+ const minPlan=Math.max(0,Math.min(300,aNum(byId("aPlanThreshold").value))),minCov=Math.max(0,Math.min(100,aNum(byId("aCoverageThreshold").value)));
+ const visitCities=aVisitGroups(base.visits,r=>r.city).filter(x=>x.plan>0&&x.value<minPlan);
+ const latest=aLatestCoverageMonth(base.rawCoverage),covRows=latest?base.rawCoverage.filter(r=>aMonthKey(r)===latest):base.coverage;
+ const covCities=aCityCoverage(covRows).filter(x=>x.value<minCov);
+ const rejCities=aRejectedGroups(base.rejected,r=>r.city);
+ const alerts=[];visitCities.forEach(x=>alerts.push(`В городе ${x.label} выполнение плана ${x.value.toFixed(1)}% — ниже ${minPlan}%`));
+ const lowPeople=aVisitGroups(base.visits,r=>`${r.merchandiser} · ${r.city}`).filter(x=>x.plan>0&&x.value<minPlan);
+ lowPeople.forEach(x=>alerts.push(`У сотрудника ${x.label} выполнение плана ${x.value.toFixed(1)}% — ниже ${minPlan}%`));
+ covCities.forEach(x=>alerts.push(`В городе ${x.label} покрытие ${x.value.toFixed(1)}% — ниже ${minCov}%`));
+ if(!alerts.length){byId("analyticsAlerts").innerHTML='<div class="analytics-alert good">По заданным порогам критичных отклонений не обнаружено.</div>';return;}
+ byId("analyticsAlerts").innerHTML=alerts.map(x=>`<div class="analytics-alert">${aEsc(x)}</div>`).join("");
+}
+function aRenderAnalytics(){
+ const meta=window.VISIT_DATA_META||{},target=byId("analyticsUpdatedAt");if(meta.updatedAt){const d=new Date(meta.updatedAt);target.innerHTML=Number.isNaN(d.getTime())?'Последнее обновление данных: <b>дата не определена</b>':`Последнее обновление данных: <b>${new Intl.DateTimeFormat('ru-RU',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}).format(d)}</b>`;}else target.innerHTML='Последнее обновление данных: <b>ожидает загрузки Excel</b>';
+ const base=aFilteredBase();aRenderPulse(base);document.querySelectorAll("[data-analytics-tab]").forEach(b=>b.classList.toggle("active",b.dataset.analyticsTab===analyticsTab));
+ if(analyticsTab==="coverage")aRenderCoverage(base);else if(analyticsTab==="visits")aRenderVisits(base);else aRenderRejected(base);aRenderAlerts(base);
+}
+function aOpenAnalytics(){
+ byId("analyticsCrumb").textContent=`${selectedProject?.name||"Проекты"} · ${selectedCity===ALL_CITIES?"Все города":selectedCity}`;
+ const projectEl=byId("aProject");if(!projectEl.options.length)projectEl.value=selectedProject?.name||"all";
+ aInitFilters();aRenderAnalytics();show("analytics");
+}
+function aExport(){
+ const base=aFilteredBase(),rows=[];const add=(...x)=>rows.push(x);
+ add("Отчёт Asmia — аналитика");add("Проекты",aSelectedProjectNames().join(", "));add("Год",aVal("aYear"));add("Период",aVal("aMonth")==="all"?"Весь год":A_MONTHS[+aVal("aMonth")]);add("Неделя",aVal("aWeek"));add("Город",aVal("aCity"));add("Сотрудник",aVal("aEmployee"));add([]);
+ add("ВИЗИТЫ");add("Проект","Год","Месяц","Неделя","Город","Сотрудник","План","Факт","Выполнение, %");base.visits.forEach(r=>add(r.project,r.year,r.month,r.week,r.city,r.merchandiser,r.plan,r.fact,aPct(aNum(r.fact),aNum(r.plan)).toFixed(1)));
+ add([]);add("ОТКЛОНЕНИЯ");add("Проект","Год","Месяц","Неделя","Город","Сотрудник","Дата","Сеть","Адрес","Комментарий");base.rejected.forEach(r=>add(r.project,r.year,r.month,r.week,r.city,r.merchandiser,r.visitDate,r.network,r.address,r.comment));
+ add([]);add("ПОКРЫТИЕ ТТ");add("Проект","Год","Месяц","Неделя","Город","ID ТТ","Сеть","Адрес","Активна","Посещена");base.coverage.forEach(r=>add(r.project,r.year,r.month,r.week,r.city,r.ttId,r.network,r.address,r.active?"Да":"Нет",r.visited?"Да":"Нет"));
+ const csv="\uFEFF"+rows.map(row=>row.map(v=>'"'+String(v??"").replace(/"/g,'""')+'"').join(";")).join("\r\n");const blob=new Blob([csv],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=`Asmia_analytics_${aVal("aYear")}_${aVal("aMonth")}.csv`;a.click();URL.revokeObjectURL(url);
+}
+function aReset(){byId("aProject").value=selectedProject?.name||"__all_projects__";byId("aYear").value="all";byId("aMonth").value="all";byId("aWeek").value="all";byId("aCity").value="all";byId("aEmployee").value="all";aInitFilters();aRenderAnalytics();}
+["aProject","aYear","aMonth","aWeek","aCity","aEmployee"].forEach(id=>byId(id).addEventListener("change",()=>{if(id==="aProject"||id==="aYear"||id==="aMonth"||id==="aCity")aInitFilters();aRenderAnalytics();}));
+["aPlanThreshold","aCoverageThreshold"].forEach(id=>byId(id).addEventListener("change",aRenderAnalytics));
+document.querySelectorAll("[data-analytics-tab]").forEach(b=>b.addEventListener("click",()=>{analyticsTab=b.dataset.analyticsTab;aRenderAnalytics();}));
+byId("analyticsExport").addEventListener("click",aExport);byId("analyticsReset").addEventListener("click",aReset);
+byId("analyticsPanel").addEventListener("click",event=>{const b=event.target.closest("[data-a-drill]");if(!b)return;const type=b.dataset.aDrill,value=b.dataset.aValue;if(type==="city"){byId("aCity").value=value;byId("aEmployee").value="all";}else if(type==="employee"){const parts=value.split(" · ");byId("aEmployee").value=parts[0];if(parts[1])byId("aCity").value=parts[1];}else if(type==="month"){const m=value.split("-");byId("aYear").value=m[0];aInitFilters();byId("aMonth").value=m[1];}aRenderAnalytics();});
+// ------------------ конец аналитики v15 ------------------
+
 function renderRejectedUpdatedAt() {
   const target = byId("rejectedUpdatedAt");
   const raw = window.VISIT_DATA_META?.updatedAt || null;
@@ -780,9 +996,7 @@ document.addEventListener("click", event => {
     const section = CONFIG.sections.find(item => item.id === value);
     if (section) openSection(section);
   } else if (action === "analytics") {
-    byId("analyticsCrumb").textContent = `${selectedProject.name} · ${selectedCity === ALL_CITIES ? "Все города" : selectedCity}`;
-    renderCoverageDashboard();
-    show("analytics");
+    aOpenAnalytics();
   }
 });
 
