@@ -126,6 +126,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
 
 <div class="footer">Asmia · План визитов · Источник данных: Excel</div>
 </main>
+<script src="https://st.max.ru/js/max-web-app.js"></script>
 <script src="config.js"></script>
 <script>
 // Запрашиваем актуальный набор данных без использования устаревшего кеша браузера.
@@ -136,6 +137,12 @@ document.write('<script src="visits-data.js?ts=' + Date.now() + '"><\/script>');
 let selectedProject = null;
 let selectedCity = null;
 let selectedSection = null;
+// Вставляется числовой MAX ID единственного администратора.
+// Пока ID не задан, сводный пункт «Все города» не показывается.
+const ADMIN_MAX_IDS = ["ВСТАВИТЬ_ID_АДМИНИСТРАТОРА"];
+const ALL_CITIES = "__all_cities__";
+const maxUserId = String(window.WebApp?.initDataUnsafe?.user?.id ?? "");
+const isAdmin = Boolean(maxUserId && ADMIN_MAX_IDS.includes(maxUserId));
 const byId = id => document.getElementById(id);
 
 function makeChoice(title, subtitle, symbol, action, value) {
@@ -182,13 +189,18 @@ function renderCities() {
   byId("projectCrumb").textContent = selectedProject.name;
   const list = byId("cityList");
   list.replaceChildren();
+  if (isAdmin) {
+    list.append(makeChoice("Все города", "Сводные данные по всем городам", "🌍", "city", ALL_CITIES));
+  }
   selectedProject.cities.forEach(city => {
     list.append(makeChoice(city, selectedProject.name, "🏙️", "city", city));
   });
 }
 
+function cityLabel() { return selectedCity === ALL_CITIES ? "Все города" : selectedCity; }
+
 function renderMenu() {
-  byId("selectedCrumb").textContent = `${selectedProject.name} · ${selectedCity}`;
+  byId("selectedCrumb").textContent = `${selectedProject.name} · ${cityLabel()}`;
   const grid = byId("sectionGrid");
   grid.replaceChildren();
   CONFIG.sections.forEach(section => {
@@ -267,8 +279,14 @@ function getCurrentISOWeek(date = new Date()) {
 
 function renderVisitDashboard() {
   renderVisitsUpdatedAt();
-  const all = (window.VISIT_DATA || []).filter(r => r.project === selectedProject.name && r.city === selectedCity);
-  const roster = (window.VISIT_EMPLOYEES || []).filter(e => e.project === selectedProject.name && e.city === selectedCity);
+  const projectRows = (window.VISIT_DATA || []).filter(r => r.project === selectedProject.name);
+  const projectRoster = (window.VISIT_EMPLOYEES || []).filter(e => e.project === selectedProject.name);
+  const all = selectedCity === ALL_CITIES
+    ? projectRows
+    : projectRows.filter(r => r.city === selectedCity);
+  const roster = selectedCity === ALL_CITIES
+    ? projectRoster
+    : projectRoster.filter(e => e.city === selectedCity);
   const monthSelect = byId("monthFilter");
   const weekSelect = byId("weekFilter");
   const months = [...new Set(all.map(r => `${r.year}-${r.month}`))].sort();
@@ -289,7 +307,6 @@ function renderVisitDashboard() {
   } else if (months.includes(currentMonthKey)) {
     monthSelect.value = currentMonthKey;
   } else if (months.length) {
-    // Если за текущий месяц данных ещё нет, открываем самый поздний доступный месяц.
     monthSelect.value = months[months.length - 1];
   }
   const selectedMonth = monthSelect.value;
@@ -304,76 +321,88 @@ function renderVisitDashboard() {
     opt.value = String(w); opt.textContent = `${w}-я неделя`; weekSelect.append(opt);
   });
   if (previousMonth === selectedMonth && (previousWeek === "all" || weeks.includes(+previousWeek))) {
-    // Сохраняем ручной выбор сотрудника при повторной отрисовке.
     weekSelect.value = previousWeek;
   } else if (selectedMonth === currentMonthKey && weeks.includes(currentWeek)) {
     weekSelect.value = String(currentWeek);
   } else {
-    // Для прошлых месяцев или если текущая неделя ещё не загружена — весь месяц.
     weekSelect.value = "all";
   }
   const chosenWeek = weekSelect.value;
   const rows = chosenWeek === "all" ? monthRows : monthRows.filter(r => r.week === +chosenWeek);
-  const plan = rows.reduce((s,r)=>s+r.plan,0);
-  const fact = rows.reduce((s,r)=>s+r.fact,0);
+  const plan = rows.reduce((s,r)=>s+(Number(r.plan)||0),0);
+  const fact = rows.reduce((s,r)=>s+(Number(r.fact)||0),0);
   const pct = plan ? fact / plan * 100 : 0;
   byId("visitSummary").innerHTML = `
     <div class="metric"><small>План</small><b>${plan}</b></div>
     <div class="metric"><small>Факт</small><b>${fact}</b></div>
     <div class="metric"><small>Выполнение</small><b>${pct.toFixed(1)}%</b><div class="progress"><span style="width:${Math.min(pct,100)}%"></span></div></div>`;
 
-  // Список сотрудников формируем только по тем, у кого есть записи в выбранном месяце.
-  // Поэтому новый сотрудник, появившийся в ноябре, не будет отображаться в октябре.
-  // При выборе отдельной недели показываем всех сотрудников месяца, а показатели
-  // считаем только за выбранную неделю.
-  const monthlyEmployees = new Set(
-    monthRows.map(r => String(r.merchandiser || "").trim()).filter(Boolean)
-  );
-  const people = new Map();
-  monthlyEmployees.forEach(name => people.set(name, {name, plan:0, fact:0}));
-  rows.forEach(r => {
-    const key = String(r.merchandiser || "").trim();
-    if (!key || !people.has(key)) return;
-    const person = people.get(key);
-    person.plan += Number(r.plan) || 0;
-    person.fact += Number(r.fact) || 0;
-  });
-
+  // В сводном режиме каждый город отображается отдельной раскрывающейся группой.
+  const cityNames = selectedCity === ALL_CITIES
+    ? selectedProject.cities
+    : [selectedCity];
   const groups = byId("cityGroups");
   groups.replaceChildren();
-  if (!people.size) {
-    groups.innerHTML = '<div class="card empty">Нет данных за выбранный период и сотрудников в справочнике.</div>';
-    return;
-  }
-  const peopleList = [...people.values()].sort((a,b)=>a.name.localeCompare(b.name,"ru"));
-  const group = document.createElement("div"); group.className="city-group";
-  const head = document.createElement("button"); head.type="button"; head.className="city-head";
-  const icon = document.createElement("span"); icon.textContent="🏙️";
-  const label = document.createElement("span");
-  const cityName = document.createElement("b"); cityName.textContent=selectedCity;
-  const citySub = document.createElement("small"); citySub.textContent=`${peopleList.length} сотрудников`;
-  label.append(cityName,citySub);
-  const total = document.createElement("span"); total.className="city-total";
-  total.textContent=`${fact}/${plan} `;
-  const totalPct = document.createElement("small"); totalPct.textContent=`${pct.toFixed(1)}%`; total.append(totalPct);
-  const chev = document.createElement("span"); chev.className="chev"; chev.textContent="⌄";
-  head.append(icon,label,total,chev);
-  const body = document.createElement("div"); body.className="city-body";
-  peopleList.forEach(r=>{
-    const person=document.createElement("div"); person.className="person";
-    const p=r.plan? r.fact/r.plan*100:0;
-    const name=document.createElement("div"); name.className="person-name"; name.textContent=r.name;
-    const values=document.createElement("div"); values.className="person-values";
-    const planEl=document.createElement("span"); planEl.append("План: "); const planStrong=document.createElement("strong"); planStrong.textContent=r.plan; planEl.append(planStrong);
-    const factEl=document.createElement("span"); factEl.append("Факт: "); const factStrong=document.createElement("strong"); factStrong.textContent=r.fact; factEl.append(factStrong);
-    const percent=document.createElement("span"); percent.className="percent"; percent.textContent=`${p.toFixed(1)}%`;
-    values.append(planEl,factEl,percent);
-    const progress=document.createElement("div"); progress.className="progress";
-    const bar=document.createElement("span"); bar.style.width=`${Math.min(p,100)}%`; progress.append(bar);
-    person.append(name,values,progress); body.append(person);
+  let renderedCities = 0;
+  cityNames.forEach(city => {
+    const cityMonthRows = monthRows.filter(r => r.city === city);
+    const cityRows = rows.filter(r => r.city === city);
+    const activeNames = new Set(cityMonthRows.map(r => String(r.merchandiser || "").trim()).filter(Boolean));
+    // Для города без фактических строк выбранного месяца сотрудников не показываем.
+    const people = new Map();
+    activeNames.forEach(name => people.set(name, {name, plan:0, fact:0}));
+    cityRows.forEach(r => {
+      const key = String(r.merchandiser || "").trim();
+      if (!key || !people.has(key)) return;
+      const person = people.get(key);
+      person.plan += Number(r.plan) || 0;
+      person.fact += Number(r.fact) || 0;
+    });
+    if (!people.size && selectedCity !== ALL_CITIES) {
+      // Оставляем понятное пустое состояние для выбранного города.
+    } else if (!people.size) {
+      return;
+    }
+    renderedCities++;
+    const cityPlan = cityRows.reduce((sum,r)=>sum+(Number(r.plan)||0),0);
+    const cityFact = cityRows.reduce((sum,r)=>sum+(Number(r.fact)||0),0);
+    const cityPct = cityPlan ? cityFact / cityPlan * 100 : 0;
+    const peopleList = [...people.values()].sort((a,b)=>a.name.localeCompare(b.name,"ru"));
+    const group = document.createElement("div"); group.className="city-group";
+    const head = document.createElement("button"); head.type="button"; head.className="city-head";
+    const icon = document.createElement("span"); icon.textContent="🏙️";
+    const label = document.createElement("span");
+    const cityName = document.createElement("b"); cityName.textContent=city;
+    const citySub = document.createElement("small"); citySub.textContent=`${peopleList.length} сотрудников`;
+    label.append(cityName,citySub);
+    const total = document.createElement("span"); total.className="city-total";
+    total.textContent=`${cityFact}/${cityPlan} `;
+    const totalPct = document.createElement("small"); totalPct.textContent=`${cityPct.toFixed(1)}%`; total.append(totalPct);
+    const chev = document.createElement("span"); chev.className="chev"; chev.textContent="⌄";
+    head.append(icon,label,total,chev);
+    const body = document.createElement("div"); body.className="city-body";
+    if (!peopleList.length) {
+      const empty = document.createElement("div"); empty.className="empty"; empty.textContent="Нет данных за выбранный период."; body.append(empty);
+    }
+    peopleList.forEach(r=>{
+      const person=document.createElement("div"); person.className="person";
+      const p=r.plan? r.fact/r.plan*100:0;
+      const name=document.createElement("div"); name.className="person-name"; name.textContent=r.name;
+      const values=document.createElement("div"); values.className="person-values";
+      const planEl=document.createElement("span"); planEl.append("План: "); const planStrong=document.createElement("strong"); planStrong.textContent=r.plan; planEl.append(planStrong);
+      const factEl=document.createElement("span"); factEl.append("Факт: "); const factStrong=document.createElement("strong"); factStrong.textContent=r.fact; factEl.append(factStrong);
+      const percent=document.createElement("span"); percent.className="percent"; percent.textContent=`${p.toFixed(1)}%`;
+      values.append(planEl,factEl,percent);
+      const progress=document.createElement("div"); progress.className="progress";
+      const bar=document.createElement("span"); bar.style.width=`${Math.min(p,100)}%`; progress.append(bar);
+      person.append(name,values,progress); body.append(person);
+    });
+    head.addEventListener("click",()=>{body.hidden=!body.hidden;chev.textContent=body.hidden?"›":"⌄";});
+    group.append(head,body); groups.append(group);
   });
-  head.addEventListener("click",()=>{body.hidden=!body.hidden;chev.textContent=body.hidden?"›":"⌄";});
-  group.append(head,body); groups.append(group);
+  if (!renderedCities) {
+    groups.innerHTML = '<div class="card empty">Нет данных за выбранный период.</div>';
+  }
 }
 byId("monthFilter").addEventListener("change", renderVisitDashboard);
 byId("weekFilter").addEventListener("change", renderVisitDashboard);
@@ -394,6 +423,7 @@ document.addEventListener("click", event => {
     renderCities();
     show("cities");
   } else if (action === "city") {
+    if (value === ALL_CITIES && !isAdmin) return;
     selectedCity = value;
     renderMenu();
     show("menu");
