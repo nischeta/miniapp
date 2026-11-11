@@ -5,16 +5,26 @@
     "holding_aqua": {
       "name": "Холдинг Аква",
       "current": {
-        "version": "1.0",
+        "version": "1.1",
         "date": "2026-11-11",
-        "documentDate": "2026-11-04",
-        "title": "Рекомендации по выкладке ассортимента",
-        "file": "standards/holding-aqua/v1.0_2026-11-11.pdf",
+        "title": "v1.0_2026-11-11",
+        "file": "standards/holding-aqua/v1.1_2026-11-11.pdf",
         "pages": 11,
-        "preview": "standards/holding-aqua/v1.0_2026-11-11/pages",
+        "preview": "standards/holding-aqua/v1.1_2026-11-11/pages",
         "previewPages": 11
       },
-      "archive": []
+      "archive": [
+        {
+          "version": "1.0",
+          "date": "2026-11-11",
+          "documentDate": "2026-11-04",
+          "title": "Рекомендации по выкладке ассортимента",
+          "file": "standards/holding-aqua/v1.0_2026-11-11.pdf",
+          "pages": 11,
+          "preview": "standards/holding-aqua/v1.0_2026-11-11/pages",
+          "previewPages": 11
+        }
+      ]
     },
     "perspektiva_sm": {
       "name": "Перспектива СМ",
