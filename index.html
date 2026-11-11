@@ -349,6 +349,8 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <div class="filters"><div><label for="salaryMonthFilter">Месяц</label><select id="salaryMonthFilter"></select></div></div>
   <div class="salary-kpis" id="salaryKpis"></div>
   <div id="salaryRulesNote" class="salary-note"></div>
+  <h2 style="font-size:16px;margin:18px 0 8px">Начисления и потери по сотрудникам</h2>
+  <div id="salaryEmployees"></div>
   <div class="card" id="salaryExportCard">
     <h2 style="font-size:16px;margin:0 0 8px">Выгрузка расчёта</h2>
     <p class="muted" style="font-size:12px;margin:0 0 12px">Выгрузки учитывают выбранные проект, город и месяц.</p>
@@ -366,8 +368,6 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
     <input type="file" id="salaryTariffImportFile" accept="application/json,.json" hidden>
     <div class="salary-muted">Настройки сохраняются в браузере этого устройства. Для переноса на другое устройство используйте экспорт и импорт JSON. Изменение тарифа действует только на выбранный месяц; повторные изменения в этом месяце сохраняются в истории.</div>
   </div>
-  <h2 style="font-size:16px;margin:18px 0 8px">Начисления и потери по сотрудникам</h2>
-  <div id="salaryEmployees"></div>
 </section>
 
 <section id="analytics" class="screen">
@@ -403,7 +403,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <div class="analytics-muted">Показатели рассчитываются по загруженным данным. Для годового покрытия в сводных карточках используется последний доступный месячный снимок базы, а график показывает помесячную динамику.</div>
 </section>
 
-<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel · Версия 1.18.4</div>
+<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel · Версия 1.18.5</div>
 </main>
 <script src="https://st.max.ru/js/max-web-app.js"></script>
 <script src="config.js"></script>
