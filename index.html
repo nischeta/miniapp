@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f3f5f9">
-<title>Asmia — мини-приложение 1.18.9</title>
+<title>Asmia — мини-приложение 1.18.10</title>
 <style>
 :root{--bg:#f3f5f9;--card:#fff;--ink:#182230;--muted:#758195;--blue:#2869e8;--line:#e7ebf1;--green:#168653;--shadow:0 8px 28px #14213b0c}
 *{box-sizing:border-box}
@@ -214,6 +214,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
 @media(min-width:600px){.salary-kpis{grid-template-columns:repeat(4,minmax(0,1fr))}#salaryEmployees{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}.salary-person{margin:0}}
 @media(min-width:1200px){#salaryEmployees{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
+@media(max-width:600px){#standardsViewer{height:calc(100dvh - 245px)!important;min-height:560px!important}}
 </style>
 </head>
 <body>
@@ -296,7 +297,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <div class="crumb" id="standardsCrumb"></div>
   <h1>Стандарты выкладки</h1>
   <p class="lead">Материалы и правила работы с ассортиментом для выбранного проекта.</p>
-  <iframe id="standardsViewer" title="Стандарты выкладки" style="display:block;width:100%;height:78vh;min-height:520px;border:1px solid var(--line);border-radius:14px;background:#fff"></iframe>
+  <iframe id="standardsViewer" title="Стандарты выкладки" style="display:block;width:100%;height:calc(100vh - 260px);min-height:680px;border:1px solid var(--line);border-radius:14px;background:#fff"></iframe>
 </section>
 
 <section id="detail" class="screen">
@@ -403,7 +404,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <div class="analytics-muted">Показатели рассчитываются по загруженным данным. Для годового покрытия в сводных карточках используется последний доступный месячный снимок базы, а график показывает помесячную динамику.</div>
 </section>
 
-<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel · Версия 1.18.9</div>
+<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel · Версия 1.18.10</div>
 </main>
 <script src="https://st.max.ru/js/max-web-app.js"></script>
 <script src="config.js"></script>

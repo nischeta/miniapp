@@ -7,10 +7,11 @@
 <title>Asmia — Стандарты выкладки</title>
 <style>
 :root{--bg:#f3f5f9;--card:#fff;--ink:#182230;--muted:#758195;--blue:#2869e8;--line:#e7ebf1;--shadow:0 8px 28px #14213b0c}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-main{max-width:1200px;margin:auto;padding:18px 16px 28px}.top{display:flex;align-items:center;gap:12px;margin:0 0 20px}.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(145deg,#4387fa,#1746b5);color:#fff;display:grid;place-items:center;font-weight:850;font-size:21px}.brand{font-size:19px;font-weight:800}.muted{color:var(--muted)}h1{font-size:26px;margin:0 0 6px}.lead{margin:0 0 18px;color:var(--muted)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px;margin:12px 0;box-shadow:var(--shadow)}.meta{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 12px}.pill{display:inline-flex;align-items:center;border-radius:18px;background:#edf3ff;color:var(--blue);font-size:11px;font-weight:750;padding:5px 9px}.title{font-size:16px;font-weight:750}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--blue);font:700 13px system-ui;padding:10px 13px;text-decoration:none;cursor:pointer}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.viewer{width:100%;height:calc(100vh - 285px);min-height:520px;border:1px solid var(--line);border-radius:12px;background:#eef1f6}.empty{border:1px dashed #cbd5e2;background:#fafbfd;border-radius:12px;padding:18px;color:var(--muted);font-size:13px}.archive{width:100%;border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px;font:inherit;color:var(--ink)}.notice{font-size:12px;color:var(--muted);margin-top:10px}
-@media(max-width:600px){main{padding:14px 12px 20px}h1{font-size:23px}.viewer{height:70vh;min-height:420px}.card{padding:13px}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+main{max-width:1240px;margin:auto;padding:14px 14px 24px}.top{display:flex;align-items:center;gap:12px;margin:0 0 15px}.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(145deg,#4387fa,#1746b5);color:#fff;display:grid;place-items:center;font-weight:850;font-size:21px}.brand{font-size:19px;font-weight:800}.muted{color:var(--muted)}h1{font-size:25px;line-height:1.2;margin:0 0 6px}.lead{margin:0 0 16px;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin:12px 0;box-shadow:var(--shadow)}.meta{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0 12px}.pill{display:inline-flex;align-items:center;border-radius:18px;background:#edf3ff;color:var(--blue);font-size:11px;font-weight:750;padding:5px 9px}.title{font-size:16px;font-weight:750}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 13px}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--blue);font:750 13px system-ui;padding:11px 14px;text-decoration:none;cursor:pointer;min-height:42px}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.notice{font-size:12px;color:var(--muted);margin:10px 0 0}.page-stack{display:grid;gap:13px;margin-top:12px}.page-card{overflow:hidden;border:1px solid var(--line);border-radius:13px;background:#fff}.page-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 11px;border-bottom:1px solid var(--line);font-size:12px;color:var(--muted)}.page-head b{color:var(--ink);font-size:13px}.page-link{display:block;background:#f1f3f7;line-height:0;text-align:center}.page-link img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;margin:0 auto}.page-link:active{opacity:.94}.page-zoom{white-space:nowrap;color:var(--blue);font-size:11px;text-decoration:none}.archive{width:100%;border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px;font:inherit;color:var(--ink)}.empty{border:1px dashed #cbd5e2;background:#fafbfd;border-radius:12px;padding:16px;color:var(--muted);font-size:13px}.archive-title{font-size:15px;font-weight:750}.viewer-note{font-size:12px;color:var(--muted);padding:10px 2px 0}
+@media(min-width:850px){main{padding:18px 20px 30px}.page-stack{gap:18px}.page-card{border-radius:15px}.page-head{padding:10px 14px;font-size:13px}.page-head b{font-size:14px}.card{padding:17px}}
+@media(max-width:420px){main{padding:10px 9px 18px}h1{font-size:22px}.card{padding:10px}.actions .btn{flex:1}.page-stack{gap:10px}.page-head{padding:7px 9px}}
 </style>
 </head>
 <body>
@@ -18,19 +19,20 @@ main{max-width:1200px;margin:auto;padding:18px 16px 28px}.top{display:flex;align
   <header class="top"><div class="logo">A</div><div><div class="brand">Asmia</div><div class="muted" style="font-size:12px">Рабочее мини-приложение</div></div></header>
   <div class="muted" id="projectName">Стандарты выкладки</div>
   <h1>Стандарты выкладки</h1>
-  <p class="lead">Материалы и правила работы с ассортиментом для выбранного проекта. Новая редакция публикуется главным администратором через MAX-бота; предыдущие версии сохраняются в архиве.</p>
+  <p class="lead">Страницы документа можно смотреть прямо здесь. Для чтения деталей нажмите на страницу, чтобы открыть изображение крупно.</p>
   <section class="card">
     <div class="title" id="docTitle">Загрузка документа…</div>
     <div class="meta" id="docMeta"></div>
     <div class="actions">
-      <a class="btn primary" id="openPdf" target="_blank" rel="noopener">Открыть PDF отдельно</a>
-      <a class="btn" id="downloadPdf" download>Скачать PDF</a>
+      <a class="btn primary" id="downloadPdf" download>Скачать PDF на телефон</a>
+      <a class="btn" id="openPdf" target="_blank" rel="noopener">Открыть PDF</a>
     </div>
-    <iframe class="viewer" id="pdfViewer" title="Просмотр стандарта выкладки" loading="lazy"></iframe>
-    <p class="notice">На телефонах PDF также можно открыть отдельно, если встроенный просмотрщик недоступен.</p>
+    <div id="pageStack" class="page-stack"></div>
+    <div id="previewFallback" class="empty" hidden>Изображения страниц для этой редакции ещё не подготовлены. Можно скачать или открыть исходный PDF.</div>
+    <p class="notice">Кнопка «Скачать PDF на телефон» сохраняет оригинальный документ. После скачивания его можно открыть в просмотрщике PDF на телефоне.</p>
   </section>
   <section class="card" id="archiveCard" hidden>
-    <div class="title">Архив предыдущих версий</div>
+    <div class="archive-title">Архив предыдущих версий</div>
     <p class="muted" style="font-size:12px;margin:5px 0 10px">Выберите более раннюю редакцию документа.</p>
     <select class="archive" id="archiveSelect"></select>
   </section>
@@ -47,15 +49,40 @@ function formatDate(value){
   const p=String(value).split("-");
   return p.length===3 ? `${p[2]}.${p[1]}.${p[0]}` : String(value);
 }
+function clearPreview(){ $("pageStack").replaceChildren(); }
+function showPreview(doc){
+  clearPreview();
+  const count=Number(doc.previewPages || doc.pages || 0);
+  if(!doc.preview || !Number.isInteger(count) || count<1){
+    $("previewFallback").hidden=false;
+    return;
+  }
+  $("previewFallback").hidden=true;
+  const base=String(doc.preview).replace(/\/$/,"");
+  for(let i=1;i<=count;i++){
+    const filename=`page-${String(i).padStart(2,"0")}.webp`;
+    const src=`${base}/${filename}`;
+    const article=document.createElement("article");article.className="page-card";
+    const head=document.createElement("div");head.className="page-head";
+    const label=document.createElement("b");label.textContent=`Страница ${i} из ${count}`;
+    const zoom=document.createElement("a");zoom.className="page-zoom";zoom.href=src;zoom.target="_blank";zoom.rel="noopener";zoom.textContent="Открыть крупно ↗";
+    head.append(label,zoom);
+    const link=document.createElement("a");link.className="page-link";link.href=src;link.target="_blank";link.rel="noopener";link.setAttribute("aria-label",`Открыть страницу ${i} крупно`);
+    const img=document.createElement("img");img.src=src;img.alt=`Страница ${i} — ${doc.title || "Стандарты выкладки"}`;img.loading=i===1?"eager":"lazy";img.decoding="async";
+    img.addEventListener("error",()=>{article.remove();if(!$("pageStack").children.length){$("previewFallback").hidden=false;$("previewFallback").textContent="Не удалось загрузить изображения страниц. Проверьте, что папка standards целиком опубликована в корне сайта. Исходный PDF доступен для скачивания.";}},{once:true});
+    link.append(img);article.append(head,link);$("pageStack").append(article);
+  }
+}
 function setDocument(doc, project){
   if(!doc || !doc.file) throw new Error("Для проекта не указан PDF-файл стандарта.");
   const title=doc.title || `Стандарты — ${project.name}`;
   const url=doc.file;
   $("docTitle").textContent=title;
   $("docMeta").innerHTML=`<span class="pill">Версия ${esc(doc.version || "—")}</span><span class="pill">Опубликовано ${esc(formatDate(doc.date))}</span>${doc.documentDate?`<span class="pill">Дата документа ${esc(formatDate(doc.documentDate))}</span>`:""}${doc.pages?`<span class="pill">${esc(doc.pages)} стр.</span>`:""}`;
-  $("pdfViewer").src=`${url}#view=FitH`;
-  $("openPdf").href=url;
   $("downloadPdf").href=url;
+  $("downloadPdf").download=(title.replace(/[\\/:*?"<>|]+/g,"_")||"standards")+".pdf";
+  $("openPdf").href=url;
+  showPreview(doc);
   $("status").hidden=true;
 }
 async function init(){
@@ -70,23 +97,13 @@ async function init(){
     const archive=Array.isArray(project.archive)?project.archive:[];
     if(archive.length){
       $("archiveCard").hidden=false;
-      const select=$("archiveSelect");
-      select.innerHTML="";
-      const currentOption=document.createElement("option");
-      currentOption.value="current";currentOption.textContent=`Текущая версия ${project.current.version} · ${formatDate(project.current.date)}`;select.append(currentOption);
-      archive.forEach((doc,index)=>{
-        const option=document.createElement("option");option.value=String(index);
-        option.textContent=`Версия ${doc.version || "—"} · ${formatDate(doc.date)}`;select.append(option);
-      });
-      select.addEventListener("change",()=>{
-        const value=select.value;
-        setDocument(value==="current"?project.current:archive[Number(value)],project);
-      });
+      const select=$("archiveSelect");select.replaceChildren();
+      const currentOption=document.createElement("option");currentOption.value="current";currentOption.textContent=`Текущая версия ${project.current.version} · ${formatDate(project.current.date)}`;select.append(currentOption);
+      archive.forEach((doc,index)=>{const option=document.createElement("option");option.value=String(index);option.textContent=`Версия ${doc.version || "—"} · ${formatDate(doc.date)}`;select.append(option);});
+      select.addEventListener("change",()=>{const value=select.value;setDocument(value==="current"?project.current:archive[Number(value)],project);window.scrollTo({top:0,behavior:"smooth"});});
     }
   }catch(error){
-    $("status").hidden=false;
-    $("status").textContent=error.message || "Не удалось загрузить стандарты.";
-    $("docTitle").textContent="Документ недоступен";
+    $("status").hidden=false;$("status").textContent=error.message || "Не удалось загрузить стандарты.";$("docTitle").textContent="Документ недоступен";
   }
 }
 init();
