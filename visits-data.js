@@ -1,6 +1,6 @@
 // Файл формируется ботом Asmia 2.2.2 после подтверждённой загрузки Excel.
 window.VISIT_DATA_META = {
-  "updatedAt": "2026-11-11T07:43:28+00:00",
+  "updatedAt": "2026-11-11T07:49:12+00:00",
   "sourceFile": "plan.xlsx",
   "recordCount": 417,
   "employeeCount": 45,
@@ -7923,7 +7923,7 @@ window.REJECTED_VISITS = [
     "visitDate": "2026-11-09T12:22",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Революции 1905 года ул, 31Г",
-    "comment": ""
+    "comment": "Товар не выставлен, работа не проводилась"
   },
   {
     "project": "Холдинг Аква",
@@ -7936,7 +7936,7 @@ window.REJECTED_VISITS = [
     "visitDate": "2026-11-10T17:01",
     "network": "Пятерочка",
     "address": "Самарская обл, Самара г, Галактионовская ул, 35",
-    "comment": ""
+    "comment": "В отчете нет фото полок с товаром"
   },
   {
     "project": "Холдинг Аква",
@@ -7949,7 +7949,7 @@ window.REJECTED_VISITS = [
     "visitDate": "2026-11-09T18:24",
     "network": "Пятерочка",
     "address": "Саратовская обл, Саратов г, Танкистов ул, 28",
-    "comment": ""
+    "comment": "Товар выставлен поверх другого."
   }
 ];
 window.TT_COVERAGE_DATA = [
