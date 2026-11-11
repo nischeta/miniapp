@@ -24,14 +24,21 @@
     "perspektiva_sm": {
       "name": "Перспектива СМ",
       "current": {
-        "version": "1.0",
+        "version": "1.1",
         "date": "2026-11-11",
-        "documentDate": "2026-10-08",
-        "title": "Стандарты Перспектива СМ",
-        "file": "standards/perspektiva-sm/v1.0_2026-11-11.pdf",
-        "pages": 16
+        "title": "perspektiva-sm",
+        "file": "standards/perspektiva-sm/v1.1_2026-11-11.pdf"
       },
-      "archive": []
+      "archive": [
+        {
+          "version": "1.0",
+          "date": "2026-11-11",
+          "documentDate": "2026-10-08",
+          "title": "Стандарты Перспектива СМ",
+          "file": "standards/perspektiva-sm/v1.0_2026-11-11.pdf",
+          "pages": 16
+        }
+      ]
     }
   }
 }
