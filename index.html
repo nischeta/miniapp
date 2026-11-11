@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f3f5f9">
-<title>Asmia — мини-приложение 1.18.2</title>
+<title>Asmia — мини-приложение 1.18.3</title>
 <style>
 :root{--bg:#f3f5f9;--card:#fff;--ink:#182230;--muted:#758195;--blue:#2869e8;--line:#e7ebf1;--green:#168653;--shadow:0 8px 28px #14213b0c}
 *{box-sizing:border-box}
@@ -384,7 +384,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <div class="analytics-muted">Показатели рассчитываются по загруженным данным. Для годового покрытия в сводных карточках используется последний доступный месячный снимок базы, а график показывает помесячную динамику.</div>
 </section>
 
-<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel · Версия 1.18.2</div>
+<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel · Версия 1.18.3</div>
 </main>
 <script src="https://st.max.ru/js/max-web-app.js"></script>
 <script src="config.js"></script>
@@ -974,12 +974,23 @@ byId("analyticsPanel").addEventListener("click",event=>{const b=event.target.clo
 // ------------------ конец аналитики v15 ------------------
 
 
-const SALARY_RULES = {"Пятерочка": {base: 2000, norm: 9, specialEight: true}};
+const SALARY_RULES = {
+  "Пятерочка": {base: 2000, norm: 9, specialCount: 8, specialPlan: 8, specialMode: "gte"},
+  "Пятёрочка": {base: 2000, norm: 9, specialCount: 8, specialPlan: 8, specialMode: "gte"},
+  "Перекресток": {base: 2500, norm: 13, specialCount: 12, specialPlan: 12, specialMode: "gt"},
+  "Перекрёсток": {base: 2500, norm: 13, specialCount: 12, specialPlan: 12, specialMode: "gt"}
+};
 const salaryRub = value => new Intl.NumberFormat("ru-RU",{style:"currency",currency:"RUB",maximumFractionDigits:2}).format(Number(value)||0);
 const salaryNum = value => Number(value)||0;
 function escapeSalary(value){return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));}
 function salaryKpi(label,value,kind=""){return `<div class="salary-kpi ${kind}"><small>${escapeSalary(label)}</small><b>${escapeSalary(value)}</b></div>`;}
-
+function salaryRate(rule, checked, plan){
+  if(!rule || checked<=0) return rule ? rule.base/rule.norm : 0;
+  const specialPlanOk = rule.specialMode === "gt" ? plan > rule.specialPlan : plan >= rule.specialPlan;
+  if(checked===rule.specialCount && specialPlanOk) return rule.base/rule.specialCount;
+  if(checked>rule.norm) return rule.base/checked;
+  return rule.base/rule.norm;
+}
 function renderSalaryDashboard() {
   const raw=window.VISIT_DATA_META?.updatedAt||window.VISIT_DATA_UPDATED_AT||null;
   const target=byId("salaryUpdatedAt");
@@ -998,42 +1009,39 @@ function renderSalaryDashboard() {
   const selected=monthSelect.value;
   const rows=projectRows.filter(r=>`${r.year}-${r.month}`===selected), rejected=rejectedAll.filter(r=>`${r.year}-${r.month}`===selected);
   const verifiedDataAvailable=rows.some(r=>r.verified!==undefined&&r.verified!==null);
-  const map=new Map(), get=(city,name)=>`${city}|||${name}`;
+  const peopleMap=new Map(), getPerson=(city,name)=>`${city}|||${name}`;
+  const ensurePerson=(city,name)=>{const key=getPerson(city,name);if(!peopleMap.has(key))peopleMap.set(key,{city,name,ttGroups:new Map()});return peopleMap.get(key);};
+  const ensureTT=(person,network,ttId)=>{const key=`${network}|||${String(ttId||"__unknown__").trim().toLocaleLowerCase("ru")}`;if(!person.ttGroups.has(key))person.ttGroups.set(key,{network,ttId,plan:0,verified:0,rejected:0,hasVerified:false});return person.ttGroups.get(key);};
   rows.forEach(r=>{
-    const k=get(r.city,r.merchandiser);
-    if(!map.has(k))map.set(k,{city:r.city,name:r.merchandiser,networks:new Map()});
-    const p=map.get(k),network=r.network||"Не указана";
-    if(!p.networks.has(network))p.networks.set(network,{plan:0,verified:0,rejected:0,hasVerified:false});
-    const b=p.networks.get(network);b.plan+=salaryNum(r.plan);
-    if(r.verified!==undefined&&r.verified!==null){b.verified+=salaryNum(r.verified);b.hasVerified=true;}
+    const person=ensurePerson(r.city,r.merchandiser||"Не назначен"),tt=ensureTT(person,r.network||"Не указана",r.ttId);
+    tt.plan+=salaryNum(r.plan);
+    if(r.verified!==undefined&&r.verified!==null){tt.verified+=salaryNum(r.verified);tt.hasVerified=true;}
   });
   rejected.forEach(r=>{
-    const k=get(r.city,r.merchandiser);
-    if(!map.has(k))map.set(k,{city:r.city,name:r.merchandiser,networks:new Map()});
-    const p=map.get(k),network=r.network||"Не указана";
-    if(!p.networks.has(network))p.networks.set(network,{plan:0,verified:0,rejected:0,hasVerified:false});
-    p.networks.get(network).rejected++;
+    const person=ensurePerson(r.city,r.merchandiser||"Не назначен"),tt=ensureTT(person,r.network||"Не указана",r.ttId);
+    tt.rejected++;
   });
-  const people=[...map.values()].sort((a,b)=>a.name.localeCompare(b.name,"ru"));
+  const people=[...peopleMap.values()].sort((a,b)=>a.name.localeCompare(b.name,"ru"));
   let verifiedTotal=0,rejectedTotal=rejected.length,salaryTotal=0,lossTotal=0,unknown=0,verifiedFieldMissing=false;
   const list=byId("salaryEmployees");list.replaceChildren();
   people.forEach(p=>{
-    let vTotal=0,rTotal=0,payTotal=0,lossPerson=0,netHtml="";
-    for(const [network,b] of p.networks){
-      vTotal+=b.verified;rTotal+=b.rejected;
-      const rule=SALARY_RULES[network];
-      if(b.verified>0&&!b.hasVerified)verifiedFieldMissing=true;
-      if(rule&&verifiedDataAvailable&&(b.verified>0||b.rejected>0)){
-        const rate=b.verified>rule.norm?rule.base/b.verified:(rule.specialEight&&b.verified===8&&b.plan>=8?rule.base/8:rule.base/rule.norm);
-        const pay=rate*b.verified,loss=rate*b.rejected;
+    let vTotal=0,rTotal=0,payTotal=0,lossPerson=0;const networks=new Map();
+    for(const tt of p.ttGroups.values()){
+      const network=tt.network,rule=SALARY_RULES[network];
+      vTotal+=tt.verified;rTotal+=tt.rejected;
+      if(tt.verified>0&&!tt.hasVerified)verifiedFieldMissing=true;
+      if(rule&&tt.ttId&&verifiedDataAvailable){
+        const rate=salaryRate(rule,tt.verified,tt.plan),pay=rate*tt.verified,loss=rate*tt.rejected;
         payTotal+=pay;lossPerson+=loss;
-        netHtml+=`<div class="salary-network-row"><span>${escapeSalary(network)}</span><span>${b.verified} провер. · ${b.rejected} откл.<br>${salaryRub(pay)} начислено<br>${salaryRub(loss)} потери</span></div><div class="salary-muted">Ставка: ${salaryRub(rate)} за визит</div>`;
-      }else{
-        if(b.verified||b.rejected)unknown++;
-        const reason=!verifiedDataAvailable?"нет отдельного количества проверенных визитов":"тариф для этой сети не настроен";
-        netHtml+=`<div class="salary-network-row"><span>${escapeSalary(network)}</span><span>${b.verified} провер. · ${b.rejected} откл.</span></div><div class="salary-muted">Денежные суммы не рассчитаны: ${reason}</div>`;
-      }
+        if(!networks.has(network))networks.set(network,{verified:0,rejected:0,pay:0,loss:0,ttCount:0});
+        const n=networks.get(network);n.verified+=tt.verified;n.rejected+=tt.rejected;n.pay+=pay;n.loss+=loss;n.ttCount++;
+      }else if(tt.verified||tt.rejected){unknown++;}
     }
+    let netHtml="";
+    for(const [network,b] of networks){
+      netHtml+=`<div class="salary-network-row"><span>${escapeSalary(network)} <span class="salary-muted">(${b.ttCount} ТТ)</span></span><span>${b.verified} провер. · ${b.rejected} откл.<br>${salaryRub(b.pay)} начислено<br>${salaryRub(b.loss)} потери</span></div>`;
+    }
+    if(!netHtml)netHtml='<div class="salary-muted">Нет данных по настроенным тарифам.</div>';
     verifiedTotal+=vTotal;salaryTotal+=payTotal;lossTotal+=lossPerson;
     const card=document.createElement("article");card.className="salary-person";
     card.innerHTML=`<div class="salary-person-head"><div><div class="salary-person-name">${escapeSalary(p.name)}</div><div class="salary-person-city">${escapeSalary(p.city)}</div></div></div>
@@ -1046,9 +1054,9 @@ function renderSalaryDashboard() {
     list.append(card);
   });
   byId("salaryKpis").innerHTML=[salaryKpi("Проверенные визиты",verifiedTotal),salaryKpi("Отклонённые визиты",rejectedTotal),salaryKpi("Начислено по настроенным тарифам",salaryRub(salaryTotal)),salaryKpi("Потери по настроенным тарифам",salaryRub(lossTotal),"loss")].join("");
-  const notes=["Правило «Пятёрочка»: 1–9 проверенных визитов — 2 000 / 9 за визит; ровно 8 при плане от 8 — 2 000 / 8; более 9 — 2 000 / фактическое число проверенных визитов. Отклонённые визиты оплачиваются по той же расчётной ставке только в отчёте о потерях."];
-  if(rows.length&&!verifiedDataAvailable)notes.push("В текущей базе нет отдельного количества проверенных визитов за выбранный месяц. Для точного расчёта зарплаты и потерь загрузите исходный Excel «Свод ХА»: бот 2.2.2 распределяет план по месяцу плана, а факт и статусы — по фактической дате создания анкеты; недельный отчёт объединяет переходящую неделю между месяцами.");
-  if(unknown&&verifiedDataAvailable)notes.push("Для сети «Перекрёсток» и других сетей тариф пока не задан. Количество визитов показано, но суммы не рассчитываются.");
+  const notes=["Расчёт выполняется отдельно по каждой уникальной ТТ за месяц и затем суммируется по сотруднику. «Пятёрочка»: база 2 000 ₽, норма 9 визитов; при 8 проверенных и плане от 8 — ставка 2 000/8; при 1–9 (кроме спецусловия) — 2 000/9; свыше 9 — 2 000/число проверенных. «Перекрёсток»: база 2 500 ₽, норма 13; при 12 проверенных и плане более 12 — ставка 2 500/12; при 1–13 (кроме спецусловия) — 2 500/13; свыше 13 — 2 500/число проверенных. Оплачиваются только «Проверена»; отклонённые показываются отдельно как потери по расчётной ставке ТТ."];
+  if(rows.length&&!verifiedDataAvailable)notes.push("В текущей базе нет отдельного количества проверенных визитов. Для точного расчёта загрузите исходный Excel «Свод ХА» через бота.");
+  if(unknown&&verifiedDataAvailable)notes.push("Для части записей отсутствует поддерживаемый тариф или данные о ТТ; суммы по ним не рассчитаны.");
   if(!rows.length&&!rejected.length)notes.push("За выбранный месяц нет данных.");
   byId("salaryRulesNote").textContent=notes.join(" ");
 }
