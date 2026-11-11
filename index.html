@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f3f5f9">
-<title>Asmia — мини-приложение v19</title>
+<title>Asmia — мини-приложение 1.18.2</title>
 <style>
 :root{--bg:#f3f5f9;--card:#fff;--ink:#182230;--muted:#758195;--blue:#2869e8;--line:#e7ebf1;--green:#168653;--shadow:0 8px 28px #14213b0c}
 *{box-sizing:border-box}
@@ -191,6 +191,29 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
 .analytics-drill{font-size:12px;color:var(--blue);margin-top:8px}
 @media(min-width:600px){#projectList{grid-template-columns:repeat(2,minmax(0,1fr))}.analytics-filters{grid-template-columns:repeat(3,minmax(0,1fr))}.analytics-kpis{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
+
+/* Зарплата и финансовые потери */
+.salary-kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}
+.salary-kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px;min-width:0}
+.salary-kpi small{display:block;color:var(--muted);font-size:11px}
+.salary-kpi b{display:block;font-size:22px;margin-top:5px;overflow-wrap:anywhere}
+.salary-kpi.loss b{color:#c14b42}
+.salary-note{padding:11px 13px;border:1px solid #ead9b5;background:#fff9eb;border-radius:12px;color:#75551e;font-size:12px;margin:10px 0}
+.salary-person{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin:10px 0;box-shadow:var(--shadow)}
+.salary-person-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.salary-person-name{font-weight:750;font-size:14px}
+.salary-person-city{font-size:11px;color:var(--muted);margin-top:3px}
+.salary-person-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+.salary-person-metric{background:#f7f9fc;border-radius:10px;padding:9px}
+.salary-person-metric small{display:block;font-size:10px;color:var(--muted)}
+.salary-person-metric b{display:block;font-size:16px;margin-top:3px}
+.salary-network{border-top:1px solid var(--line);margin-top:12px;padding-top:10px;font-size:12px}
+.salary-network-row{display:flex;justify-content:space-between;gap:10px;padding:5px 0}
+.salary-network-row span:last-child{text-align:right;font-weight:700}
+.salary-muted{font-size:11px;color:var(--muted);margin-top:8px}
+@media(min-width:600px){.salary-kpis{grid-template-columns:repeat(4,minmax(0,1fr))}#salaryEmployees{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}.salary-person{margin:0}}
+@media(min-width:1200px){#salaryEmployees{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
 </style>
 </head>
 <body>
@@ -315,6 +338,19 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
 </section>
 
 
+<section id="salary" class="screen">
+  <button class="back" type="button" data-go="menu">← В рабочее меню</button>
+  <div class="crumb" id="salaryCrumb"></div>
+  <h1>Зарплата и потери</h1>
+  <p class="lead">Начисления только за проверенные визиты. Отклонения учитываются отдельно как финансовые потери.</p>
+  <div class="updated-note" id="salaryUpdatedAt">Последнее обновление данных: <b>ожидает загрузки Excel</b></div>
+  <div class="filters"><div><label for="salaryMonthFilter">Месяц</label><select id="salaryMonthFilter"></select></div></div>
+  <div class="salary-kpis" id="salaryKpis"></div>
+  <div id="salaryRulesNote" class="salary-note"></div>
+  <h2 style="font-size:16px;margin:18px 0 8px">Начисления и потери по сотрудникам</h2>
+  <div id="salaryEmployees"></div>
+</section>
+
 <section id="analytics" class="screen">
   <button class="back" type="button" data-go="menu">← В рабочее меню</button>
   <div class="crumb" id="analyticsCrumb"></div>
@@ -348,7 +384,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <div class="analytics-muted">Показатели рассчитываются по загруженным данным. Для годового покрытия в сводных карточках используется последний доступный месячный снимок базы, а график показывает помесячную динамику.</div>
 </section>
 
-<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel · Версия v19</div>
+<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel · Версия 1.18.2</div>
 </main>
 <script src="https://st.max.ru/js/max-web-app.js"></script>
 <script src="config.js"></script>
@@ -379,7 +415,7 @@ const APP_CONFIG = (() => {
   const defaultSections = [
     {id:"visits",name:"Выполнение визитов",icon:"✓",hint:"План и фактическое выполнение"},
     {id:"rejected",name:"Отклонённые визиты",icon:"!",hint:"Причины и список отклонений"},
-    {id:"salary",name:"Зарплата",icon:"₽",hint:"Личные начисления сотрудника"},
+    {id:"salary",name:"Зарплата",icon:"₽",hint:"Начисления и потери по сотрудникам"},
     {id:"extra",name:"Дополнительный раздел",icon:"+",hint:"Резерв для будущей функции"}
   ];
   return {...source, projects, sections:Array.isArray(source.sections) && source.sections.length ? source.sections : defaultSections};
@@ -505,6 +541,12 @@ function openSection(section) {
     show("rejected");
     return;
   }
+  if (section.id === "salary") {
+    byId("salaryCrumb").textContent = `${selectedProject.name} · ${selectedCity === ALL_CITIES ? "Все города" : selectedCity}`;
+    renderSalaryDashboard();
+    show("salary");
+    return;
+  }
   byId("detailText").textContent = section.description || section.hint ||
     "Раздел будет подключён на следующем этапе.";
   show("detail");
@@ -573,7 +615,8 @@ function renderVisitDashboard() {
   }
   const selectedMonth = monthSelect.value;
   const monthRows = selectedMonth ? all.filter(r => `${r.year}-${r.month}` === selectedMonth) : [];
-  const weeks = [...new Set(monthRows.map(r => r.week))].sort((a,b)=>a-b);
+  const selectedYear = selectedMonth ? Number(selectedMonth.split("-")[0]) : null;
+  const weeks = [...new Set(monthRows.map(r => Number(r.week)).filter(Number.isFinite))].sort((a,b)=>a-b);
   const previousWeek = weekSelect.value;
   weekSelect.replaceChildren();
   const allOpt = document.createElement("option");
@@ -590,7 +633,12 @@ function renderVisitDashboard() {
     weekSelect.value = "all";
   }
   const chosenWeek = weekSelect.value;
-  const rows = chosenWeek === "all" ? monthRows : monthRows.filter(r => r.week === +chosenWeek);
+  // При выборе недели показываем её целиком по ISO-году и номеру недели,
+  // даже если часть визитов относится к соседнему календарному месяцу.
+  const selectedWeekYear = chosenWeek === "all" ? selectedYear : Number((monthRows.find(r => Number(r.week) === Number(chosenWeek)) || {}).weekYear ?? selectedYear);
+  const rows = chosenWeek === "all"
+    ? monthRows
+    : all.filter(r => Number(r.weekYear ?? r.year) === selectedWeekYear && Number(r.week) === Number(chosenWeek));
   const plan = rows.reduce((s,r)=>s+(Number(r.plan)||0),0);
   const fact = rows.reduce((s,r)=>s+(Number(r.fact)||0),0);
   const pct = plan ? fact / plan * 100 : 0;
@@ -607,9 +655,8 @@ function renderVisitDashboard() {
   groups.replaceChildren();
   let renderedCities = 0;
   cityNames.forEach(city => {
-    const cityMonthRows = monthRows.filter(r => r.city === city);
     const cityRows = rows.filter(r => r.city === city);
-    const activeNames = new Set(cityMonthRows.map(r => String(r.merchandiser || "").trim()).filter(Boolean));
+    const activeNames = new Set(cityRows.map(r => String(r.merchandiser || "").trim()).filter(Boolean));
     // Для города без фактических строк выбранного месяца сотрудников не показываем.
     const people = new Map();
     activeNames.forEach(name => people.set(name, {name, plan:0, fact:0}));
@@ -683,15 +730,15 @@ function renderCoverageDashboard() {
   const now = new Date(), currentMonthKey = `${now.getFullYear()}-${now.getMonth()+1}`;
   const monthNames = ["","Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
   monthSelect.replaceChildren();
+  const allBaseOpt = document.createElement("option"); allBaseOpt.value = "all"; allBaseOpt.textContent = "Вся база из файла"; monthSelect.append(allBaseOpt);
   months.forEach(key => {
     const [year, month] = key.split("-"); const opt = document.createElement("option");
     opt.value = key; opt.textContent = `${monthNames[+month]} ${year}`; monthSelect.append(opt);
   });
-  if (months.includes(previousMonth)) monthSelect.value = previousMonth;
-  else if (months.includes(currentMonthKey)) monthSelect.value = currentMonthKey;
-  else if (months.length) monthSelect.value = months[months.length - 1];
+  if (previousMonth === "all" || months.includes(previousMonth)) monthSelect.value = previousMonth;
+  else monthSelect.value = "all";
   const selectedMonth = monthSelect.value;
-  const monthRows = selectedMonth ? source.filter(r => `${r.year}-${r.month}` === selectedMonth) : [];
+  const monthRows = selectedMonth === "all" ? source : source.filter(r => `${r.year}-${r.month}` === selectedMonth);
   const weeks = [...new Set(monthRows.map(r => Number(r.week)).filter(Number.isFinite))].sort((a,b)=>a-b);
   const previousWeek = weekSelect.value; weekSelect.replaceChildren();
   const allOpt = document.createElement("option"); allOpt.value = "all"; allOpt.textContent = "Весь месяц"; weekSelect.append(allOpt);
@@ -701,12 +748,15 @@ function renderCoverageDashboard() {
   else weekSelect.value = "all";
 
   const selectedWeek = weekSelect.value;
-  const rawRows = selectedWeek === "all" ? monthRows : monthRows.filter(r => Number(r.week) === Number(selectedWeek));
+  const selectedWeekRow = selectedWeek === "all" ? null : monthRows.find(r => Number(r.week) === Number(selectedWeek));
+  const selectedWeekYear = selectedWeekRow ? Number(selectedWeekRow.weekYear ?? selectedWeekRow.year) : null;
+  // Переходящая неделя выбирается целиком, даже если часть строк относится к соседнему месяцу.
+  const rawRows = selectedWeek === "all" ? monthRows : source.filter(r => Number(r.weekYear ?? r.year) === selectedWeekYear && Number(r.week) === Number(selectedWeek));
   // Дедупликация по проекту, городу и ID ТТ. В помесячном режиме статус «Посещена» сохраняется,
   // если точка была посещена хотя бы в одной недельной записи выбранного месяца.
   const unique = new Map();
   rawRows.forEach(r => {
-    const key = `${r.project}|||${r.city}|||${String(r.ttId).trim().toLowerCase()}`;
+    const key = String(r.ttId).trim().toLowerCase();
     if (!unique.has(key)) unique.set(key, {...r, active: !!r.active, visited: !!r.visited});
     else {
       const item = unique.get(key);
@@ -716,18 +766,18 @@ function renderCoverageDashboard() {
   });
   const entries = [...unique.values()];
   const active = entries.filter(r => r.active);
-  const visited = active.filter(r => r.visited);
+  const visited = entries.filter(r => r.visited);
   const coveragePercent = entries.length ? active.length / entries.length * 100 : 0;
   const visitPercent = active.length ? visited.length / active.length * 100 : 0;
   byId("coverageSummary").innerHTML = `
     <div class="metric"><small>Всего уникальных ТТ</small><b>${entries.length}</b></div>
     <div class="metric"><small>Активная база</small><b>${active.length}</b><div class="progress"><span style="width:${Math.min(coveragePercent,100)}%"></span></div><small style="margin-top:5px">${coveragePercent.toFixed(1)}% покрытия</small></div>
-    <div class="metric"><small>Посещено активных</small><b>${visited.length}</b><div class="progress"><span style="width:${Math.min(visitPercent,100)}%"></span></div><small style="margin-top:5px">${visitPercent.toFixed(1)}% посещено</small></div>`;
+    <div class="metric"><small>Посещено ТТ</small><b>${visited.length}</b><div class="progress"><span style="width:${Math.min(visitPercent,100)}%"></span></div><small style="margin-top:5px">${visitPercent.toFixed(1)}% посещено</small></div>`;
 
   const container = byId("coverageCityGroups"); container.replaceChildren();
   if (!entries.length) {
     const empty = document.createElement("div"); empty.className = "coverage-empty";
-    empty.textContent = "За выбранный период нет данных по базе торговых точек. Добавь строки на лист «База ТТ» и загрузи Excel.";
+    empty.textContent = "За выбранный период нет данных по торговым точкам. Проверь столбец «код ТТ» в листе «Свод ХА» и загрузи Excel.";
     container.append(empty); return;
   }
   const cityNames = selectedCity === ALL_CITIES ? selectedProject.cities : [selectedCity];
@@ -735,7 +785,7 @@ function renderCoverageDashboard() {
     const cityRows = entries.filter(r => r.city === city);
     if (!cityRows.length) return;
     const cityActive = cityRows.filter(r => r.active);
-    const cityVisited = cityActive.filter(r => r.visited);
+    const cityVisited = cityRows.filter(r => r.visited);
     const pct = cityRows.length ? cityActive.length / cityRows.length * 100 : 0;
     const visitPct = cityActive.length ? cityVisited.length / cityActive.length * 100 : 0;
     const card = document.createElement("article"); card.className = "coverage-city";
@@ -767,10 +817,19 @@ function aAllData(){return {visits:window.VISIT_DATA||[], rejected:window.REJECT
 function aSelectedProjectNames(){return aVal("aProject")==="__all_projects__"?aProjectNames():[aVal("aProject")];}
 function aFilteredBase(){
  const d=aAllData(), projects=aSelectedProjectNames(), year=aVal("aYear"), month=aVal("aMonth"), week=aVal("aWeek"), city=aVal("aCity"), employee=aVal("aEmployee");
- const common=r=>projects.includes(r.project)&& (year==="all"||String(r.year)===year) && (month==="all"||String(r.month)===month) && (week==="all"||String(r.week)===week) && (city==="all"||r.city===city) && (employee==="all"||r.merchandiser===employee);
- return {visits:d.visits.filter(common), rejected:d.rejected.filter(common), coverage:d.coverage.filter(r=>projects.includes(r.project)&&(year==="all"||String(r.year)===year)&&(month==="all"||String(r.month)===month)&&(week==="all"||String(r.week)===week)&&(city==="all"||r.city===city)), rawCoverage:d.coverage.filter(r=>projects.includes(r.project)&&(year==="all"||String(r.year)===year)&&(city==="all"||r.city===city))};
+ // Если выбрана неделя, месяц не ограничивает визиты: переходящая неделя
+ // показывается целиком. Месячная детализация при этом остаётся календарной.
+ const visitCommon=r=>projects.includes(r.project) &&
+   (week!=="all" ? (year==="all"||String(r.weekYear??r.year)===year) && String(r.week)===week :
+     (year==="all"||String(r.year)===year) && (month==="all"||String(r.month)===month)) &&
+   (city==="all"||r.city===city) && (employee==="all"||r.merchandiser===employee);
+ const coverageCommon=r=>projects.includes(r.project) &&
+   (week!=="all" ? (year==="all"||String(r.weekYear??r.year)===year) && String(r.week)===week :
+     (year==="all"||String(r.year)===year) && (month==="all"||String(r.month)===month)) &&
+   (city==="all"||r.city===city);
+ return {visits:d.visits.filter(visitCommon), rejected:d.rejected.filter(visitCommon), coverage:d.coverage.filter(coverageCommon), rawCoverage:d.coverage.filter(r=>projects.includes(r.project)&&(year==="all"||String(r.year)===year)&&(city==="all"||r.city===city))};
 }
-function aUniqueCoverage(rows){const map=new Map(); rows.forEach(r=>{const key=[r.project,r.city,String(r.ttId).trim().toLowerCase()].join("|||");if(!map.has(key))map.set(key,{...r,active:!!r.active,visited:!!r.visited});else{const x=map.get(key);x.active=x.active||!!r.active;x.visited=x.visited||!!r.visited;}});return [...map.values()];}
+function aUniqueCoverage(rows){const map=new Map(); rows.forEach(r=>{const key=String(r.ttId).trim().toLowerCase();if(!map.has(key))map.set(key,{...r,active:!!r.active,visited:!!r.visited});else{const x=map.get(key);x.active=x.active||!!r.active;x.visited=x.visited||!!r.visited;}});return [...map.values()];}
 function aAggregateVisits(rows){return rows.reduce((o,r)=>{o.plan+=aNum(r.plan);o.fact+=aNum(r.fact);return o;},{plan:0,fact:0});}
 function aPct(n,d){return d?100*n/d:0;}
 function aKpi(label,value,note=""){return `<div class="analytics-kpi"><small>${aEsc(label)}</small><b>${aEsc(value)}</b>${note?`<small>${aEsc(note)}</small>`:""}</div>`;}
@@ -801,10 +860,12 @@ function aInitFilters(){
 }
 function aCoverageMonthRows(rows,year,month){return rows.filter(r=>(year==="all"||String(r.year)===year)&&(month==="all"||String(r.month)===month));}
 function aLatestCoverageMonth(rows){const keys=[...new Set(rows.map(aMonthKey))].sort((a,b)=>{const [ay,am]=a.split("-").map(Number),[by,bm]=b.split("-").map(Number);return ay-by||am-bm;});return keys[keys.length-1]||null;}
-function aCoverageStats(rows){const u=aUniqueCoverage(rows),active=u.filter(r=>r.active),visited=active.filter(r=>r.visited);return {total:u.length,active:active.length,visited:visited.length,pct:aPct(active.length,u.length),visitPct:aPct(visited.length,active.length),entries:u};}
+function aCoverageStats(rows){const u=aUniqueCoverage(rows),active=u.filter(r=>r.active),visited=u.filter(r=>r.visited);return {total:u.length,active:active.length,visited:visited.length,pct:aPct(active.length,u.length),visitPct:aPct(visited.length,active.length),entries:u};}
 function aRenderPulse(base){
  const visits=aAggregateVisits(base.visits), rejected=base.rejected.length;
- const covRows=base.rawCoverage, selectedMonth=aVal("aMonth"), last=selectedMonth==="all"?aLatestCoverageMonth(covRows):(aVal("aYear")==="all"?aLatestCoverageMonth(covRows.filter(r=>String(r.month)===selectedMonth)):`${aVal("aYear")}-${selectedMonth}`), cov=last?aCoverageStats(covRows.filter(r=>aMonthKey(r)===last)):aCoverageStats(base.coverage);
+ const selectedMonth=aVal("aMonth"), selectedWeek=aVal("aWeek");
+ const covRows=selectedWeek!=="all"?base.coverage:(selectedMonth!=="all"?base.coverage:base.rawCoverage);
+ const cov=aCoverageStats(covRows);
  byId("analyticsPulse").innerHTML=[aKpi("Выполнение плана",`${aPct(visits.fact,visits.plan).toFixed(1)}%`,`${visits.fact} из ${visits.plan}`),aKpi("Покрытие ТТ",`${cov.pct.toFixed(1)}%`,`${cov.active} активных из ${cov.total} уникальных ТТ`),aKpi("Посещено, %",`${cov.visitPct.toFixed(1)}%`,`${cov.visited} из ${cov.active} активных ТТ`),aKpi("Фактические визиты",visits.fact),aKpi("Отклонения",rejected)].join("");
 }
 function aMonthlyCoverage(rows){const map=new Map();rows.forEach(r=>{const k=aMonthKey(r);if(!map.has(k))map.set(k,[]);map.get(k).push(r);});return [...map.entries()].sort((a,b)=>{const [ay,am]=a[0].split("-").map(Number),[by,bm]=b[0].split("-").map(Number);return ay-by||am-bm;}).map(([key,rs])=>{const s=aCoverageStats(rs);return {key,label:`${A_MONTHS[+key.split("-")[1]]} ${key.split("-")[0]}`,value:s.pct,extra:`Активных ${s.active}/${s.total}; посещено ${s.visited}/${s.active}`};});}
@@ -839,14 +900,15 @@ function aProjectRejectedCompare(rows){
 }
 function aRenderCoverage(base){
  const periodRows=base.coverage, allYearRows=base.rawCoverage, month=aVal("aMonth");
- const currentKey=month==="all"?aLatestCoverageMonth(allYearRows):null;
- const snapshotRows=month==="all"?(currentKey?allYearRows.filter(r=>aMonthKey(r)===currentKey):periodRows):periodRows;
+ const week=aVal("aWeek"), year=aVal("aYear");
+ const currentKey=month==="all"&&week==="all"?aLatestCoverageMonth(allYearRows):null;
+ const snapshotRows=week!=="all"?periodRows:(month!=="all"?periodRows:allYearRows);
  const stats=aCoverageStats(snapshotRows);
  const cityRows=aCityCoverage(snapshotRows);
  const monthly=aMonthlyCoverage(allYearRows);
- let html=aProjectCoverageCompare(allYearRows)+aCard("Покрытие торговой базы",`<div class="analytics-kpis">${aKpi("Всего уникальных ТТ",stats.total)}${aKpi("Активная база",stats.active)}${aKpi("Посещено ТТ",stats.visited)}${aKpi("Покрытие",`${stats.pct.toFixed(1)}%`)}${aKpi("Посещено, %",`${stats.visitPct.toFixed(1)}%`)}</div>`,month==="all"&&currentKey?`Сводные показатели по последнему снимку: ${A_MONTHS[+currentKey.split("-")[1]]} ${currentKey.split("-")[0]}`:"Покрытие = активные ТТ / все уникальные ТТ. Посещённость = посещённые активные ТТ / активная база.");
+ let html=aProjectCoverageCompare(allYearRows)+aCard("Покрытие торговой базы",`<div class="analytics-kpis">${aKpi("Всего уникальных ТТ",stats.total)}${aKpi("Активная база",stats.active)}${aKpi("Посещено ТТ",stats.visited)}${aKpi("Покрытие",`${stats.pct.toFixed(1)}%`)}${aKpi("Посещено, %",`${stats.visitPct.toFixed(1)}%`)}</div>`,week!=="all"?`Показатели за ${week}-ю неделю ${year==="all"?"":year+" года"}. Переходящая неделя учитывается целиком, без разделения по месяцам.`:(month!=="all"?`Показатели за выбранный календарный месяц.`:"Общая база — все уникальные ТТ из загруженного файла. Покрытие = активные ТТ / все уникальные ТТ. Посещённость = посещённые ТТ / активная база."));
  html+=aCard("Покрытие по городам",aBars(cityRows,{format:v=>`${v.toFixed(1)}%`,kind:"good"}));
- html+=aCard("Динамика покрытия по месяцам",aBars(monthly,{format:v=>`${v.toFixed(1)}%`,kind:"good",on:"month"}),"Покрытие = активные ТТ / все уникальные ТТ. Посещённость = посещённые активные ТТ / активная база.");
+ html+=aCard("Динамика покрытия по месяцам",aBars(monthly,{format:v=>`${v.toFixed(1)}%`,kind:"good",on:"month"}),"Покрытие = активные ТТ / все уникальные ТТ. Посещённость = уникальные посещённые ТТ / активная база.");
  html+=aCoverageYearComparison(base);
  html+=aCard("Детализация базы",`<div class="analytics-table-wrap"><table class="analytics-table"><thead><tr><th>Город</th><th>Всего</th><th>Активных</th><th>Посещено</th><th>Покрытие</th><th>Посещено, %</th></tr></thead><tbody>${cityRows.map(c=>{const rs=stats.entries.filter(r=>r.city===c.key),active=rs.filter(r=>r.active),visited=active.filter(r=>r.visited);return `<tr><td>${aEsc(c.label)}</td><td>${rs.length}</td><td>${active.length}</td><td>${visited.length}</td><td>${aPct(active.length,rs.length).toFixed(1)}%</td><td>${aPct(visited.length,active.length).toFixed(1)}%</td></tr>`}).join("")}</tbody></table></div>`);
  byId("analyticsPanel").innerHTML=html;
@@ -910,6 +972,88 @@ document.querySelectorAll("[data-analytics-tab]").forEach(b=>b.addEventListener(
 byId("analyticsExport").addEventListener("click",aExport);byId("analyticsReset").addEventListener("click",aReset);
 byId("analyticsPanel").addEventListener("click",event=>{const b=event.target.closest("[data-a-drill]");if(!b)return;const type=b.dataset.aDrill,value=b.dataset.aValue;if(type==="city"){byId("aCity").value=value;byId("aEmployee").value="all";}else if(type==="employee"){const parts=value.split(" · ");byId("aEmployee").value=parts[0];if(parts[1])byId("aCity").value=parts[1];}else if(type==="month"){const m=value.split("-");byId("aYear").value=m[0];aInitFilters();byId("aMonth").value=m[1];}aRenderAnalytics();});
 // ------------------ конец аналитики v15 ------------------
+
+
+const SALARY_RULES = {"Пятерочка": {base: 2000, norm: 9, specialEight: true}};
+const salaryRub = value => new Intl.NumberFormat("ru-RU",{style:"currency",currency:"RUB",maximumFractionDigits:2}).format(Number(value)||0);
+const salaryNum = value => Number(value)||0;
+function escapeSalary(value){return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));}
+function salaryKpi(label,value,kind=""){return `<div class="salary-kpi ${kind}"><small>${escapeSalary(label)}</small><b>${escapeSalary(value)}</b></div>`;}
+
+function renderSalaryDashboard() {
+  const raw=window.VISIT_DATA_META?.updatedAt||window.VISIT_DATA_UPDATED_AT||null;
+  const target=byId("salaryUpdatedAt");
+  if(raw&&!Number.isNaN(new Date(raw).getTime())) target.innerHTML=`Последнее обновление данных: <b>${new Intl.DateTimeFormat("ru-RU",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"}).format(new Date(raw))}</b>`;
+  else target.innerHTML='Последнее обновление данных: <b>ожидает загрузки Excel</b>';
+
+  const projectRows=(window.VISIT_DATA||[]).filter(r=>r.project===selectedProject.name&&(selectedCity===ALL_CITIES||r.city===selectedCity));
+  const rejectedAll=(window.REJECTED_VISITS||[]).filter(r=>r.project===selectedProject.name&&(selectedCity===ALL_CITIES||r.city===selectedCity));
+  const monthSelect=byId("salaryMonthFilter");
+  const months=[...new Set([...projectRows.map(r=>`${r.year}-${r.month}`),...rejectedAll.map(r=>`${r.year}-${r.month}`)])].sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}));
+  const previous=monthSelect.value,now=new Date(),current=`${now.getFullYear()}-${now.getMonth()+1}`;
+  const names=["","Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+  monthSelect.replaceChildren();
+  months.forEach(key=>{const [y,m]=key.split("-"),o=document.createElement("option");o.value=key;o.textContent=`${names[Number(m)]} ${y}`;monthSelect.append(o);});
+  if(months.includes(previous))monthSelect.value=previous;else if(months.includes(current))monthSelect.value=current;else if(months.length)monthSelect.value=months[months.length-1];
+  const selected=monthSelect.value;
+  const rows=projectRows.filter(r=>`${r.year}-${r.month}`===selected), rejected=rejectedAll.filter(r=>`${r.year}-${r.month}`===selected);
+  const verifiedDataAvailable=rows.some(r=>r.verified!==undefined&&r.verified!==null);
+  const map=new Map(), get=(city,name)=>`${city}|||${name}`;
+  rows.forEach(r=>{
+    const k=get(r.city,r.merchandiser);
+    if(!map.has(k))map.set(k,{city:r.city,name:r.merchandiser,networks:new Map()});
+    const p=map.get(k),network=r.network||"Не указана";
+    if(!p.networks.has(network))p.networks.set(network,{plan:0,verified:0,rejected:0,hasVerified:false});
+    const b=p.networks.get(network);b.plan+=salaryNum(r.plan);
+    if(r.verified!==undefined&&r.verified!==null){b.verified+=salaryNum(r.verified);b.hasVerified=true;}
+  });
+  rejected.forEach(r=>{
+    const k=get(r.city,r.merchandiser);
+    if(!map.has(k))map.set(k,{city:r.city,name:r.merchandiser,networks:new Map()});
+    const p=map.get(k),network=r.network||"Не указана";
+    if(!p.networks.has(network))p.networks.set(network,{plan:0,verified:0,rejected:0,hasVerified:false});
+    p.networks.get(network).rejected++;
+  });
+  const people=[...map.values()].sort((a,b)=>a.name.localeCompare(b.name,"ru"));
+  let verifiedTotal=0,rejectedTotal=rejected.length,salaryTotal=0,lossTotal=0,unknown=0,verifiedFieldMissing=false;
+  const list=byId("salaryEmployees");list.replaceChildren();
+  people.forEach(p=>{
+    let vTotal=0,rTotal=0,payTotal=0,lossPerson=0,netHtml="";
+    for(const [network,b] of p.networks){
+      vTotal+=b.verified;rTotal+=b.rejected;
+      const rule=SALARY_RULES[network];
+      if(b.verified>0&&!b.hasVerified)verifiedFieldMissing=true;
+      if(rule&&verifiedDataAvailable&&(b.verified>0||b.rejected>0)){
+        const rate=b.verified>rule.norm?rule.base/b.verified:(rule.specialEight&&b.verified===8&&b.plan>=8?rule.base/8:rule.base/rule.norm);
+        const pay=rate*b.verified,loss=rate*b.rejected;
+        payTotal+=pay;lossPerson+=loss;
+        netHtml+=`<div class="salary-network-row"><span>${escapeSalary(network)}</span><span>${b.verified} провер. · ${b.rejected} откл.<br>${salaryRub(pay)} начислено<br>${salaryRub(loss)} потери</span></div><div class="salary-muted">Ставка: ${salaryRub(rate)} за визит</div>`;
+      }else{
+        if(b.verified||b.rejected)unknown++;
+        const reason=!verifiedDataAvailable?"нет отдельного количества проверенных визитов":"тариф для этой сети не настроен";
+        netHtml+=`<div class="salary-network-row"><span>${escapeSalary(network)}</span><span>${b.verified} провер. · ${b.rejected} откл.</span></div><div class="salary-muted">Денежные суммы не рассчитаны: ${reason}</div>`;
+      }
+    }
+    verifiedTotal+=vTotal;salaryTotal+=payTotal;lossTotal+=lossPerson;
+    const card=document.createElement("article");card.className="salary-person";
+    card.innerHTML=`<div class="salary-person-head"><div><div class="salary-person-name">${escapeSalary(p.name)}</div><div class="salary-person-city">${escapeSalary(p.city)}</div></div></div>
+      <div class="salary-person-grid">
+        <div class="salary-person-metric"><small>Проверенные визиты</small><b>${vTotal}</b></div>
+        <div class="salary-person-metric"><small>Отклонённые визиты</small><b>${rTotal}</b></div>
+        <div class="salary-person-metric"><small>Начислено</small><b>${salaryRub(payTotal)}</b></div>
+        <div class="salary-person-metric"><small>Финансовые потери</small><b style="color:#c14b42">${salaryRub(lossPerson)}</b></div>
+      </div><div class="salary-network">${netHtml}</div>`;
+    list.append(card);
+  });
+  byId("salaryKpis").innerHTML=[salaryKpi("Проверенные визиты",verifiedTotal),salaryKpi("Отклонённые визиты",rejectedTotal),salaryKpi("Начислено по настроенным тарифам",salaryRub(salaryTotal)),salaryKpi("Потери по настроенным тарифам",salaryRub(lossTotal),"loss")].join("");
+  const notes=["Правило «Пятёрочка»: 1–9 проверенных визитов — 2 000 / 9 за визит; ровно 8 при плане от 8 — 2 000 / 8; более 9 — 2 000 / фактическое число проверенных визитов. Отклонённые визиты оплачиваются по той же расчётной ставке только в отчёте о потерях."];
+  if(rows.length&&!verifiedDataAvailable)notes.push("В текущей базе нет отдельного количества проверенных визитов за выбранный месяц. Для точного расчёта зарплаты и потерь загрузите исходный Excel «Свод ХА»: бот 2.2.2 распределяет план по месяцу плана, а факт и статусы — по фактической дате создания анкеты; недельный отчёт объединяет переходящую неделю между месяцами.");
+  if(unknown&&verifiedDataAvailable)notes.push("Для сети «Перекрёсток» и других сетей тариф пока не задан. Количество визитов показано, но суммы не рассчитываются.");
+  if(!rows.length&&!rejected.length)notes.push("За выбранный месяц нет данных.");
+  byId("salaryRulesNote").textContent=notes.join(" ");
+}
+byId("salaryMonthFilter")?.addEventListener("change",renderSalaryDashboard);
+
 
 function renderRejectedUpdatedAt() {
   const target = byId("rejectedUpdatedAt");
