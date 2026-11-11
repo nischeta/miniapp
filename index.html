@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f3f5f9">
-<title>Asmia — мини-приложение 1.18.4</title>
+<title>Asmia — мини-приложение 1.18.8</title>
 <style>
 :root{--bg:#f3f5f9;--card:#fff;--ink:#182230;--muted:#758195;--blue:#2869e8;--line:#e7ebf1;--green:#168653;--shadow:0 8px 28px #14213b0c}
 *{box-sizing:border-box}
@@ -391,7 +391,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <div class="analytics-muted">Показатели рассчитываются по загруженным данным. Для годового покрытия в сводных карточках используется последний доступный месячный снимок базы, а график показывает помесячную динамику.</div>
 </section>
 
-<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel · Версия 1.18.5</div>
+<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel · Версия 1.18.8</div>
 </main>
 <script src="https://st.max.ru/js/max-web-app.js"></script>
 <script src="config.js"></script>
@@ -994,11 +994,11 @@ const salaryRub = value => new Intl.NumberFormat("ru-RU",{style:"currency",curre
 const salaryNum = value => Number(value)||0;
 function escapeSalary(value){return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));}
 function salaryKpi(label,value,kind=""){return `<div class="salary-kpi ${kind}"><small>${escapeSalary(label)}</small><b>${escapeSalary(value)}</b></div>`;}
-function salaryRate(rule, checked, plan){
-  if(!rule || checked<=0) return rule ? rule.base/rule.norm : 0;
+function salaryRate(rule, fact, plan){
+  if(!rule || fact<=0) return rule ? rule.base/rule.norm : 0;
   const specialPlanOk = rule.specialMode === "gt" ? plan > rule.specialPlan : plan >= rule.specialPlan;
-  if(checked===rule.specialCount && specialPlanOk) return rule.base/rule.specialCount;
-  if(checked>rule.norm) return rule.base/checked;
+  if(fact===rule.specialCount && specialPlanOk) return rule.base/rule.specialCount;
+  if(fact>rule.norm) return rule.base/fact;
   return rule.base/rule.norm;
 }
 function renderSalaryDashboard() {
@@ -1041,7 +1041,7 @@ function renderSalaryDashboard() {
       vTotal+=tt.verified;rTotal+=tt.rejected;
       if(tt.verified>0&&!tt.hasVerified)verifiedFieldMissing=true;
       if(rule&&tt.ttId&&verifiedDataAvailable){
-        const rate=salaryRate(rule,tt.verified,tt.plan),pay=rate*tt.verified,loss=rate*tt.rejected;
+        const fact=tt.verified+tt.rejected,rate=salaryRate(rule,fact,tt.plan),pay=rate*tt.verified,loss=rate*tt.rejected;
         payTotal+=pay;lossPerson+=loss;
         if(!networks.has(network))networks.set(network,{verified:0,rejected:0,pay:0,loss:0,ttCount:0});
         const n=networks.get(network);n.verified+=tt.verified;n.rejected+=tt.rejected;n.pay+=pay;n.loss+=loss;n.ttCount++;
@@ -1064,7 +1064,16 @@ function renderSalaryDashboard() {
     list.append(card);
   });
   byId("salaryKpis").innerHTML=[salaryKpi("Проверенные визиты",verifiedTotal),salaryKpi("Отклонённые визиты",rejectedTotal),salaryKpi("Начислено по настроенным тарифам",salaryRub(salaryTotal)),salaryKpi("Потери по настроенным тарифам",salaryRub(lossTotal),"loss")].join("");
-  const notes=["Тарифы загружаются администратором через Excel-лист «Тарифы». Расчёт выполняется отдельно по каждой уникальной ТТ за месяц и затем суммируется по сотруднику. «Пятёрочка»: база 2 000 ₽, норма 9 визитов; при 8 проверенных и плане от 8 — ставка 2 000/8; при 1–9 (кроме спецусловия) — 2 000/9; свыше 9 — 2 000/число проверенных. «Перекрёсток»: база 2 500 ₽, норма 13; при 12 проверенных и плане более 12 — ставка 2 500/12; при 1–13 (кроме спецусловия) — 2 500/13; свыше 13 — 2 500/число проверенных. Оплачиваются только «Проверена»; отклонённые показываются отдельно как потери по расчётной ставке ТТ."];
+  const formatTariffAmount=value=>new Intl.NumberFormat("ru-RU",{maximumFractionDigits:2}).format(Number(value)||0);
+  const tariffCondition=rule=>rule.specialMode==="gt"?`план > ${formatTariffAmount(rule.specialPlan)}`:`план ≥ ${formatTariffAmount(rule.specialPlan)}`;
+  const tariffDescription=(network,label)=>{
+    const rule=salaryRuleFor(network,selected);
+    if(!rule)return `«${label}»: тариф для выбранного месяца не настроен.`;
+    const base=formatTariffAmount(rule.base),norm=formatTariffAmount(rule.norm),special=formatTariffAmount(rule.specialCount);
+    return `«${label}»: база ${base} ₽, норма ${norm} визитов; при ${special} проверенных и условии ${tariffCondition(rule)} — ставка ${base}/${special}; при 1–${norm} (кроме спецусловия) — ${base}/${norm}; свыше ${norm} — ${base}/число проверенных.`;
+  };
+  const selectedMonthLabel=selected?(()=>{const [y,m]=selected.split("-");return `${names[Number(m)]} ${y}`;})():"месяц не выбран";
+  const notes=[`Тарифные условия на ${selectedMonthLabel}. Тарифы загружаются администратором через Excel-лист «Тарифы». Расчёт выполняется отдельно по каждой уникальной ТТ за месяц и затем суммируется по сотруднику. Факт для определения ставки = проверенные + отклонённые визиты; оплачиваются только проверенные, отклонённые учитываются как потери. ${tariffDescription("Пятёрочка","Пятёрочка")} ${tariffDescription("Перекрёсток","Перекрёсток")} Оплачиваются только «Проверена»; отклонённые показываются отдельно как потери по расчётной ставке ТТ.`];
   if(rows.length&&!verifiedDataAvailable)notes.push("В текущей базе нет отдельного количества проверенных визитов. Для точного расчёта загрузите исходный Excel «Свод ХА» через бота.");
   if(unknown&&verifiedDataAvailable)notes.push("Для части записей отсутствует поддерживаемый тариф или данные о ТТ; суммы по ним не рассчитаны.");
   if(!rows.length&&!rejected.length)notes.push("За выбранный месяц нет данных.");
@@ -1077,11 +1086,11 @@ function salaryBuildRows(){
  const map=new Map(),key=(r)=>[r.city,r.merchandiser||"Не назначен",salaryCanonicalNetwork(r.network),String(r.ttId||"__unknown__").trim().toLocaleLowerCase("ru")].join("|||");
  rows.forEach(r=>{const k=key(r);if(!map.has(k))map.set(k,{project:r.project,city:r.city,employee:r.merchandiser||"Не назначен",network:salaryCanonicalNetwork(r.network),ttId:r.ttId||"",plan:0,verified:0,rejected:0});const x=map.get(k);x.plan+=salaryNum(r.plan);x.verified+=salaryNum(r.verified);});
  rejected.forEach(r=>{const k=key(r);if(!map.has(k))map.set(k,{project:r.project,city:r.city,employee:r.merchandiser||"Не назначен",network:salaryCanonicalNetwork(r.network),ttId:r.ttId||"",plan:0,verified:0,rejected:0});map.get(k).rejected++;});
- return [...map.values()].map(x=>{const rule=salaryRuleFor(x.network,month),rate=rule?salaryRate(rule,x.verified,x.plan):0;return {...x,base:rule?.base??0,norm:rule?.norm??0,rate,pay:rate*x.verified,loss:rate*x.rejected};});
+ return [...map.values()].map(x=>{const fact=x.verified+x.rejected,rule=salaryRuleFor(x.network,month),rate=rule?salaryRate(rule,fact,x.plan):0;return {...x,fact,base:rule?.base??0,norm:rule?.norm??0,rate,pay:rate*x.verified,loss:rate*x.rejected};});
 }
 function salaryDownloadCsv(filename,rows){const csv="\uFEFF"+rows.map(row=>row.map(v=>'"'+String(v??"").replace(/"/g,'""')+'"').join(";")).join("\r\n");const blob=new Blob([csv],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-function salaryExportDetail(){const data=salaryBuildRows(),out=[["Проект","Город","Сотрудник","Сеть","Код ТТ","План визитов","Проверенные визиты","Отклонённые визиты","Базовая сумма, ₽","Норматив","Ставка за визит, ₽","Начисление, ₽","Потери, ₽"]];data.forEach(x=>out.push([x.project,x.city,x.employee,x.network,x.ttId,x.plan,x.verified,x.rejected,x.base,x.norm,+x.rate.toFixed(4),+x.pay.toFixed(2),+x.loss.toFixed(2)]));salaryDownloadCsv(`Asmia_salary_detail_${byId("salaryMonthFilter").value}.csv`,out);}
-function salaryExportSummary(){const grouped=new Map();salaryBuildRows().forEach(x=>{const k=[x.project,x.city,x.employee].join("|||");if(!grouped.has(k))grouped.set(k,{project:x.project,city:x.city,employee:x.employee,tt:new Set(),plan:0,verified:0,rejected:0,pyat:0,cross:0,loss:0});const a=grouped.get(k);a.tt.add(x.ttId);a.plan+=x.plan;a.verified+=x.verified;a.rejected+=x.rejected;if(x.network==="Пятёрочка")a.pyat+=x.pay;if(x.network==="Перекрёсток")a.cross+=x.pay;a.loss+=x.loss;});const out=[["Проект","Город","Сотрудник","Количество ТТ","План визитов","Фактические проверенные визиты","Отклонённые визиты","Пятёрочка, ₽","Перекрёсток, ₽","Итого зарплата, ₽","Финансовые потери, ₽"]];[...grouped.values()].sort((a,b)=>a.employee.localeCompare(b.employee,"ru")).forEach(a=>out.push([a.project,a.city,a.employee,a.tt.size,a.plan,a.verified,a.rejected,+a.pyat.toFixed(2),+a.cross.toFixed(2),+(a.pyat+a.cross).toFixed(2),+a.loss.toFixed(2)]));salaryDownloadCsv(`Asmia_salary_summary_${byId("salaryMonthFilter").value}.csv`,out);}
+function salaryExportDetail(){const data=salaryBuildRows(),out=[["Проект","Город","Сотрудник","Сеть","Код ТТ","План визитов","Проверенные визиты","Отклонённые визиты","Факт визитов (проверенные + отклонённые)","Базовая сумма, ₽","Норматив","Ставка за визит, ₽","Начисление, ₽","Потери, ₽"]];data.forEach(x=>out.push([x.project,x.city,x.employee,x.network,x.ttId,x.plan,x.verified,x.rejected,x.fact,x.base,x.norm,+x.rate.toFixed(4),+x.pay.toFixed(2),+x.loss.toFixed(2)]));salaryDownloadCsv(`Asmia_salary_detail_${byId("salaryMonthFilter").value}.csv`,out);}
+function salaryExportSummary(){const grouped=new Map();salaryBuildRows().forEach(x=>{const k=[x.project,x.city,x.employee].join("|||");if(!grouped.has(k))grouped.set(k,{project:x.project,city:x.city,employee:x.employee,tt:new Set(),plan:0,verified:0,rejected:0,fact:0,pyat:0,cross:0,loss:0});const a=grouped.get(k);a.tt.add(x.ttId);a.plan+=x.plan;a.verified+=x.verified;a.rejected+=x.rejected;a.fact+=x.fact;if(x.network==="Пятёрочка")a.pyat+=x.pay;if(x.network==="Перекрёсток")a.cross+=x.pay;a.loss+=x.loss;});const out=[["Проект","Город","Сотрудник","Количество ТТ","План визитов","Проверенные визиты","Отклонённые визиты","Факт визитов (проверенные + отклонённые)","Пятёрочка, ₽","Перекрёсток, ₽","Итого зарплата, ₽","Финансовые потери, ₽"]];[...grouped.values()].sort((a,b)=>a.employee.localeCompare(b.employee,"ru")).forEach(a=>out.push([a.project,a.city,a.employee,a.tt.size,a.plan,a.verified,a.rejected,a.fact,+a.pyat.toFixed(2),+a.cross.toFixed(2),+(a.pyat+a.cross).toFixed(2),+a.loss.toFixed(2)]));salaryDownloadCsv(`Asmia_salary_summary_${byId("salaryMonthFilter").value}.csv`,out);}
 byId("salaryMonthFilter")?.addEventListener("change",renderSalaryDashboard);
 byId("salaryExportDetail")?.addEventListener("click",salaryExportDetail);byId("salaryExportSummary")?.addEventListener("click",salaryExportSummary);
 
