@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f3f5f9">
-<title>Asmia — мини-приложение v16</title>
+<title>Asmia — мини-приложение v18</title>
 <style>
 :root{--bg:#f3f5f9;--card:#fff;--ink:#182230;--muted:#758195;--blue:#2869e8;--line:#e7ebf1;--green:#168653;--shadow:0 8px 28px #14213b0c}
 *{box-sizing:border-box}
@@ -100,7 +100,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   .pill {font-size:11px; padding:6px 11px; margin-bottom:14px}
   .back {font-size:14px; margin-bottom:20px}
   .crumb {font-size:13px; margin-bottom:12px}
-  #projectList {display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px;max-width:1100px}
+  #projectList {display:grid;grid-template-columns:1fr;gap:12px;width:100%;max-width:760px}
   #cityList {display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;max-width:1300px}
   .choice {margin:0; min-height:104px; padding:22px; border-radius:17px; gap:17px}
   .choice b {font-size:17px}
@@ -189,7 +189,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
 .analytics-actions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
 .analytics-action{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;color:var(--blue);font:700 12px system-ui;cursor:pointer}
 .analytics-drill{font-size:12px;color:var(--blue);margin-top:8px}
-@media(min-width:600px){.analytics-filters{grid-template-columns:repeat(3,minmax(0,1fr))}.analytics-kpis{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(min-width:600px){#projectList{grid-template-columns:repeat(2,minmax(0,1fr))}.analytics-filters{grid-template-columns:repeat(3,minmax(0,1fr))}.analytics-kpis{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
 </style>
 </head>
@@ -348,7 +348,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <div class="analytics-muted">Показатели рассчитываются по загруженным данным. Для годового покрытия в сводных карточках используется последний доступный месячный снимок базы, а график показывает помесячную динамику.</div>
 </section>
 
-<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel</div>
+<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel · Версия v18</div>
 </main>
 <script src="https://st.max.ru/js/max-web-app.js"></script>
 <script src="config.js"></script>
@@ -358,6 +358,32 @@ document.write('<script src="visits-data.js?ts=' + Date.now() + '"><\/script>');
 </script>
 <script>
 "use strict";
+
+const APP_CONFIG = (() => {
+  const defaults = [
+    {id:"holding_aqua", name:"Холдинг Аква", cities:["Краснодар","Ростов-на-Дону","Воронеж","Самара","Саратов"]},
+    {id:"perspektiva_sm", name:"Перспектива СМ", cities:["Краснодар","Ростов-на-Дону"]}
+  ];
+  let source = {};
+  try {
+    if (typeof CONFIG !== "undefined" && CONFIG && typeof CONFIG === "object") source = CONFIG;
+  } catch (e) {}
+  // Всегда показываем оба проекта. Конфигурация может дополнять города,
+  // но отсутствие проекта в config.js не скрывает его с первого экрана.
+  const configured = Array.isArray(source.projects) ? source.projects : [];
+  const projects = defaults.map(base => {
+    const match = configured.find(p => p && (p.id === base.id || p.name === base.name));
+    const cities = match && Array.isArray(match.cities) && match.cities.length ? match.cities : base.cities;
+    return {...base, ...(match || {}), id:base.id, name:base.name, cities:[...new Set(cities.filter(Boolean))]};
+  });
+  const defaultSections = [
+    {id:"visits",name:"Выполнение визитов",icon:"✓",hint:"План и фактическое выполнение"},
+    {id:"rejected",name:"Отклонённые визиты",icon:"!",hint:"Причины и список отклонений"},
+    {id:"salary",name:"Зарплата",icon:"₽",hint:"Личные начисления сотрудника"},
+    {id:"extra",name:"Дополнительный раздел",icon:"+",hint:"Резерв для будущей функции"}
+  ];
+  return {...source, projects, sections:Array.isArray(source.sections) && source.sections.length ? source.sections : defaultSections};
+})();
 let selectedProject = null;
 let selectedCity = null;
 let selectedSection = null;
@@ -398,7 +424,7 @@ function show(screenId) {
 function renderProjects() {
   const list = byId("projectList");
   list.replaceChildren();
-  CONFIG.projects.forEach(project => {
+  APP_CONFIG.projects.forEach(project => {
     const count = project.cities.length;
     const word = count === 1 ? "город" : (count < 5 ? "города" : "городов");
     const symbol = project.id === "holding_aqua" ? "💧" : "📊";
@@ -422,7 +448,7 @@ function renderMenu() {
   byId("selectedCrumb").textContent = `${selectedProject.name} · ${cityLabel()}`;
   const grid = byId("sectionGrid");
   grid.replaceChildren();
-  CONFIG.sections.forEach(section => {
+  APP_CONFIG.sections.forEach(section => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "action";
@@ -691,11 +717,12 @@ function renderCoverageDashboard() {
   const entries = [...unique.values()];
   const active = entries.filter(r => r.active);
   const visited = active.filter(r => r.visited);
-  const percent = active.length ? visited.length / active.length * 100 : 0;
+  const coveragePercent = entries.length ? active.length / entries.length * 100 : 0;
+  const visitPercent = active.length ? visited.length / active.length * 100 : 0;
   byId("coverageSummary").innerHTML = `
     <div class="metric"><small>Всего уникальных ТТ</small><b>${entries.length}</b></div>
-    <div class="metric"><small>Активная база</small><b>${active.length}</b></div>
-    <div class="metric"><small>Посещено активных</small><b>${visited.length}</b><div class="progress"><span style="width:${Math.min(percent,100)}%"></span></div><small style="margin-top:5px">${percent.toFixed(1)}% покрытия</small></div>`;
+    <div class="metric"><small>Активная база</small><b>${active.length}</b><div class="progress"><span style="width:${Math.min(coveragePercent,100)}%"></span></div><small style="margin-top:5px">${coveragePercent.toFixed(1)}% покрытия</small></div>
+    <div class="metric"><small>Посещено активных</small><b>${visited.length}</b><div class="progress"><span style="width:${Math.min(visitPercent,100)}%"></span></div><small style="margin-top:5px">${visitPercent.toFixed(1)}% посещено</small></div>`;
 
   const container = byId("coverageCityGroups"); container.replaceChildren();
   if (!entries.length) {
@@ -709,18 +736,20 @@ function renderCoverageDashboard() {
     if (!cityRows.length) return;
     const cityActive = cityRows.filter(r => r.active);
     const cityVisited = cityActive.filter(r => r.visited);
-    const pct = cityActive.length ? cityVisited.length / cityActive.length * 100 : 0;
+    const pct = cityRows.length ? cityActive.length / cityRows.length * 100 : 0;
+    const visitPct = cityActive.length ? cityVisited.length / cityActive.length * 100 : 0;
     const card = document.createElement("article"); card.className = "coverage-city";
     const head = document.createElement("div"); head.className = "coverage-city-head";
     const name = document.createElement("span"); name.textContent = city;
-    const rate = document.createElement("span"); rate.textContent = `${pct.toFixed(1)}%`;
+    const rate = document.createElement("span"); rate.textContent = `${pct.toFixed(1)}% покрытия`;
     head.append(name, rate);
     const values = document.createElement("div"); values.className = "coverage-city-values";
     [["Всего",cityRows.length],["Активных",cityActive.length],["Посещено",cityVisited.length]].forEach(([label,value])=>{
       const span=document.createElement("span"); span.textContent=`${label}: `; const b=document.createElement("b"); b.textContent=value; span.append(b); values.append(span);
     });
     const bar = document.createElement("div"); bar.className = "progress"; const fill = document.createElement("span"); fill.style.width = `${Math.min(pct,100)}%`; bar.append(fill);
-    card.append(head, values, bar); container.append(card);
+    const visitNote = document.createElement("small"); visitNote.style.cssText = "display:block;margin-top:7px;color:var(--muted)"; visitNote.textContent = `Посещено: ${visitPct.toFixed(1)}% активной базы`;
+    card.append(head, values, bar, visitNote); container.append(card);
   });
 }
 
@@ -733,7 +762,7 @@ const aVal = id => byId(id)?.value || "all";
 const aNum = value => Number(value) || 0;
 const aEsc = value => String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 const aMonthKey = r => `${Number(r.year)}-${Number(r.month)}`;
-const aProjectNames = () => (CONFIG?.projects || []).map(p=>p.name);
+const aProjectNames = () => (APP_CONFIG?.projects || []).map(p=>p.name);
 function aAllData(){return {visits:window.VISIT_DATA||[], rejected:window.REJECTED_VISITS||[], coverage:window.TT_COVERAGE_DATA||[], employees:window.VISIT_EMPLOYEES||[]};}
 function aSelectedProjectNames(){return aVal("aProject")==="__all_projects__"?aProjectNames():[aVal("aProject")];}
 function aFilteredBase(){
@@ -772,13 +801,13 @@ function aInitFilters(){
 }
 function aCoverageMonthRows(rows,year,month){return rows.filter(r=>(year==="all"||String(r.year)===year)&&(month==="all"||String(r.month)===month));}
 function aLatestCoverageMonth(rows){const keys=[...new Set(rows.map(aMonthKey))].sort((a,b)=>{const [ay,am]=a.split("-").map(Number),[by,bm]=b.split("-").map(Number);return ay-by||am-bm;});return keys[keys.length-1]||null;}
-function aCoverageStats(rows){const u=aUniqueCoverage(rows),active=u.filter(r=>r.active),visited=active.filter(r=>r.visited);return {total:u.length,active:active.length,visited:visited.length,pct:aPct(visited.length,active.length),entries:u};}
+function aCoverageStats(rows){const u=aUniqueCoverage(rows),active=u.filter(r=>r.active),visited=active.filter(r=>r.visited);return {total:u.length,active:active.length,visited:visited.length,pct:aPct(active.length,u.length),visitPct:aPct(visited.length,active.length),entries:u};}
 function aRenderPulse(base){
  const visits=aAggregateVisits(base.visits), rejected=base.rejected.length;
  const covRows=base.rawCoverage, selectedMonth=aVal("aMonth"), last=selectedMonth==="all"?aLatestCoverageMonth(covRows):(aVal("aYear")==="all"?aLatestCoverageMonth(covRows.filter(r=>String(r.month)===selectedMonth)):`${aVal("aYear")}-${selectedMonth}`), cov=last?aCoverageStats(covRows.filter(r=>aMonthKey(r)===last)):aCoverageStats(base.coverage);
- byId("analyticsPulse").innerHTML=[aKpi("Выполнение плана",`${aPct(visits.fact,visits.plan).toFixed(1)}%`,`${visits.fact} из ${visits.plan}`),aKpi("Покрытие ТТ",`${cov.pct.toFixed(1)}%`,`${cov.visited} из ${cov.active} активных ТТ`),aKpi("Фактические визиты",visits.fact),aKpi("Отклонения",rejected)].join("");
+ byId("analyticsPulse").innerHTML=[aKpi("Выполнение плана",`${aPct(visits.fact,visits.plan).toFixed(1)}%`,`${visits.fact} из ${visits.plan}`),aKpi("Покрытие ТТ",`${cov.pct.toFixed(1)}%`,`${cov.active} активных из ${cov.total} уникальных ТТ`),aKpi("Посещено, %",`${cov.visitPct.toFixed(1)}%`,`${cov.visited} из ${cov.active} активных ТТ`),aKpi("Фактические визиты",visits.fact),aKpi("Отклонения",rejected)].join("");
 }
-function aMonthlyCoverage(rows){const map=new Map();rows.forEach(r=>{const k=aMonthKey(r);if(!map.has(k))map.set(k,[]);map.get(k).push(r);});return [...map.entries()].sort((a,b)=>{const [ay,am]=a[0].split("-").map(Number),[by,bm]=b[0].split("-").map(Number);return ay-by||am-bm;}).map(([key,rs])=>{const s=aCoverageStats(rs);return {key,label:`${A_MONTHS[+key.split("-")[1]]} ${key.split("-")[0]}`,value:s.pct,extra:`${s.visited}/${s.active}`};});}
+function aMonthlyCoverage(rows){const map=new Map();rows.forEach(r=>{const k=aMonthKey(r);if(!map.has(k))map.set(k,[]);map.get(k).push(r);});return [...map.entries()].sort((a,b)=>{const [ay,am]=a[0].split("-").map(Number),[by,bm]=b[0].split("-").map(Number);return ay-by||am-bm;}).map(([key,rs])=>{const s=aCoverageStats(rs);return {key,label:`${A_MONTHS[+key.split("-")[1]]} ${key.split("-")[0]}`,value:s.pct,extra:`Активных ${s.active}/${s.total}; посещено ${s.visited}/${s.active}`};});}
 function aMonthlyVisits(rows){const map=new Map();rows.forEach(r=>{const k=aMonthKey(r);if(!map.has(k))map.set(k,{plan:0,fact:0});const x=map.get(k);x.plan+=aNum(r.plan);x.fact+=aNum(r.fact);});return [...map.entries()].sort((a,b)=>{const [ay,am]=a[0].split("-").map(Number),[by,bm]=b[0].split("-").map(Number);return ay-by||am-bm;}).map(([key,x])=>({key,label:`${A_MONTHS[+key.split("-")[1]]} ${key.split("-")[0]}`,value:x.fact,extra:`${x.fact}/${x.plan}`}));}
 function aMonthlyRejected(rows){const map=new Map();rows.forEach(r=>{const k=aMonthKey(r);map.set(k,(map.get(k)||0)+1);});return [...map.entries()].sort((a,b)=>{const [ay,am]=a[0].split("-").map(Number),[by,bm]=b[0].split("-").map(Number);return ay-by||am-bm;}).map(([key,value])=>({key,label:`${A_MONTHS[+key.split("-")[1]]} ${key.split("-")[0]}`,value}));}
 function aCityCoverage(rows){const map=aGroupBy(rows,r=>r.city,()=>({rows:[]}));return [...map.entries()].map(([city,x])=>{const s=aCoverageStats(x.rows);return {key:city,label:city,value:s.pct,extra:`${s.visited}/${s.active}`};}).sort((a,b)=>b.value-a.value);}
@@ -815,11 +844,11 @@ function aRenderCoverage(base){
  const stats=aCoverageStats(snapshotRows);
  const cityRows=aCityCoverage(snapshotRows);
  const monthly=aMonthlyCoverage(allYearRows);
- let html=aProjectCoverageCompare(allYearRows)+aCard("Покрытие торговой базы",`<div class="analytics-kpis">${aKpi("Всего уникальных ТТ",stats.total)}${aKpi("Активная база",stats.active)}${aKpi("Посещено ТТ",stats.visited)}${aKpi("Покрытие",`${stats.pct.toFixed(1)}%`)}</div>`,month==="all"&&currentKey?`Сводные показатели по последнему снимку: ${A_MONTHS[+currentKey.split("-")[1]]} ${currentKey.split("-")[0]}`:"Уникальные торговые точки выбранного периода");
+ let html=aProjectCoverageCompare(allYearRows)+aCard("Покрытие торговой базы",`<div class="analytics-kpis">${aKpi("Всего уникальных ТТ",stats.total)}${aKpi("Активная база",stats.active)}${aKpi("Посещено ТТ",stats.visited)}${aKpi("Покрытие",`${stats.pct.toFixed(1)}%`)}${aKpi("Посещено, %",`${stats.visitPct.toFixed(1)}%`)}</div>`,month==="all"&&currentKey?`Сводные показатели по последнему снимку: ${A_MONTHS[+currentKey.split("-")[1]]} ${currentKey.split("-")[0]}`:"Покрытие = активные ТТ / все уникальные ТТ. Посещённость = посещённые активные ТТ / активная база.");
  html+=aCard("Покрытие по городам",aBars(cityRows,{format:v=>`${v.toFixed(1)}%`,kind:"good"}));
- html+=aCard("Динамика покрытия по месяцам",aBars(monthly,{format:v=>`${v.toFixed(1)}%`,kind:"good",on:"month"}),"Каждая ТТ учитывается один раз в пределах месяца.");
+ html+=aCard("Динамика покрытия по месяцам",aBars(monthly,{format:v=>`${v.toFixed(1)}%`,kind:"good",on:"month"}),"Покрытие = активные ТТ / все уникальные ТТ. Посещённость = посещённые активные ТТ / активная база.");
  html+=aCoverageYearComparison(base);
- html+=aCard("Детализация базы",`<div class="analytics-table-wrap"><table class="analytics-table"><thead><tr><th>Город</th><th>Всего</th><th>Активных</th><th>Посещено</th><th>Покрытие</th></tr></thead><tbody>${cityRows.map(c=>{const rs=stats.entries.filter(r=>r.city===c.key),active=rs.filter(r=>r.active),visited=active.filter(r=>r.visited);return `<tr><td>${aEsc(c.label)}</td><td>${rs.length}</td><td>${active.length}</td><td>${visited.length}</td><td>${aPct(visited.length,active.length).toFixed(1)}%</td></tr>`}).join("")}</tbody></table></div>`);
+ html+=aCard("Детализация базы",`<div class="analytics-table-wrap"><table class="analytics-table"><thead><tr><th>Город</th><th>Всего</th><th>Активных</th><th>Посещено</th><th>Покрытие</th><th>Посещено, %</th></tr></thead><tbody>${cityRows.map(c=>{const rs=stats.entries.filter(r=>r.city===c.key),active=rs.filter(r=>r.active),visited=active.filter(r=>r.visited);return `<tr><td>${aEsc(c.label)}</td><td>${rs.length}</td><td>${active.length}</td><td>${visited.length}</td><td>${aPct(active.length,rs.length).toFixed(1)}%</td><td>${aPct(visited.length,active.length).toFixed(1)}%</td></tr>`}).join("")}</tbody></table></div>`);
  byId("analyticsPanel").innerHTML=html;
 }
 function aRenderVisits(base){
@@ -960,9 +989,8 @@ byId("rejectedMonthFilter").addEventListener("change",renderRejectedDashboard);
 byId("rejectedWeekFilter").addEventListener("change",renderRejectedDashboard);
 byId("rejectedBackToEmployees").addEventListener("click",()=>{byId("rejectedDetailView").hidden=true;byId("rejectedEmployeeView").hidden=false;});
 
-// Старые фильтры покрытия могут отсутствовать в новой разметке v15.
-if (byId("coverageMonthFilter")) byId("coverageMonthFilter").addEventListener("change", renderCoverageDashboard);
-if (byId("coverageWeekFilter")) byId("coverageWeekFilter").addEventListener("change", renderCoverageDashboard);
+byId("coverageMonthFilter").addEventListener("change", renderCoverageDashboard);
+byId("coverageWeekFilter").addEventListener("change", renderCoverageDashboard);
 
 byId("monthFilter").addEventListener("change", renderVisitDashboard);
 byId("weekFilter").addEventListener("change", renderVisitDashboard);
@@ -984,7 +1012,7 @@ document.addEventListener("click", event => {
   const action = button.dataset.action;
   const value = button.dataset.value;
   if (action === "project") {
-    selectedProject = CONFIG.projects.find(project => project.id === value);
+    selectedProject = APP_CONFIG.projects.find(project => project.id === value);
     if (!selectedProject) return;
     selectedCity = null;
     renderCities();
@@ -994,7 +1022,7 @@ document.addEventListener("click", event => {
     renderMenu();
     show("menu");
   } else if (action === "section") {
-    const section = CONFIG.sections.find(item => item.id === value);
+    const section = APP_CONFIG.sections.find(item => item.id === value);
     if (section) openSection(section);
   } else if (action === "analytics") {
     aOpenAnalytics();
