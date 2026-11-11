@@ -1,6 +1,6 @@
 // Файл формируется ботом Asmia 2.2.2 после подтверждённой загрузки Excel.
 window.VISIT_DATA_META = {
-  "updatedAt": "2026-11-11T07:24:14+00:00",
+  "updatedAt": "2026-11-11T07:43:28+00:00",
   "sourceFile": "plan.xlsx",
   "recordCount": 417,
   "employeeCount": 45,
@@ -9,7 +9,7 @@ window.VISIT_DATA_META = {
   "uniqueTtCount": 633,
   "activeTtCount": 475,
   "visitedTtCount": 464,
-  "verifiedCount": 4937
+  "verifiedCount": 4971
 };
 window.VISIT_DATA = [
   {
@@ -5258,7 +5258,7 @@ window.VISIT_DATA = [
     "merchandiser": "Неклюдова Анастасия Игоревна",
     "network": "Пятерочка",
     "plan": 100,
-    "fact": 24,
+    "fact": 26,
     "verified": 23,
     "rejected": 1
   },
@@ -5272,7 +5272,7 @@ window.VISIT_DATA = [
     "merchandiser": "Неклюдов Никита Игоревич",
     "network": "Пятерочка",
     "plan": 82,
-    "fact": 14,
+    "fact": 16,
     "verified": 14,
     "rejected": 0
   },
@@ -5357,7 +5357,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "plan": 64,
     "fact": 26,
-    "verified": 18,
+    "verified": 26,
     "rejected": 0
   },
   {
@@ -5371,7 +5371,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "plan": 76,
     "fact": 10,
-    "verified": 6,
+    "verified": 10,
     "rejected": 0
   },
   {
@@ -5399,7 +5399,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "plan": 40,
     "fact": 9,
-    "verified": 5,
+    "verified": 9,
     "rejected": 0
   },
   {
@@ -5413,7 +5413,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "plan": 50,
     "fact": 18,
-    "verified": 6,
+    "verified": 18,
     "rejected": 0
   },
   {
@@ -5595,7 +5595,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "plan": 20,
     "fact": 7,
-    "verified": 6,
+    "verified": 7,
     "rejected": 0
   },
   {
@@ -5622,7 +5622,7 @@ window.VISIT_DATA = [
     "merchandiser": "Кандя Татьяна Юрьевна",
     "network": "Пятерочка",
     "plan": 12,
-    "fact": 6,
+    "fact": 7,
     "verified": 6,
     "rejected": 0
   },
@@ -5637,7 +5637,7 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "plan": 12,
     "fact": 4,
-    "verified": 2,
+    "verified": 4,
     "rejected": 0
   },
   {
@@ -5651,7 +5651,7 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "plan": 9,
     "fact": 3,
-    "verified": 2,
+    "verified": 3,
     "rejected": 0
   },
   {
@@ -5679,7 +5679,7 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "plan": 6,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -5749,7 +5749,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "plan": 4,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -7923,7 +7923,7 @@ window.REJECTED_VISITS = [
     "visitDate": "2026-11-09T12:22",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Революции 1905 года ул, 31Г",
-    "comment": "Товар не выставлен, работа не проводилась"
+    "comment": ""
   },
   {
     "project": "Холдинг Аква",
@@ -7936,7 +7936,7 @@ window.REJECTED_VISITS = [
     "visitDate": "2026-11-10T17:01",
     "network": "Пятерочка",
     "address": "Самарская обл, Самара г, Галактионовская ул, 35",
-    "comment": "В отчете нет фото полок с товаром"
+    "comment": ""
   },
   {
     "project": "Холдинг Аква",
@@ -7949,7 +7949,7 @@ window.REJECTED_VISITS = [
     "visitDate": "2026-11-09T18:24",
     "network": "Пятерочка",
     "address": "Саратовская обл, Саратов г, Танкистов ул, 28",
-    "comment": "Товар выставлен поверх другого"
+    "comment": ""
   }
 ];
 window.TT_COVERAGE_DATA = [
@@ -93725,7 +93725,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Олеко Дундича ул, 13",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -94167,7 +94167,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Грузинская ул, 37А",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -95220,7 +95220,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Смирнова пер, 8А",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
