@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "publishedAt": "2026-11-11",
+  "projects": {
+    "holding_aqua": {
+      "name": "Холдинг Аква",
+      "current": {
+        "version": "1.0",
+        "date": "2026-11-11",
+        "documentDate": "2026-11-04",
+        "title": "Рекомендации по выкладке ассортимента",
+        "file": "standards/holding-aqua/v1.0_2026-11-11.pdf",
+        "pages": 11
+      },
+      "archive": []
+    },
+    "perspektiva_sm": {
+      "name": "Перспектива СМ",
+      "current": {
+        "version": "1.0",
+        "date": "2026-11-11",
+        "documentDate": "2026-10-08",
+        "title": "Стандарты Перспектива СМ",
+        "file": "standards/perspektiva-sm/v1.0_2026-11-11.pdf",
+        "pages": 16
+      },
+      "archive": []
+    }
+  }
+}
