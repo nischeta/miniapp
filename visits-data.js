@@ -1,6 +1,6 @@
 // Файл формируется ботом Asmia 2.2.5 после подтверждённой загрузки Excel.
 window.VISIT_DATA_META = {
-  "updatedAt": "2026-11-11T09:31:00+00:00",
+  "updatedAt": "2026-11-11T09:33:28+00:00",
   "sourceFile": "plan.xlsx",
   "recordCount": 3796,
   "employeeCount": 45,
@@ -152589,6 +152589,34 @@ window.SALARY_TARIFFS = {
     "specialMode": "gte"
   },
   "2027-11|||Перекрёсток": {
+    "base": 250.0,
+    "norm": 13,
+    "specialCount": 12,
+    "specialPlan": 12,
+    "specialMode": "gt"
+  },
+  "2026-8|||Пятёрочка": {
+    "base": 2000.0,
+    "norm": 9,
+    "specialCount": 8,
+    "specialPlan": 8,
+    "specialMode": "gte"
+  },
+  "2026-8|||Перекрёсток": {
+    "base": 2500.0,
+    "norm": 13,
+    "specialCount": 12,
+    "specialPlan": 12,
+    "specialMode": "gt"
+  },
+  "2026-11|||Пятёрочка": {
+    "base": 200.0,
+    "norm": 9,
+    "specialCount": 8,
+    "specialPlan": 8,
+    "specialMode": "gte"
+  },
+  "2026-11|||Перекрёсток": {
     "base": 250.0,
     "norm": 13,
     "specialCount": 12,
