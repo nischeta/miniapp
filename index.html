@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f3f5f9">
-<title>Asmia — мини-приложение 1.18.3</title>
+<title>Asmia — мини-приложение 1.18.4</title>
 <style>
 :root{--bg:#f3f5f9;--card:#fff;--ink:#182230;--muted:#758195;--blue:#2869e8;--line:#e7ebf1;--green:#168653;--shadow:0 8px 28px #14213b0c}
 *{box-sizing:border-box}
@@ -211,6 +211,8 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
 .salary-network-row{display:flex;justify-content:space-between;gap:10px;padding:5px 0}
 .salary-network-row span:last-child{text-align:right;font-weight:700}
 .salary-muted{font-size:11px;color:var(--muted);margin-top:8px}
+#salaryTariffCard input,#salaryTariffCard select{width:100%;min-width:0;border:1px solid var(--line);border-radius:11px;background:#fff;padding:11px;color:var(--ink);font:inherit}
+#salaryTariffCard label{font-size:11px;color:var(--muted);display:block;margin:0 0 5px}
 @media(min-width:600px){.salary-kpis{grid-template-columns:repeat(4,minmax(0,1fr))}#salaryEmployees{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}.salary-person{margin:0}}
 @media(min-width:1200px){#salaryEmployees{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
@@ -347,6 +349,23 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <div class="filters"><div><label for="salaryMonthFilter">Месяц</label><select id="salaryMonthFilter"></select></div></div>
   <div class="salary-kpis" id="salaryKpis"></div>
   <div id="salaryRulesNote" class="salary-note"></div>
+  <div class="card" id="salaryExportCard">
+    <h2 style="font-size:16px;margin:0 0 8px">Выгрузка расчёта</h2>
+    <p class="muted" style="font-size:12px;margin:0 0 12px">Выгрузки учитывают выбранные проект, город и месяц.</p>
+    <button class="action" type="button" id="salaryExportDetail" style="width:100%;min-height:0;margin-bottom:8px"><b>Скачать детальную по ТТ</b><small>План, проверенные и отклонённые визиты, ставка и начисление по каждой торговой точке</small></button>
+    <button class="action" type="button" id="salaryExportSummary" style="width:100%;min-height:0"><b>Скачать сводную по сотрудникам</b><small>Итоги по каждому сотруднику и торговой сети</small></button>
+  </div>
+  <div class="card" id="salaryTariffCard">
+    <h2 style="font-size:16px;margin:0 0 8px">Тарифы и история изменений</h2>
+    <p class="muted" style="font-size:12px;margin:0 0 12px">Настройки применяются только к выбранному месяцу. Прошлые и другие месяцы не меняются.</p>
+    <div class="filters"><div><label for="salaryTariffNetwork">Торговая сеть</label><select id="salaryTariffNetwork"><option value="Пятёрочка">Пятёрочка</option><option value="Перекрёсток">Перекрёсток</option></select></div><div><label for="salaryTariffMonth">Месяц действия</label><input id="salaryTariffMonth" type="text" readonly style="width:100%;border:1px solid var(--line);border-radius:11px;padding:11px;background:#f7f9fc;color:var(--ink)"></div></div>
+    <div class="filters"><div><label for="salaryTariffBase">Базовая сумма, ₽</label><input id="salaryTariffBase" type="number" min="0" step="0.01"></div><div><label for="salaryTariffNorm">Основной норматив, визитов</label><input id="salaryTariffNorm" type="number" min="1" step="1"></div><div><label for="salaryTariffSpecialCount">Спец. количество проверенных</label><input id="salaryTariffSpecialCount" type="number" min="1" step="1"></div><div><label for="salaryTariffSpecialPlan">План для спец. условия</label><input id="salaryTariffSpecialPlan" type="number" min="0" step="1"></div></div>
+    <div class="filters"><div><label for="salaryTariffSpecialMode">Условие плана</label><select id="salaryTariffSpecialMode"><option value="gte">Не меньше (≥)</option><option value="gt">Больше (&gt;)</option></select></div><div style="display:flex;align-items:end"><button type="button" class="action" id="salaryTariffSave" style="width:100%;min-height:0;padding:11px;text-align:center"><b>Сохранить тариф</b></button></div></div>
+    <div class="salary-muted" id="salaryTariffHistory"></div>
+    <div class="filters"><button type="button" class="action" id="salaryTariffExport" style="min-height:0;padding:11px;text-align:center"><b>Экспорт настроек</b></button><button type="button" class="action" id="salaryTariffImportButton" style="min-height:0;padding:11px;text-align:center"><b>Импорт настроек</b></button></div>
+    <input type="file" id="salaryTariffImportFile" accept="application/json,.json" hidden>
+    <div class="salary-muted">Настройки сохраняются в браузере этого устройства. Для переноса на другое устройство используйте экспорт и импорт JSON. Изменение тарифа действует только на выбранный месяц; повторные изменения в этом месяце сохраняются в истории.</div>
+  </div>
   <h2 style="font-size:16px;margin:18px 0 8px">Начисления и потери по сотрудникам</h2>
   <div id="salaryEmployees"></div>
 </section>
@@ -384,7 +403,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <div class="analytics-muted">Показатели рассчитываются по загруженным данным. Для годового покрытия в сводных карточках используется последний доступный месячный снимок базы, а график показывает помесячную динамику.</div>
 </section>
 
-<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel · Версия 1.18.3</div>
+<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel · Версия 1.18.4</div>
 </main>
 <script src="https://st.max.ru/js/max-web-app.js"></script>
 <script src="config.js"></script>
@@ -980,6 +999,12 @@ const SALARY_RULES = {
   "Перекресток": {base: 2500, norm: 13, specialCount: 12, specialPlan: 12, specialMode: "gt"},
   "Перекрёсток": {base: 2500, norm: 13, specialCount: 12, specialPlan: 12, specialMode: "gt"}
 };
+const SALARY_TARIFF_STORAGE_KEY = "asmia_salary_tariffs_v1";
+function salaryTariffStore(){try{return JSON.parse(localStorage.getItem(SALARY_TARIFF_STORAGE_KEY)||"{}");}catch(_){return {};}}
+function salaryCanonicalNetwork(name){return /перекр/i.test(String(name||""))?"Перекрёсток":/пятер|пятёр/i.test(String(name||""))?"Пятёрочка":String(name||"");}
+function salaryRuleFor(network, month){const canonical=salaryCanonicalNetwork(network),base=SALARY_RULES[canonical]||SALARY_RULES[network];if(!base)return null;const saved=salaryTariffStore()[`${selectedProject.name}|||${canonical}|||${month}`];const active=saved?.current||saved;return active?{...base,...active}:base;}
+function salarySaveTariff(network,month,rule){const store=salaryTariffStore(),key=`${selectedProject.name}|||${salaryCanonicalNetwork(network)}|||${month}`,old=store[key]||{},current=old.current||old,history=Array.isArray(old.history)?old.history:[];if(current&&current.updatedAt)history.push({...current,archivedAt:new Date().toISOString()});store[key]={current:{...rule,updatedAt:new Date().toISOString()},history};localStorage.setItem(SALARY_TARIFF_STORAGE_KEY,JSON.stringify(store));}
+
 const salaryRub = value => new Intl.NumberFormat("ru-RU",{style:"currency",currency:"RUB",maximumFractionDigits:2}).format(Number(value)||0);
 const salaryNum = value => Number(value)||0;
 function escapeSalary(value){return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));}
@@ -1027,7 +1052,7 @@ function renderSalaryDashboard() {
   people.forEach(p=>{
     let vTotal=0,rTotal=0,payTotal=0,lossPerson=0;const networks=new Map();
     for(const tt of p.ttGroups.values()){
-      const network=tt.network,rule=SALARY_RULES[network];
+      const network=tt.network,rule=salaryRuleFor(network,selected);
       vTotal+=tt.verified;rTotal+=tt.rejected;
       if(tt.verified>0&&!tt.hasVerified)verifiedFieldMissing=true;
       if(rule&&tt.ttId&&verifiedDataAvailable){
@@ -1059,8 +1084,28 @@ function renderSalaryDashboard() {
   if(unknown&&verifiedDataAvailable)notes.push("Для части записей отсутствует поддерживаемый тариф или данные о ТТ; суммы по ним не рассчитаны.");
   if(!rows.length&&!rejected.length)notes.push("За выбранный месяц нет данных.");
   byId("salaryRulesNote").textContent=notes.join(" ");
+  if(typeof salaryTariffEditorLoad==="function")salaryTariffEditorLoad();
 }
-byId("salaryMonthFilter")?.addEventListener("change",renderSalaryDashboard);
+function salaryBuildRows(){
+ const projectRows=(window.VISIT_DATA||[]).filter(r=>r.project===selectedProject.name&&(selectedCity===ALL_CITIES||r.city===selectedCity));
+ const rejectedAll=(window.REJECTED_VISITS||[]).filter(r=>r.project===selectedProject.name&&(selectedCity===ALL_CITIES||r.city===selectedCity));
+ const month=byId("salaryMonthFilter").value,rows=projectRows.filter(r=>`${r.year}-${r.month}`===month),rejected=rejectedAll.filter(r=>`${r.year}-${r.month}`===month);
+ const map=new Map(),key=(r)=>[r.city,r.merchandiser||"Не назначен",salaryCanonicalNetwork(r.network),String(r.ttId||"__unknown__").trim().toLocaleLowerCase("ru")].join("|||");
+ rows.forEach(r=>{const k=key(r);if(!map.has(k))map.set(k,{project:r.project,city:r.city,employee:r.merchandiser||"Не назначен",network:salaryCanonicalNetwork(r.network),ttId:r.ttId||"",plan:0,verified:0,rejected:0});const x=map.get(k);x.plan+=salaryNum(r.plan);x.verified+=salaryNum(r.verified);});
+ rejected.forEach(r=>{const k=key(r);if(!map.has(k))map.set(k,{project:r.project,city:r.city,employee:r.merchandiser||"Не назначен",network:salaryCanonicalNetwork(r.network),ttId:r.ttId||"",plan:0,verified:0,rejected:0});map.get(k).rejected++;});
+ return [...map.values()].map(x=>{const rule=salaryRuleFor(x.network,month),rate=rule?salaryRate(rule,x.verified,x.plan):0;return {...x,base:rule?.base??0,norm:rule?.norm??0,rate,pay:rate*x.verified,loss:rate*x.rejected};});
+}
+function salaryDownloadCsv(filename,rows){const csv="\uFEFF"+rows.map(row=>row.map(v=>'"'+String(v??"").replace(/"/g,'""')+'"').join(";")).join("\r\n");const blob=new Blob([csv],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function salaryExportDetail(){const data=salaryBuildRows(),out=[["Проект","Город","Сотрудник","Сеть","Код ТТ","План визитов","Проверенные визиты","Отклонённые визиты","Базовая сумма, ₽","Норматив","Ставка за визит, ₽","Начисление, ₽","Потери, ₽"]];data.forEach(x=>out.push([x.project,x.city,x.employee,x.network,x.ttId,x.plan,x.verified,x.rejected,x.base,x.norm,+x.rate.toFixed(4),+x.pay.toFixed(2),+x.loss.toFixed(2)]));salaryDownloadCsv(`Asmia_salary_detail_${byId("salaryMonthFilter").value}.csv`,out);}
+function salaryExportSummary(){const grouped=new Map();salaryBuildRows().forEach(x=>{const k=[x.project,x.city,x.employee].join("|||");if(!grouped.has(k))grouped.set(k,{project:x.project,city:x.city,employee:x.employee,tt:new Set(),plan:0,verified:0,rejected:0,pyat:0,cross:0,loss:0});const a=grouped.get(k);a.tt.add(x.ttId);a.plan+=x.plan;a.verified+=x.verified;a.rejected+=x.rejected;if(x.network==="Пятёрочка")a.pyat+=x.pay;if(x.network==="Перекрёсток")a.cross+=x.pay;a.loss+=x.loss;});const out=[["Проект","Город","Сотрудник","Количество ТТ","План визитов","Фактические проверенные визиты","Отклонённые визиты","Пятёрочка, ₽","Перекрёсток, ₽","Итого зарплата, ₽","Финансовые потери, ₽"]];[...grouped.values()].sort((a,b)=>a.employee.localeCompare(b.employee,"ru")).forEach(a=>out.push([a.project,a.city,a.employee,a.tt.size,a.plan,a.verified,a.rejected,+a.pyat.toFixed(2),+a.cross.toFixed(2),+(a.pyat+a.cross).toFixed(2),+a.loss.toFixed(2)]));salaryDownloadCsv(`Asmia_salary_summary_${byId("salaryMonthFilter").value}.csv`,out);}
+function salaryTariffEditorLoad(){const month=byId("salaryMonthFilter").value;byId("salaryTariffMonth").value=month||"—";const network=byId("salaryTariffNetwork").value,rule=salaryRuleFor(network,month)||SALARY_RULES[network];if(!rule)return;byId("salaryTariffBase").value=rule.base;byId("salaryTariffNorm").value=rule.norm;byId("salaryTariffSpecialCount").value=rule.specialCount;byId("salaryTariffSpecialPlan").value=rule.specialPlan;byId("salaryTariffSpecialMode").value=rule.specialMode;const store=salaryTariffStore(),prefix=`${selectedProject.name}|||${salaryCanonicalNetwork(network)}|||`;const history=Object.entries(store).filter(([k])=>k.startsWith(prefix)).sort(([a],[b])=>a.localeCompare(b));const lines=[];history.forEach(([k,v])=>{const active=v.current||v;if(active.updatedAt)lines.push(`${k.slice(prefix.length)} — сейчас: ${active.base} ₽ / ${active.norm} виз. (${new Date(active.updatedAt).toLocaleString("ru-RU")})`);(v.history||[]).forEach(h=>lines.push(`${k.slice(prefix.length)} — прежнее: ${h.base} ₽ / ${h.norm} виз. (${new Date(h.updatedAt).toLocaleString("ru-RU")})`));});byId("salaryTariffHistory").textContent=lines.length?"История изменений: "+lines.join("; "):"Для этой сети изменения ещё не сохранялись. Используются исходные тарифы.";}
+function salaryTariffSaveCurrent(){const month=byId("salaryMonthFilter").value,network=byId("salaryTariffNetwork").value,rule={base:Number(byId("salaryTariffBase").value),norm:Number(byId("salaryTariffNorm").value),specialCount:Number(byId("salaryTariffSpecialCount").value),specialPlan:Number(byId("salaryTariffSpecialPlan").value),specialMode:byId("salaryTariffSpecialMode").value};if(!month||Object.values(rule).some(v=>typeof v==="number"&&(!Number.isFinite(v)||v<0))||rule.base<=0||rule.norm<1||rule.specialCount<1){alert("Проверьте значения тарифа: сумма должна быть больше нуля, нормативы — целыми положительными числами.");return;}salarySaveTariff(network,month,rule);salaryTariffEditorLoad();renderSalaryDashboard();alert(`Тариф ${network} сохранён только для ${month}. Другие месяцы не изменены.`);}
+function salaryTariffExport(){const blob=new Blob([JSON.stringify({format:"asmia-salary-tariffs-v1",tariffs:salaryTariffStore()},null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="Asmia_salary_tariffs_backup.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function salaryTariffImport(file){const reader=new FileReader();reader.onload=()=>{try{const data=JSON.parse(reader.result);if(data.format!=="asmia-salary-tariffs-v1"||!data.tariffs||typeof data.tariffs!=="object")throw new Error("Неверный формат файла");localStorage.setItem(SALARY_TARIFF_STORAGE_KEY,JSON.stringify(data.tariffs));salaryTariffEditorLoad();renderSalaryDashboard();alert("Настройки тарифов импортированы.");}catch(e){alert("Не удалось импортировать настройки: "+e.message);}};reader.readAsText(file);}
+byId("salaryMonthFilter")?.addEventListener("change",()=>{renderSalaryDashboard();salaryTariffEditorLoad();});
+byId("salaryExportDetail")?.addEventListener("click",salaryExportDetail);byId("salaryExportSummary")?.addEventListener("click",salaryExportSummary);
+byId("salaryTariffNetwork")?.addEventListener("change",salaryTariffEditorLoad);byId("salaryTariffSave")?.addEventListener("click",salaryTariffSaveCurrent);byId("salaryTariffExport")?.addEventListener("click",salaryTariffExport);byId("salaryTariffImportButton")?.addEventListener("click",()=>byId("salaryTariffImportFile").click());byId("salaryTariffImportFile")?.addEventListener("change",e=>{if(e.target.files?.[0])salaryTariffImport(e.target.files[0]);e.target.value="";});
+
 
 
 function renderRejectedUpdatedAt() {
