@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f3f5f9">
-<title>Asmia — мини-приложение 1.18.10</title>
+<title>Asmia — мини-приложение 1.18.11</title>
 <style>
 :root{--bg:#f3f5f9;--card:#fff;--ink:#182230;--muted:#758195;--blue:#2869e8;--line:#e7ebf1;--green:#168653;--shadow:0 8px 28px #14213b0c}
 *{box-sizing:border-box}
@@ -404,7 +404,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <div class="analytics-muted">Показатели рассчитываются по загруженным данным. Для годового покрытия в сводных карточках используется последний доступный месячный снимок базы, а график показывает помесячную динамику.</div>
 </section>
 
-<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel · Версия 1.18.10</div>
+<div class="footer">Asmia · Аналитика и план визитов · Источник данных: Excel · Версия 1.18.11</div>
 </main>
 <script src="https://st.max.ru/js/max-web-app.js"></script>
 <script src="config.js"></script>
@@ -504,7 +504,10 @@ function renderMenu() {
   byId("selectedCrumb").textContent = `${selectedProject.name} · ${cityLabel()}`;
   const grid = byId("sectionGrid");
   grid.replaceChildren();
-  APP_CONFIG.sections.forEach(section => {
+  const availableSections = APP_CONFIG.sections.filter(section =>
+    section.id !== "salary" || selectedProject.id === "holding_aqua"
+  );
+  availableSections.forEach(section => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "action";
@@ -562,6 +565,10 @@ function openSection(section) {
     return;
   }
   if (section.id === "salary") {
+    if (selectedProject.id !== "holding_aqua") {
+      show("menu");
+      return;
+    }
     byId("salaryCrumb").textContent = `${selectedProject.name} · ${selectedCity === ALL_CITIES ? "Все города" : selectedCity}`;
     renderSalaryDashboard();
     show("salary");
@@ -1021,6 +1028,12 @@ function salaryRate(rule, fact, plan){
   return rule.base/rule.norm;
 }
 function renderSalaryDashboard() {
+  if (selectedProject?.id !== "holding_aqua") {
+    byId("salaryKpis").replaceChildren();
+    byId("salaryEmployees").replaceChildren();
+    byId("salaryRulesNote").textContent = "Для проекта «Перспектива СМ» зарплатный расчёт не применяется.";
+    return;
+  }
   const raw=window.VISIT_DATA_META?.updatedAt||window.VISIT_DATA_UPDATED_AT||null;
   const target=byId("salaryUpdatedAt");
   if(raw&&!Number.isNaN(new Date(raw).getTime())) target.innerHTML=`Последнее обновление данных: <b>${new Intl.DateTimeFormat("ru-RU",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"}).format(new Date(raw))}</b>`;
@@ -1099,6 +1112,7 @@ function renderSalaryDashboard() {
   byId("salaryRulesNote").textContent=notes.join(" ");
 }
 function salaryBuildRows(){
+ if(selectedProject?.id!=="holding_aqua")return [];
  const projectRows=(window.VISIT_DATA||[]).filter(r=>r.project===selectedProject.name&&(selectedCity===ALL_CITIES||r.city===selectedCity));
  const rejectedAll=(window.REJECTED_VISITS||[]).filter(r=>r.project===selectedProject.name&&(selectedCity===ALL_CITIES||r.city===selectedCity));
  const month=byId("salaryMonthFilter").value,rows=projectRows.filter(r=>`${r.year}-${r.month}`===month),rejected=rejectedAll.filter(r=>`${r.year}-${r.month}`===month);
@@ -1108,8 +1122,8 @@ function salaryBuildRows(){
  return [...map.values()].map(x=>{const fact=x.verified+x.rejected,rule=salaryRuleFor(x.network,month),rate=rule?salaryRate(rule,fact,x.plan):0;return {...x,fact,base:rule?.base??0,norm:rule?.norm??0,rate,pay:rate*x.verified,loss:rate*x.rejected};});
 }
 function salaryDownloadCsv(filename,rows){const csv="\uFEFF"+rows.map(row=>row.map(v=>'"'+String(v??"").replace(/"/g,'""')+'"').join(";")).join("\r\n");const blob=new Blob([csv],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-function salaryExportDetail(){const data=salaryBuildRows(),out=[["Проект","Город","Сотрудник","Сеть","Код ТТ","План визитов","Проверенные визиты","Отклонённые визиты","Факт визитов (проверенные + отклонённые)","Базовая сумма, ₽","Норматив","Ставка за визит, ₽","Начисление, ₽","Потери, ₽"]];data.forEach(x=>out.push([x.project,x.city,x.employee,x.network,x.ttId,x.plan,x.verified,x.rejected,x.fact,x.base,x.norm,+x.rate.toFixed(4),+x.pay.toFixed(2),+x.loss.toFixed(2)]));salaryDownloadCsv(`Asmia_salary_detail_${byId("salaryMonthFilter").value}.csv`,out);}
-function salaryExportSummary(){const grouped=new Map();salaryBuildRows().forEach(x=>{const k=[x.project,x.city,x.employee].join("|||");if(!grouped.has(k))grouped.set(k,{project:x.project,city:x.city,employee:x.employee,tt:new Set(),plan:0,verified:0,rejected:0,fact:0,pyat:0,cross:0,loss:0});const a=grouped.get(k);a.tt.add(x.ttId);a.plan+=x.plan;a.verified+=x.verified;a.rejected+=x.rejected;a.fact+=x.fact;if(x.network==="Пятёрочка")a.pyat+=x.pay;if(x.network==="Перекрёсток")a.cross+=x.pay;a.loss+=x.loss;});const out=[["Проект","Город","Сотрудник","Количество ТТ","План визитов","Проверенные визиты","Отклонённые визиты","Факт визитов (проверенные + отклонённые)","Пятёрочка, ₽","Перекрёсток, ₽","Итого зарплата, ₽","Финансовые потери, ₽"]];[...grouped.values()].sort((a,b)=>a.employee.localeCompare(b.employee,"ru")).forEach(a=>out.push([a.project,a.city,a.employee,a.tt.size,a.plan,a.verified,a.rejected,a.fact,+a.pyat.toFixed(2),+a.cross.toFixed(2),+(a.pyat+a.cross).toFixed(2),+a.loss.toFixed(2)]));salaryDownloadCsv(`Asmia_salary_summary_${byId("salaryMonthFilter").value}.csv`,out);}
+function salaryExportDetail(){if(selectedProject?.id!=="holding_aqua")return;const data=salaryBuildRows(),out=[["Проект","Город","Сотрудник","Сеть","Код ТТ","План визитов","Проверенные визиты","Отклонённые визиты","Факт визитов (проверенные + отклонённые)","Базовая сумма, ₽","Норматив","Ставка за визит, ₽","Начисление, ₽","Потери, ₽"]];data.forEach(x=>out.push([x.project,x.city,x.employee,x.network,x.ttId,x.plan,x.verified,x.rejected,x.fact,x.base,x.norm,+x.rate.toFixed(4),+x.pay.toFixed(2),+x.loss.toFixed(2)]));salaryDownloadCsv(`Asmia_salary_detail_${byId("salaryMonthFilter").value}.csv`,out);}
+function salaryExportSummary(){if(selectedProject?.id!=="holding_aqua")return;const grouped=new Map();salaryBuildRows().forEach(x=>{const k=[x.project,x.city,x.employee].join("|||");if(!grouped.has(k))grouped.set(k,{project:x.project,city:x.city,employee:x.employee,tt:new Set(),plan:0,verified:0,rejected:0,fact:0,pyat:0,cross:0,loss:0});const a=grouped.get(k);a.tt.add(x.ttId);a.plan+=x.plan;a.verified+=x.verified;a.rejected+=x.rejected;a.fact+=x.fact;if(x.network==="Пятёрочка")a.pyat+=x.pay;if(x.network==="Перекрёсток")a.cross+=x.pay;a.loss+=x.loss;});const out=[["Проект","Город","Сотрудник","Количество ТТ","План визитов","Проверенные визиты","Отклонённые визиты","Факт визитов (проверенные + отклонённые)","Пятёрочка, ₽","Перекрёсток, ₽","Итого зарплата, ₽","Финансовые потери, ₽"]];[...grouped.values()].sort((a,b)=>a.employee.localeCompare(b.employee,"ru")).forEach(a=>out.push([a.project,a.city,a.employee,a.tt.size,a.plan,a.verified,a.rejected,a.fact,+a.pyat.toFixed(2),+a.cross.toFixed(2),+(a.pyat+a.cross).toFixed(2),+a.loss.toFixed(2)]));salaryDownloadCsv(`Asmia_salary_summary_${byId("salaryMonthFilter").value}.csv`,out);}
 byId("salaryMonthFilter")?.addEventListener("change",renderSalaryDashboard);
 byId("salaryExportDetail")?.addEventListener("click",salaryExportDetail);byId("salaryExportSummary")?.addEventListener("click",salaryExportSummary);
 
