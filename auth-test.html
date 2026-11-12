@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Asmia — тест авторизации MAX</title>
+    <script src="https://st.max.ru/js/max-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 24px;
+            background: #f3f5f8;
+            color: #202938;
+        }
+        .panel {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 24px;
+            background: white;
+            border-radius: 16px;
+        }
+        .status {
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 8px;
+            background: #eef2f6;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <h2>Asmia</h2>
+        <h3>Тест авторизации MAX</h3>
+
+        <div class="status" id="bridge">Проверка MAX Bridge...</div>
+        <div class="status" id="data">Проверка initData...</div>
+        <div class="status" id="user">Проверка пользователя...</div>
+        <div class="status" id="platform">Проверка платформы...</div>
+    </div>
+
+    <script>
+        const bridge = window.WebApp;
+
+        if (!bridge) {
+            document.getElementById("bridge").textContent =
+                "MAX Bridge не обнаружен";
+            document.getElementById("data").textContent =
+                "Нет данных запуска";
+        } else {
+            document.getElementById("bridge").textContent =
+                "MAX Bridge подключён";
+
+            const initData = bridge.initData || "";
+            document.getElementById("data").textContent =
+                initData.length > 0
+                    ? "initData получен. Длина: " + initData.length
+                    : "initData отсутствует";
+
+            const user = bridge.initDataUnsafe?.user;
+
+            document.getElementById("user").textContent =
+                user?.id
+                    ? "Пользователь обнаружен. ID получен."
+                    : "Данные пользователя отсутствуют";
+
+            document.getElementById("platform").textContent =
+                "Платформа: " + (bridge.platform || "не определена");
+        }
+    </script>
+</body>
+</html>
