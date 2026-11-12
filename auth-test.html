@@ -38,6 +38,11 @@
         <div class="status" id="user">Проверка пользователя...</div>
         <div class="status" id="platform">Проверка платформы...</div>
     </div>
+<button id="checkServer">
+    Проверить авторизацию на сервере
+</button>
+
+<div id="serverResult"></div>
 
     <script>
         const bridge = window.WebApp;
@@ -70,3 +75,47 @@
     </script>
 </body>
 </html>
+
+document.getElementById("checkServer").addEventListener("click", async () => {
+    const result = document.getElementById("serverResult");
+    const button = document.getElementById("checkServer");
+
+    if (!bridge || !bridge.initData) {
+        result.textContent = "Нет данных MAX для проверки";
+        return;
+    }
+
+    button.disabled = true;
+    result.textContent = "Проверяем авторизацию...";
+
+    try {
+        const response = await fetch(
+            "http://127.0.0.1:8001/auth/max",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    webapp_data: bridge.initData
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        if (response.ok && data.authenticated) {
+            result.textContent =
+                "Авторизация успешна. ID пользователя: " + data.user_id;
+        } else {
+            result.textContent =
+                "Сервер отклонил авторизацию: " + response.status;
+        }
+
+    } catch (error) {
+        result.textContent =
+            "Нет соединения с тестовым сервером. Проверь его запуск.";
+    } finally {
+        button.disabled = false;
+    }
+});
