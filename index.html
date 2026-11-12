@@ -1161,8 +1161,9 @@ function renderRejectedDashboard() {
   const previousWeek=weekSelect.value; weekSelect.replaceChildren();
   const allOpt=document.createElement("option"); allOpt.value="all"; allOpt.textContent="Весь месяц"; weekSelect.append(allOpt);
   weeks.forEach(w=>{const opt=document.createElement("option");opt.value=String(w);opt.textContent=`${w}-я неделя`;weekSelect.append(opt);});
+  // По умолчанию показываем весь выбранный месяц; ранее выбранную неделю
+  // сохраняем только при повторном обновлении того же месяца.
   if (previousMonth===selectedMonth && (previousWeek==="all" || weeks.includes(+previousWeek))) weekSelect.value=previousWeek;
-  else if (selectedMonth===currentMonthKey && weeks.includes(getCurrentISOWeek(now))) weekSelect.value=String(getCurrentISOWeek(now));
   else weekSelect.value="all";
   const rows=weekSelect.value==="all" ? monthRows : monthRows.filter(r=>Number(r.week)===Number(weekSelect.value));
   byId("rejectedTotal").textContent=String(rows.length);
