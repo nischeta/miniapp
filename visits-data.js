@@ -1,8 +1,8 @@
 // Файл формируется ботом Asmia 2.2.7 после подтверждённой загрузки Excel.
 window.VISIT_DATA_META = {
-  "updatedAt": "2026-11-12T08:08:33+00:00",
+  "updatedAt": "2026-11-12T08:33:12+00:00",
   "sourceFile": "Свод.xlsx",
-  "recordCount": 3908,
+  "recordCount": 3895,
   "employeeCount": 49,
   "rejectedCount": 149,
   "coverageCount": 7340,
@@ -57679,39 +57679,9 @@ window.VISIT_DATA = [
     "week": 46,
     "weekYear": 2026,
     "city": "Ростов-на-Дону",
-    "merchandiser": "Мещеряков Александр Иванович",
-    "network": "Пятерочка",
-    "ttId": "35SD",
-    "plan": 2,
-    "fact": 0,
-    "verified": 0,
-    "rejected": 0
-  },
-  {
-    "project": "Перспектива СМ",
-    "year": 2026,
-    "month": 11,
-    "week": 46,
-    "weekYear": 2026,
-    "city": "Ростов-на-Дону",
     "merchandiser": "Иванов Александр Олегович",
     "network": "Пятерочка",
     "ttId": "7518",
-    "plan": 2,
-    "fact": 0,
-    "verified": 0,
-    "rejected": 0
-  },
-  {
-    "project": "Перспектива СМ",
-    "year": 2026,
-    "month": 11,
-    "week": 46,
-    "weekYear": 2026,
-    "city": "Ростов-на-Дону",
-    "merchandiser": "Мещеряков Александр Иванович",
-    "network": "Пятерочка",
-    "ttId": "300J",
     "plan": 2,
     "fact": 0,
     "verified": 0,
@@ -57769,21 +57739,6 @@ window.VISIT_DATA = [
     "week": 46,
     "weekYear": 2026,
     "city": "Ростов-на-Дону",
-    "merchandiser": "Мещеряков Александр Иванович",
-    "network": "Пятерочка",
-    "ttId": "33AA",
-    "plan": 2,
-    "fact": 0,
-    "verified": 0,
-    "rejected": 0
-  },
-  {
-    "project": "Перспектива СМ",
-    "year": 2026,
-    "month": 11,
-    "week": 46,
-    "weekYear": 2026,
-    "city": "Ростов-на-Дону",
     "merchandiser": "Иванов Александр Олегович",
     "network": "Пятерочка",
     "ttId": "Q663",
@@ -57820,21 +57775,6 @@ window.VISIT_DATA = [
     "plan": 2,
     "fact": 1,
     "verified": 1,
-    "rejected": 0
-  },
-  {
-    "project": "Перспектива СМ",
-    "year": 2026,
-    "month": 11,
-    "week": 46,
-    "weekYear": 2026,
-    "city": "Ростов-на-Дону",
-    "merchandiser": "Мещеряков Александр Иванович",
-    "network": "Пятерочка",
-    "ttId": "398G",
-    "plan": 2,
-    "fact": 0,
-    "verified": 0,
     "rejected": 0
   },
   {
@@ -57964,21 +57904,6 @@ window.VISIT_DATA = [
     "week": 46,
     "weekYear": 2026,
     "city": "Ростов-на-Дону",
-    "merchandiser": "Мещеряков Александр Иванович",
-    "network": "Пятерочка",
-    "ttId": "33SG",
-    "plan": 2,
-    "fact": 0,
-    "verified": 0,
-    "rejected": 0
-  },
-  {
-    "project": "Перспектива СМ",
-    "year": 2026,
-    "month": 11,
-    "week": 46,
-    "weekYear": 2026,
-    "city": "Ростов-на-Дону",
     "merchandiser": "Иванов Александр Олегович",
     "network": "Пятерочка",
     "ttId": "6611",
@@ -58000,21 +57925,6 @@ window.VISIT_DATA = [
     "plan": 2,
     "fact": 1,
     "verified": 1,
-    "rejected": 0
-  },
-  {
-    "project": "Перспектива СМ",
-    "year": 2026,
-    "month": 11,
-    "week": 46,
-    "weekYear": 2026,
-    "city": "Ростов-на-Дону",
-    "merchandiser": "Мещеряков Александр Иванович",
-    "network": "Пятерочка",
-    "ttId": "38BX",
-    "plan": 2,
-    "fact": 0,
-    "verified": 0,
     "rejected": 0
   },
   {
@@ -58072,21 +57982,6 @@ window.VISIT_DATA = [
     "merchandiser": "Иванов Александр Олегович",
     "network": "Пятерочка",
     "ttId": "E108",
-    "plan": 2,
-    "fact": 0,
-    "verified": 0,
-    "rejected": 0
-  },
-  {
-    "project": "Перспектива СМ",
-    "year": 2026,
-    "month": 11,
-    "week": 46,
-    "weekYear": 2026,
-    "city": "Ростов-на-Дону",
-    "merchandiser": "Мещеряков Александр Иванович",
-    "network": "Пятерочка",
-    "ttId": "353C",
     "plan": 2,
     "fact": 0,
     "verified": 0,
@@ -58174,21 +58069,6 @@ window.VISIT_DATA = [
     "week": 46,
     "weekYear": 2026,
     "city": "Ростов-на-Дону",
-    "merchandiser": "Мещеряков Александр Иванович",
-    "network": "Пятерочка",
-    "ttId": "36HB",
-    "plan": 2,
-    "fact": 0,
-    "verified": 0,
-    "rejected": 0
-  },
-  {
-    "project": "Перспектива СМ",
-    "year": 2026,
-    "month": 11,
-    "week": 46,
-    "weekYear": 2026,
-    "city": "Ростов-на-Дону",
     "merchandiser": "Иванов Александр Олегович",
     "network": "Пятерочка",
     "ttId": "31SY",
@@ -58234,21 +58114,6 @@ window.VISIT_DATA = [
     "week": 46,
     "weekYear": 2026,
     "city": "Ростов-на-Дону",
-    "merchandiser": "Мещеряков Александр Иванович",
-    "network": "Пятерочка",
-    "ttId": "7610",
-    "plan": 2,
-    "fact": 0,
-    "verified": 0,
-    "rejected": 0
-  },
-  {
-    "project": "Перспектива СМ",
-    "year": 2026,
-    "month": 11,
-    "week": 46,
-    "weekYear": 2026,
-    "city": "Ростов-на-Дону",
     "merchandiser": "Иванов Александр Олегович",
     "network": "Пятерочка",
     "ttId": "33JQ",
@@ -58267,21 +58132,6 @@ window.VISIT_DATA = [
     "merchandiser": "Иванов Александр Олегович",
     "network": "Пятерочка",
     "ttId": "L647",
-    "plan": 2,
-    "fact": 0,
-    "verified": 0,
-    "rejected": 0
-  },
-  {
-    "project": "Перспектива СМ",
-    "year": 2026,
-    "month": 11,
-    "week": 46,
-    "weekYear": 2026,
-    "city": "Ростов-на-Дону",
-    "merchandiser": "Мещеряков Александр Иванович",
-    "network": "Пятерочка",
-    "ttId": "35BN",
     "plan": 2,
     "fact": 0,
     "verified": 0,
@@ -58324,57 +58174,12 @@ window.VISIT_DATA = [
     "week": 46,
     "weekYear": 2026,
     "city": "Ростов-на-Дону",
-    "merchandiser": "Мещеряков Александр Иванович",
-    "network": "Пятерочка",
-    "ttId": "4773",
-    "plan": 2,
-    "fact": 0,
-    "verified": 0,
-    "rejected": 0
-  },
-  {
-    "project": "Перспектива СМ",
-    "year": 2026,
-    "month": 11,
-    "week": 46,
-    "weekYear": 2026,
-    "city": "Ростов-на-Дону",
-    "merchandiser": "Мещеряков Александр Иванович",
-    "network": "Пятерочка",
-    "ttId": "E882",
-    "plan": 2,
-    "fact": 0,
-    "verified": 0,
-    "rejected": 0
-  },
-  {
-    "project": "Перспектива СМ",
-    "year": 2026,
-    "month": 11,
-    "week": 46,
-    "weekYear": 2026,
-    "city": "Ростов-на-Дону",
     "merchandiser": "Омаров Влад Айдынович",
     "network": "Пятерочка",
     "ttId": "Q385",
     "plan": 2,
     "fact": 1,
     "verified": 1,
-    "rejected": 0
-  },
-  {
-    "project": "Перспектива СМ",
-    "year": 2026,
-    "month": 11,
-    "week": 46,
-    "weekYear": 2026,
-    "city": "Ростов-на-Дону",
-    "merchandiser": "Мещеряков Александр Иванович",
-    "network": "Пятерочка",
-    "ttId": "33KF",
-    "plan": 2,
-    "fact": 0,
-    "verified": 0,
     "rejected": 0
   },
   {
@@ -155463,7 +155268,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "35SD",
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Стачки пр-кт, 280А, стр 1",
-    "active": true,
+    "active": false,
     "visited": false
   },
   {
@@ -155489,7 +155294,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "300J",
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Профсоюзная ул, 122",
-    "active": true,
+    "active": false,
     "visited": false
   },
   {
@@ -155541,7 +155346,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "33AA",
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Тружеников ул, 2А",
-    "active": true,
+    "active": false,
     "visited": false
   },
   {
@@ -155593,7 +155398,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "398G",
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Мадояна ул, 33/75",
-    "active": true,
+    "active": false,
     "visited": false
   },
   {
@@ -155710,7 +155515,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "33SG",
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Содружества ул, 58/124",
-    "active": true,
+    "active": false,
     "visited": false
   },
   {
@@ -155749,7 +155554,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "38BX",
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Коммунистический проспект, 51",
-    "active": true,
+    "active": false,
     "visited": false
   },
   {
@@ -155814,7 +155619,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "353C",
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Мичуринская ул, 124",
-    "active": true,
+    "active": false,
     "visited": false
   },
   {
@@ -155892,7 +155697,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "36HB",
     "network": "Пятерочка",
     "address": "Ростовская обл , Ростов-на-Дону г, Тружеников улица, 18а",
-    "active": true,
+    "active": false,
     "visited": false
   },
   {
@@ -155944,7 +155749,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "7610",
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Коммунистический пр-кт, 35/4",
-    "active": true,
+    "active": false,
     "visited": false
   },
   {
@@ -155983,7 +155788,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "35BN",
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Стачки пр-кт, 226/1",
-    "active": true,
+    "active": false,
     "visited": false
   },
   {
@@ -156022,7 +155827,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "4773",
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Жмайлова ул, 21А",
-    "active": true,
+    "active": false,
     "visited": false
   },
   {
@@ -156035,7 +155840,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "E882",
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Каширская ул, 6А",
-    "active": true,
+    "active": false,
     "visited": false
   },
   {
@@ -156061,7 +155866,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "33KF",
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Магнитогорская ул, 2В",
-    "active": true,
+    "active": false,
     "visited": false
   },
   {
