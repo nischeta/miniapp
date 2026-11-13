@@ -1,6 +1,6 @@
 // Файл формируется ботом Asmia 2.2.7 после подтверждённой загрузки Excel.
 window.VISIT_DATA_META = {
-  "updatedAt": "2026-11-13T06:21:32+00:00",
+  "updatedAt": "2026-11-13T08:39:56+00:00",
   "sourceFile": "Свод.xlsx",
   "recordCount": 3895,
   "employeeCount": 49,
@@ -8,8 +8,8 @@ window.VISIT_DATA_META = {
   "coverageCount": 7340,
   "uniqueTtCount": 633,
   "activeTtCount": 477,
-  "visitedTtCount": 471,
-  "verifiedCount": 5275
+  "visitedTtCount": 472,
+  "verifiedCount": 5306
 };
 window.VISIT_DATA = [
   {
@@ -49944,7 +49944,7 @@ window.VISIT_DATA = [
     "ttId": "2186",
     "plan": 3,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -50034,7 +50034,7 @@ window.VISIT_DATA = [
     "ttId": "2481",
     "plan": 3,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -50843,7 +50843,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "L627",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -50978,7 +50978,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31FC",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -51128,7 +51128,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "362K",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -51639,7 +51639,7 @@ window.VISIT_DATA = [
     "ttId": "2191",
     "plan": 3,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -51774,7 +51774,7 @@ window.VISIT_DATA = [
     "ttId": "L887",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -51789,7 +51789,7 @@ window.VISIT_DATA = [
     "ttId": "31TV",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -51819,7 +51819,7 @@ window.VISIT_DATA = [
     "ttId": "L918",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -51834,7 +51834,7 @@ window.VISIT_DATA = [
     "ttId": "Q383",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -51864,7 +51864,7 @@ window.VISIT_DATA = [
     "ttId": "34ID",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -52044,7 +52044,7 @@ window.VISIT_DATA = [
     "ttId": "31D3",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -52149,7 +52149,7 @@ window.VISIT_DATA = [
     "ttId": "6616",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -52554,7 +52554,7 @@ window.VISIT_DATA = [
     "ttId": "O250",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -52584,7 +52584,7 @@ window.VISIT_DATA = [
     "ttId": "34NJ",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -52734,7 +52734,7 @@ window.VISIT_DATA = [
     "ttId": "Q393",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -52794,7 +52794,7 @@ window.VISIT_DATA = [
     "ttId": "8168",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53079,7 +53079,7 @@ window.VISIT_DATA = [
     "ttId": "36T0",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53124,7 +53124,7 @@ window.VISIT_DATA = [
     "ttId": "J551",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -53154,7 +53154,7 @@ window.VISIT_DATA = [
     "ttId": "335W",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53199,7 +53199,7 @@ window.VISIT_DATA = [
     "ttId": "Q096",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53289,7 +53289,7 @@ window.VISIT_DATA = [
     "ttId": "3355",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53304,7 +53304,7 @@ window.VISIT_DATA = [
     "ttId": "390S",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53409,7 +53409,7 @@ window.VISIT_DATA = [
     "ttId": "31J6",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53484,7 +53484,7 @@ window.VISIT_DATA = [
     "ttId": "J497",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53514,7 +53514,7 @@ window.VISIT_DATA = [
     "ttId": "37S9",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53574,7 +53574,7 @@ window.VISIT_DATA = [
     "ttId": "2598",
     "plan": 3,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -53694,7 +53694,7 @@ window.VISIT_DATA = [
     "ttId": "E235",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -54039,7 +54039,7 @@ window.VISIT_DATA = [
     "ttId": "E002",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -54309,7 +54309,7 @@ window.VISIT_DATA = [
     "ttId": "35GL",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -55989,7 +55989,7 @@ window.VISIT_DATA = [
     "ttId": "2700",
     "plan": 3,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -56019,7 +56019,7 @@ window.VISIT_DATA = [
     "ttId": "2749",
     "plan": 3,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -56334,7 +56334,7 @@ window.VISIT_DATA = [
     "ttId": "38K5",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -56858,7 +56858,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "30YP",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -56964,7 +56964,7 @@ window.VISIT_DATA = [
     "ttId": "345C",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -147143,7 +147143,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Алма-Атинская ул, 8",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -147286,7 +147286,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Тепличная ул, 26/7",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -147481,7 +147481,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Тиханкина ул, 8",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -153994,7 +153994,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Междуреченская ул, 1Л",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
