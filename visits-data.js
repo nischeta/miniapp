@@ -1,6 +1,6 @@
 // Файл формируется ботом Asmia 2.2.7 после подтверждённой загрузки Excel.
 window.VISIT_DATA_META = {
-  "updatedAt": "2026-11-12T16:26:16+00:00",
+  "updatedAt": "2026-11-13T06:21:32+00:00",
   "sourceFile": "Свод.xlsx",
   "recordCount": 3895,
   "employeeCount": 49,
@@ -8,8 +8,8 @@ window.VISIT_DATA_META = {
   "coverageCount": 7340,
   "uniqueTtCount": 633,
   "activeTtCount": 477,
-  "visitedTtCount": 470,
-  "verifiedCount": 5216
+  "visitedTtCount": 471,
+  "verifiedCount": 5275
 };
 window.VISIT_DATA = [
   {
@@ -49943,7 +49943,7 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2186",
     "plan": 3,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -49989,7 +49989,7 @@ window.VISIT_DATA = [
     "ttId": "B215",
     "plan": 3,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -50004,7 +50004,7 @@ window.VISIT_DATA = [
     "ttId": "2175",
     "plan": 3,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -50033,7 +50033,7 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2481",
     "plan": 3,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -50169,7 +50169,7 @@ window.VISIT_DATA = [
     "ttId": "31FI",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -50244,7 +50244,7 @@ window.VISIT_DATA = [
     "ttId": "31FL",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -51159,7 +51159,7 @@ window.VISIT_DATA = [
     "ttId": "30PL",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -51249,7 +51249,7 @@ window.VISIT_DATA = [
     "ttId": "4411",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -51638,7 +51638,7 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2191",
     "plan": 3,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -51773,7 +51773,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "L887",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -51788,7 +51788,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31TV",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -51818,7 +51818,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "L918",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -51833,7 +51833,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q383",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -51863,7 +51863,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "34ID",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -51879,7 +51879,7 @@ window.VISIT_DATA = [
     "ttId": "35SD",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -51954,7 +51954,7 @@ window.VISIT_DATA = [
     "ttId": "300J",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -51983,7 +51983,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "8647",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -52043,7 +52043,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31D3",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -52148,7 +52148,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "6616",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -52553,7 +52553,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "O250",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -52583,7 +52583,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "34NJ",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -52733,7 +52733,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q393",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -52793,7 +52793,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "8168",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -53078,7 +53078,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "36T0",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -53123,7 +53123,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "J551",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -53153,7 +53153,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "335W",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -53198,7 +53198,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q096",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -53288,7 +53288,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "3355",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -53303,7 +53303,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "390S",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -53334,7 +53334,7 @@ window.VISIT_DATA = [
     "ttId": "4773",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -53408,7 +53408,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31J6",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -53424,7 +53424,7 @@ window.VISIT_DATA = [
     "ttId": "G779",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -53483,7 +53483,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "J497",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -53513,7 +53513,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "37S9",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -53543,8 +53543,8 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "B034",
     "plan": 3,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53559,7 +53559,7 @@ window.VISIT_DATA = [
     "ttId": "2197",
     "plan": 3,
     "fact": 2,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -53573,7 +53573,7 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2598",
     "plan": 3,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -53664,7 +53664,7 @@ window.VISIT_DATA = [
     "ttId": "33VK",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53679,7 +53679,7 @@ window.VISIT_DATA = [
     "ttId": "35M6",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53693,7 +53693,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "E235",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -53723,8 +53723,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "395B",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53739,7 +53739,7 @@ window.VISIT_DATA = [
     "ttId": "E288",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53769,7 +53769,7 @@ window.VISIT_DATA = [
     "ttId": "31O3",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53798,8 +53798,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "34CU",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53829,7 +53829,7 @@ window.VISIT_DATA = [
     "ttId": "31D6",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53858,8 +53858,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "367P",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53889,7 +53889,7 @@ window.VISIT_DATA = [
     "ttId": "5931",
     "plan": 2,
     "fact": 2,
-    "verified": 0,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53918,8 +53918,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "7940",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -53934,7 +53934,7 @@ window.VISIT_DATA = [
     "ttId": "38S8",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -54038,7 +54038,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "E002",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -54114,7 +54114,7 @@ window.VISIT_DATA = [
     "ttId": "36WJ",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -54249,7 +54249,7 @@ window.VISIT_DATA = [
     "ttId": "S236",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -54264,7 +54264,7 @@ window.VISIT_DATA = [
     "ttId": "35M3",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -54278,8 +54278,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "L967",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -54308,7 +54308,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "35GL",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -54354,7 +54354,7 @@ window.VISIT_DATA = [
     "ttId": "37SM",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -54579,7 +54579,7 @@ window.VISIT_DATA = [
     "ttId": "38CX",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -54608,8 +54608,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "341Y",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -54639,7 +54639,7 @@ window.VISIT_DATA = [
     "ttId": "6506",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -54654,7 +54654,7 @@ window.VISIT_DATA = [
     "ttId": "Y039",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -54699,7 +54699,7 @@ window.VISIT_DATA = [
     "ttId": "34N7",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -54833,8 +54833,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "33VJ",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -54864,7 +54864,7 @@ window.VISIT_DATA = [
     "ttId": "S831",
     "plan": 2,
     "fact": 2,
-    "verified": 0,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -54939,7 +54939,7 @@ window.VISIT_DATA = [
     "ttId": "H445",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -54983,8 +54983,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "344C",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -55104,7 +55104,7 @@ window.VISIT_DATA = [
     "ttId": "B272",
     "plan": 3,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -55164,7 +55164,7 @@ window.VISIT_DATA = [
     "ttId": "2255",
     "plan": 3,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -55209,7 +55209,7 @@ window.VISIT_DATA = [
     "ttId": "2406",
     "plan": 3,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -55299,7 +55299,7 @@ window.VISIT_DATA = [
     "ttId": "31C3",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -55539,7 +55539,7 @@ window.VISIT_DATA = [
     "ttId": "4107",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -55674,7 +55674,7 @@ window.VISIT_DATA = [
     "ttId": "9850",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -55734,7 +55734,7 @@ window.VISIT_DATA = [
     "ttId": "L541",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -55839,7 +55839,7 @@ window.VISIT_DATA = [
     "ttId": "4791",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -55869,7 +55869,7 @@ window.VISIT_DATA = [
     "ttId": "306A",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -55988,7 +55988,7 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2700",
     "plan": 3,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -56018,7 +56018,7 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2749",
     "plan": 3,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -56049,7 +56049,7 @@ window.VISIT_DATA = [
     "ttId": "37EU",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -56124,7 +56124,7 @@ window.VISIT_DATA = [
     "ttId": "375V",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -56244,7 +56244,7 @@ window.VISIT_DATA = [
     "ttId": "31ER",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -56304,7 +56304,7 @@ window.VISIT_DATA = [
     "ttId": "E186",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -56333,7 +56333,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "38K5",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -56364,7 +56364,7 @@ window.VISIT_DATA = [
     "ttId": "S500",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -56394,7 +56394,7 @@ window.VISIT_DATA = [
     "ttId": "E313",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -56544,7 +56544,7 @@ window.VISIT_DATA = [
     "ttId": "33VC",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -56679,7 +56679,7 @@ window.VISIT_DATA = [
     "ttId": "H467",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -56709,7 +56709,7 @@ window.VISIT_DATA = [
     "ttId": "356S",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -56784,7 +56784,7 @@ window.VISIT_DATA = [
     "ttId": "331J",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -56844,7 +56844,7 @@ window.VISIT_DATA = [
     "ttId": "34FY",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -56963,7 +56963,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "345C",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -57623,7 +57623,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "L918",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -57638,7 +57638,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q383",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -57668,7 +57668,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "34ID",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -57698,7 +57698,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "8647",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -57713,7 +57713,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "396W",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -57728,7 +57728,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31D3",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -57968,7 +57968,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q393",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -58163,7 +58163,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "390S",
     "plan": 2,
-    "fact": 1,
+    "fact": 2,
     "verified": 1,
     "rejected": 0
   },
@@ -148287,7 +148287,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Нариманова ул, 57/1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -149808,7 +149808,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Малиновского ул, 76Б/87А",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -150458,7 +150458,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Краснодарский край, Краснодар г, Красная ул, 176",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -150588,7 +150588,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Кубанская Набережная ул, 5",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -153162,7 +153162,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Саратовская обл, Саратов г, им Василия Люкшина ул, 5",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -153435,7 +153435,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Саратовская обл, Саратов г, Большая Горная улица, 143",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -155580,7 +155580,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Буденновский пр-кт, 80",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
