@@ -1,15 +1,15 @@
 // Файл формируется ботом NISCHARD 2.2.10 после подтверждённой загрузки Excel.
 window.VISIT_DATA_META = {
-  "updatedAt": "2026-11-16T18:17:22+00:00",
+  "updatedAt": "2026-11-17T08:33:25+00:00",
   "sourceFile": "Свод.xlsx",
-  "recordCount": 4358,
-  "employeeCount": 50,
-  "rejectedCount": 154,
-  "coverageCount": 7959,
+  "recordCount": 4438,
+  "employeeCount": 51,
+  "rejectedCount": 157,
+  "coverageCount": 8038,
   "uniqueTtCount": 633,
-  "activeTtCount": 499,
+  "activeTtCount": 510,
   "visitedTtCount": 489,
-  "verifiedCount": 5545
+  "verifiedCount": 5633
 };
 window.VISIT_DATA = [
   {
@@ -57129,7 +57129,7 @@ window.VISIT_DATA = [
     "ttId": "B147",
     "plan": 3,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -57143,6 +57143,21 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2481",
     "plan": 3,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "X330",
+    "plan": 2,
     "fact": 0,
     "verified": 0,
     "rejected": 0
@@ -57334,6 +57349,36 @@ window.VISIT_DATA = [
     "week": 47,
     "weekYear": 2026,
     "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "30WX",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Неклюдов Никита Игоревич",
+    "network": "Пятерочка",
+    "ttId": "31OT",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
     "merchandiser": "Неклюдов Никита Игоревич",
     "network": "Пятерочка",
     "ttId": "31FJ",
@@ -57499,9 +57544,39 @@ window.VISIT_DATA = [
     "week": 47,
     "weekYear": 2026,
     "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "30T8",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
     "merchandiser": "Неклюдова Анастасия Игоревна",
     "network": "Пятерочка",
     "ttId": "30OC",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "31FM",
     "plan": 2,
     "fact": 0,
     "verified": 0,
@@ -57529,6 +57604,21 @@ window.VISIT_DATA = [
     "week": 47,
     "weekYear": 2026,
     "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "31O5",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
     "merchandiser": "Мозговая Ольга Владимировна",
     "network": "Пятерочка",
     "ttId": "4409",
@@ -57544,9 +57634,39 @@ window.VISIT_DATA = [
     "week": 47,
     "weekYear": 2026,
     "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "H750",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
     "merchandiser": "Мозговая Ольга Владимировна",
     "network": "Пятерочка",
     "ttId": "36RL",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "30ZI",
     "plan": 2,
     "fact": 0,
     "verified": 0,
@@ -57694,6 +57814,36 @@ window.VISIT_DATA = [
     "week": 47,
     "weekYear": 2026,
     "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "7130",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "30WW",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
     "merchandiser": "Неклюдова Анастасия Игоревна",
     "network": "Пятерочка",
     "ttId": "E756",
@@ -57714,6 +57864,36 @@ window.VISIT_DATA = [
     "ttId": "S372",
     "plan": 2,
     "fact": 1,
+    "verified": 1,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "J810",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Неклюдова Анастасия Игоревна",
+    "network": "Пятерочка",
+    "ttId": "G985",
+    "plan": 2,
+    "fact": 0,
     "verified": 0,
     "rejected": 0
   },
@@ -57889,6 +58069,21 @@ window.VISIT_DATA = [
     "week": 47,
     "weekYear": 2026,
     "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "31BN",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
     "merchandiser": "Мозговая Ольга Владимировна",
     "network": "Пятерочка",
     "ttId": "3A9P",
@@ -57904,9 +58099,54 @@ window.VISIT_DATA = [
     "week": 47,
     "weekYear": 2026,
     "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "O411",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "345F",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
     "merchandiser": "Неклюдова Анастасия Игоревна",
     "network": "Пятерочка",
     "ttId": "36Q8",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "30ZQ",
     "plan": 2,
     "fact": 0,
     "verified": 0,
@@ -57994,9 +58234,39 @@ window.VISIT_DATA = [
     "week": 47,
     "weekYear": 2026,
     "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "Y002",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
     "merchandiser": "Неклюдов Никита Игоревич",
     "network": "Пятерочка",
     "ttId": "362K",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "33H6",
     "plan": 2,
     "fact": 0,
     "verified": 0,
@@ -58039,12 +58309,42 @@ window.VISIT_DATA = [
     "week": 47,
     "weekYear": 2026,
     "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "35B7",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
     "merchandiser": "Алексеева Елена Викторовна",
     "network": "Пятерочка",
     "ttId": "36F7",
     "plan": 2,
     "fact": 1,
     "verified": 1,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "30ZA",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
     "rejected": 0
   },
   {
@@ -58189,6 +58489,36 @@ window.VISIT_DATA = [
     "week": 47,
     "weekYear": 2026,
     "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "L892",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна",
+    "network": "Пятерочка",
+    "ttId": "S263",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
     "merchandiser": "Неклюдова Анастасия Игоревна",
     "network": "Пятерочка",
     "ttId": "31F1",
@@ -58254,7 +58584,7 @@ window.VISIT_DATA = [
     "ttId": "2192",
     "plan": 3,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58328,8 +58658,8 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2223",
     "plan": 3,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58389,7 +58719,7 @@ window.VISIT_DATA = [
     "ttId": "B167",
     "plan": 3,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58538,8 +58868,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "S459",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58674,7 +59004,7 @@ window.VISIT_DATA = [
     "ttId": "8647",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58688,8 +59018,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Y734",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58749,7 +59079,7 @@ window.VISIT_DATA = [
     "ttId": "33AA",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58838,8 +59168,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "6616",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59258,8 +59588,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q388",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59318,8 +59648,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "34NJ",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59438,8 +59768,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "X941",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59483,8 +59813,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "J498",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59588,8 +59918,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "8168",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59649,7 +59979,7 @@ window.VISIT_DATA = [
     "ttId": "353C",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59873,8 +60203,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31ZK",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59918,8 +60248,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "36T0",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59963,8 +60293,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "J551",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60023,8 +60353,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "335W",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60054,7 +60384,7 @@ window.VISIT_DATA = [
     "ttId": "7610",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60069,7 +60399,7 @@ window.VISIT_DATA = [
     "ttId": "Q096",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60144,7 +60474,7 @@ window.VISIT_DATA = [
     "ttId": "35BN",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60173,8 +60503,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "3355",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60234,7 +60564,7 @@ window.VISIT_DATA = [
     "ttId": "390S",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60249,7 +60579,7 @@ window.VISIT_DATA = [
     "ttId": "O618",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60264,7 +60594,7 @@ window.VISIT_DATA = [
     "ttId": "4773",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60369,7 +60699,7 @@ window.VISIT_DATA = [
     "ttId": "31J6",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60429,7 +60759,7 @@ window.VISIT_DATA = [
     "ttId": "36NF",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60459,7 +60789,7 @@ window.VISIT_DATA = [
     "ttId": "J497",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60518,8 +60848,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "37S9",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61043,7 +61373,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "E002",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -61418,7 +61748,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "36EP",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -61448,7 +61778,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "34M7",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -61793,7 +62123,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "33PD",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -61854,7 +62184,7 @@ window.VISIT_DATA = [
     "ttId": "30QQ",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61914,7 +62244,7 @@ window.VISIT_DATA = [
     "ttId": "31ON",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61944,7 +62274,7 @@ window.VISIT_DATA = [
     "ttId": "357E",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61958,7 +62288,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "338R",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -62004,7 +62334,7 @@ window.VISIT_DATA = [
     "ttId": "2154",
     "plan": 3,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62049,7 +62379,7 @@ window.VISIT_DATA = [
     "ttId": "B272",
     "plan": 3,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62124,7 +62454,7 @@ window.VISIT_DATA = [
     "ttId": "B383",
     "plan": 3,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62169,7 +62499,7 @@ window.VISIT_DATA = [
     "ttId": "B406",
     "plan": 3,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62184,7 +62514,7 @@ window.VISIT_DATA = [
     "ttId": "2639",
     "plan": 3,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62198,7 +62528,7 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2806",
     "plan": 3,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -62349,7 +62679,7 @@ window.VISIT_DATA = [
     "ttId": "4105",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62529,7 +62859,7 @@ window.VISIT_DATA = [
     "ttId": "S722",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62604,7 +62934,7 @@ window.VISIT_DATA = [
     "ttId": "O360",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62648,7 +62978,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q434",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -62933,8 +63263,8 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2700",
     "plan": 3,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62948,8 +63278,8 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2303",
     "plan": 3,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62963,8 +63293,8 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2749",
     "plan": 3,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62978,7 +63308,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "37CP",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -63799,7 +64129,7 @@ window.VISIT_DATA = [
     "week": 47,
     "weekYear": 2026,
     "city": "Воронеж",
-    "merchandiser": "Неклюдов Никита Игоревич",
+    "merchandiser": "Неклюдова Анастасия Игоревна",
     "network": "Пятерочка",
     "ttId": "30YP",
     "plan": 2,
@@ -64523,9 +64853,9 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q387",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
-    "rejected": 0
+    "rejected": 1
   },
   {
     "project": "Перспектива СМ",
@@ -64538,9 +64868,9 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "L887",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
-    "rejected": 0
+    "fact": 2,
+    "verified": 0,
+    "rejected": 2
   },
   {
     "project": "Перспектива СМ",
@@ -64569,7 +64899,7 @@ window.VISIT_DATA = [
     "ttId": "L918",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -64584,7 +64914,7 @@ window.VISIT_DATA = [
     "ttId": "Q383",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -64598,8 +64928,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "S459",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -64614,7 +64944,7 @@ window.VISIT_DATA = [
     "ttId": "34ID",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -64644,7 +64974,7 @@ window.VISIT_DATA = [
     "ttId": "8647",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -64659,7 +64989,7 @@ window.VISIT_DATA = [
     "ttId": "396W",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -64674,7 +65004,7 @@ window.VISIT_DATA = [
     "ttId": "31D3",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -64703,8 +65033,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "H505",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -64748,8 +65078,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "7519",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -64763,8 +65093,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "33YL",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -64778,8 +65108,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "34IE",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -64808,8 +65138,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "9941",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -64838,8 +65168,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "34TT",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -64868,8 +65198,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "36U0",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -64883,8 +65213,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "H355",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -64898,8 +65228,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "39BZ",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -64913,8 +65243,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q393",
     "plan": 2,
-    "fact": 1,
-    "verified": 0,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -64958,8 +65288,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31T6",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -64973,8 +65303,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31ZN",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -65003,8 +65333,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "O925",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -65033,8 +65363,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "337H",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -65078,8 +65408,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "L647",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -65109,7 +65439,7 @@ window.VISIT_DATA = [
     "ttId": "390S",
     "plan": 2,
     "fact": 2,
-    "verified": 1,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -65138,8 +65468,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "S800",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -65154,7 +65484,7 @@ window.VISIT_DATA = [
     "ttId": "E288",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -65169,7 +65499,7 @@ window.VISIT_DATA = [
     "ttId": "31O3",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -65184,7 +65514,7 @@ window.VISIT_DATA = [
     "ttId": "31D6",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -65228,8 +65558,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31QF",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -65258,8 +65588,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "38LM",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -65273,8 +65603,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "D853",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -65348,8 +65678,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "34SN",
     "plan": 2,
-    "fact": 1,
-    "verified": 1,
+    "fact": 2,
+    "verified": 2,
     "rejected": 0
   },
   {
@@ -65372,6 +65702,876 @@ window.VISIT_DATA = [
     "year": 2026,
     "month": 11,
     "week": 46,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Савельева Дарья Николаевна",
+    "network": "Пятерочка",
+    "ttId": "38DH",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "Q387",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Габранс Никита Юрьевич",
+    "network": "Пятерочка",
+    "ttId": "L887",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "D282",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "L918",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "Q383",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "S459",
+    "plan": 2,
+    "fact": 1,
+    "verified": 1,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "34ID",
+    "plan": 2,
+    "fact": 1,
+    "verified": 1,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "7518",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "8647",
+    "plan": 2,
+    "fact": 1,
+    "verified": 1,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Габранс Никита Юрьевич",
+    "network": "Пятерочка",
+    "ttId": "396W",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Габранс Никита Юрьевич",
+    "network": "Пятерочка",
+    "ttId": "31D3",
+    "plan": 2,
+    "fact": 1,
+    "verified": 1,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "Q663",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "H505",
+    "plan": 2,
+    "fact": 1,
+    "verified": 1,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "36M2",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "E091",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "7519",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "33YL",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "34IE",
+    "plan": 2,
+    "fact": 1,
+    "verified": 1,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "J485",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "9941",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "6621",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "34TT",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "6611",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "36U0",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "H355",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "39BZ",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Габранс Никита Юрьевич",
+    "network": "Пятерочка",
+    "ttId": "Q393",
+    "plan": 2,
+    "fact": 1,
+    "verified": 1,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "E108",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "302Y",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "31T6",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "31ZN",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Габранс Никита Юрьевич",
+    "network": "Пятерочка",
+    "ttId": "36HW",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "O925",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "31SY",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "337H",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "J551",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "33JQ",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "L647",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "network": "Пятерочка",
+    "ttId": "31N9",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "390S",
+    "plan": 2,
+    "fact": 1,
+    "verified": 1,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Омаров Влад Айдынович",
+    "network": "Пятерочка",
+    "ttId": "Q385",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Григорьева Анастасия Андреевна",
+    "network": "Пятерочка",
+    "ttId": "S800",
+    "plan": 2,
+    "fact": 1,
+    "verified": 1,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Мавлюкаева Ирина Владиславовна",
+    "network": "Пятерочка",
+    "ttId": "E288",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Мавлюкаева Ирина Владиславовна",
+    "network": "Пятерочка",
+    "ttId": "31O3",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Мавлюкаева Ирина Владиславовна",
+    "network": "Пятерочка",
+    "ttId": "31D6",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Мавлюкаева Ирина Владиславовна",
+    "network": "Пятерочка",
+    "ttId": "Q098",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Савельева Дарья Николаевна",
+    "network": "Пятерочка",
+    "ttId": "31P0",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Власова Анна Андреевна",
+    "network": "Пятерочка",
+    "ttId": "31QF",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Власова Анна Андреевна",
+    "network": "Пятерочка",
+    "ttId": "35GL",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Григорьева Анастасия Андреевна",
+    "network": "Пятерочка",
+    "ttId": "38LM",
+    "plan": 2,
+    "fact": 1,
+    "verified": 1,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Григорьева Анастасия Андреевна",
+    "network": "Пятерочка",
+    "ttId": "D853",
+    "plan": 2,
+    "fact": 1,
+    "verified": 1,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Савельева Дарья Николаевна",
+    "network": "Пятерочка",
+    "ttId": "34M7",
+    "plan": 2,
+    "fact": 1,
+    "verified": 1,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Савельева Дарья Николаевна",
+    "network": "Пятерочка",
+    "ttId": "E427",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Григорьева Анастасия Андреевна",
+    "network": "Пятерочка",
+    "ttId": "38CX",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Савельева Дарья Николаевна",
+    "network": "Пятерочка",
+    "ttId": "H225",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Власова Анна Андреевна",
+    "network": "Пятерочка",
+    "ttId": "34SN",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "merchandiser": "Савельева Дарья Николаевна",
+    "network": "Пятерочка",
+    "ttId": "33PD",
+    "plan": 2,
+    "fact": 1,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
     "weekYear": 2026,
     "city": "Краснодар",
     "merchandiser": "Савельева Дарья Николаевна",
@@ -65633,6 +66833,11 @@ window.VISIT_EMPLOYEES = [
     "project": "Холдинг Аква",
     "city": "Ростов-на-Дону",
     "merchandiser": "Шмальц Даниил"
+  },
+  {
+    "project": "Холдинг Аква",
+    "city": "Воронеж",
+    "merchandiser": "Алексеевна Наталья Алексеевна"
   }
 ];
 window.REJECTED_VISITS = [
@@ -67791,6 +68996,48 @@ window.REJECTED_VISITS = [
     "ttId": "Q393",
     "address": "Ростовская обл, Ростов-на-Дону г, Буденновский пр-кт, 80",
     "comment": "НЕТ Ф БА НЕТ Ф БАЭН НЕТ Ф САН+ПН НЕТ КБ НЕТ ПГ"
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 46,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Иванов Александр Олегович",
+    "visitDate": "2026-11-15T22:30",
+    "network": "Пятерочка",
+    "ttId": "Q387",
+    "address": "Ростовская обл, Ростов-на-Дону г, Королева пр-кт, 29",
+    "comment": ""
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 46,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Габранс Никита Юрьевич",
+    "visitDate": "2026-11-11T22:39",
+    "network": "Пятерочка",
+    "ttId": "L887",
+    "address": "Ростовская обл, Ростов-на-Дону г, Соколова пр-кт, 72",
+    "comment": ""
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 46,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Габранс Никита Юрьевич",
+    "visitDate": "2026-11-14T17:40",
+    "network": "Пятерочка",
+    "ttId": "L887",
+    "address": "Ростовская обл, Ростов-на-Дону г, Соколова пр-кт, 72",
+    "comment": ""
   }
 ];
 window.TT_COVERAGE_DATA = [
@@ -161378,7 +162625,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "X330",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Хользунова ул, 38/11",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -161612,7 +162859,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "30WX",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Владимира Невского ул, 48",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -161625,7 +162872,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "31OT",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Сельская ул, 2/2",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -161833,7 +163080,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "30T8",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Владимира Невского ул, 29/1",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -161859,7 +163106,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "31FM",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, 9 Января ул, 241/15",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -161898,7 +163145,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "31O5",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Хользунова ул, 48А",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -161924,7 +163171,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "H750",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Генерала Лизюкова ул, 50",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -161963,7 +163210,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "30ZI",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Генерала Лизюкова ул, 95А",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -162119,7 +163366,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "7130",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, 9 Января ул, 168",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -162132,7 +163379,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "30WW",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Беговая ул, 158А",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -162184,7 +163431,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "J810",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Труда пр-кт, 72",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -162197,7 +163444,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "G985",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Садовое кольцо ул, 1/1",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -162431,7 +163678,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "31BN",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Владимира Невского ул, 38П",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -162457,7 +163704,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "O411",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, 9 Января ул, 233/35",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -162470,7 +163717,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "345F",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, 9 Января ул, 177А",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -162496,7 +163743,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "30ZQ",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Владимира Невского ул, 25/7",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -162600,7 +163847,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "Y002",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, 60 Армии ул, 4Д",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -162626,7 +163873,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "33H6",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Новгородская ул, 124В",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -162704,7 +163951,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "35B7",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, 9 Января ул, 233/34",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -162743,7 +163990,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "30ZA",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, 9 Января ул, 292Б",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -162977,7 +164224,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "L892",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Генерала Лизюкова ул, 61А",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -163042,7 +164289,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "S263",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, 9 Января ул, 133",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -163251,7 +164498,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Ростовская обл, Ростов-на-Дону г, Зорге ул, 33",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -163472,7 +164719,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Зорге ул, 13",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -163628,7 +164875,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Наклонный пер, 23",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -163810,7 +165057,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Пушкинская ул, 199",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164226,7 +165473,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Еременко ул, 58/11",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164278,7 +165525,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Доломановский пер, 116, стр 1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164408,7 +165655,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Добровольского ул, 13",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164447,7 +165694,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Карпатская ул, 1/1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164538,7 +165785,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Пушкинская ул, 231",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164837,7 +166084,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Комарова б-р, 18/3, стр 1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164902,7 +166149,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Мечникова улица, 41\\53",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164941,7 +166188,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Малиновского ул, 76Б/87А",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164993,7 +166240,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Доломановский пер, 124, стр 1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -165175,7 +166422,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Текучева ул, 66",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -165539,7 +166786,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Варфоломеева ул, 71/2 стр.1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -166033,7 +167280,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, им Петра Метальникова ул, 3",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -166384,7 +167631,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Ягодина ул, 39/1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -166410,7 +167657,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Российская ул, 267А",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -166709,7 +167956,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, им Григория Пономаренко ул, 41",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -166852,7 +168099,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, им Цезаря Куникова ул, 24, к 1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167216,7 +168463,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Самарская обл, Самара г, Георгия Димитрова ул, 7",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167762,7 +169009,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Самарская обл, Самара г, Калинина ул, 11А",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -168204,7 +169451,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Саратовская обл, Саратов г, Московская ул, 113/117",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -168217,7 +169464,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Саратовская обл, Саратов г, им Зарубина В С ул, 167",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -168243,7 +169490,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Саратовская обл, Саратов г, им Василия Люкшина ул, 5",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -168256,7 +169503,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Саратовская обл, Саратов г, Хользунова улица, 36\\56",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -170245,7 +171492,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Королева пр-кт, 29",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -170505,7 +171752,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Беляева ул, 26А",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -170544,7 +171791,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Волкова ул, 9",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -170648,7 +171895,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Комарова б-р, 28Г",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -170713,7 +171960,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Орбитальная ул, 23",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -170726,7 +171973,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Орбитальная ул, 82Б",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -170752,7 +171999,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Думенко ул, 3/2",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -170791,7 +172038,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Комарова б-р, 13",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -170843,7 +172090,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Волкова ул, 10",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -171142,7 +172389,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Домбайская ул, 59, пом.26,30",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -171253,6 +172500,1033 @@ window.TT_COVERAGE_DATA = [
     "year": 2026,
     "month": 11,
     "week": 46,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "38DH",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, Российская улица, 608",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "Q387",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Королева пр-кт, 29",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "L887",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Соколова пр-кт, 72",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "D282",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Таганрогская ул, 167/1",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "L918",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, 2-я Краснодарская ул, 145А",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "Q383",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, 2-я Краснодарская ул, 78/3",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "S459",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Зорге ул, 13",
+    "active": true,
+    "visited": true
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "34ID",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Портовая ул, 257/27",
+    "active": true,
+    "visited": true
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "35SD",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Стачки пр-кт, 280А, стр 1",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "7518",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Вятская ул, 51А",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "300J",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Профсоюзная ул, 122",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "8647",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Доватора ул, 257А",
+    "active": true,
+    "visited": true
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "396W",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Доломановский пер, 55А",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "31D3",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Мечникова ул, 31/106",
+    "active": true,
+    "visited": true
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "33AA",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Тружеников ул, 2А",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "Q663",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Королева пр-кт, 22Г",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "H505",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Еременко ул, 100",
+    "active": true,
+    "visited": true
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "36M2",
+    "network": "Пятерочка",
+    "address": "Ростовская обл , Ростов-на-Дону г, Петренко ул, зд 3",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "398G",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Мадояна ул, 33/75",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "E091",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Космонавтов пр-кт, 39/1",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "7519",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Зорге ул, 37",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "33YL",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Беляева ул, 26А",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "34IE",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Еременко ул, 89Б",
+    "active": true,
+    "visited": true
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "J485",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Петренко ул, 10",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "9941",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Волкова ул, 9",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "6621",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Зорге ул, 29",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "34TT",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Зорге ул, 31В",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "33SG",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Содружества ул, 58/124",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "6611",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Казахская ул, 88",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "36U0",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, 339-й Стрелковой Дивизии ул, 45094",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "38BX",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Коммунистический проспект, 51",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "H355",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Доватора ул, 144/28",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "39BZ",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Комарова б-р, 28Г",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "Q393",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Буденновский пр-кт, 80",
+    "active": true,
+    "visited": true
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "E108",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Днепровский пер, 115",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "353C",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Мичуринская ул, 124",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "302Y",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Таганрогская ул, 118",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "31T6",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Орбитальная ул, 23",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "31ZN",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Орбитальная ул, 82Б",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "36HW",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Мечникова улица, 63",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "O925",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Думенко ул, 3/2",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "36HB",
+    "network": "Пятерочка",
+    "address": "Ростовская обл , Ростов-на-Дону г, Тружеников улица, 18а",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "31SY",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Ректорская ул, 38",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "337H",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Комарова б-р, 13",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "J551",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Малиновского ул, 76Б/87А",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "7610",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Коммунистический пр-кт, 35/4",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "33JQ",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Казахская ул, 115/3",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "L647",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Волкова ул, 10",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "35BN",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Стачки пр-кт, 226/1",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "31N9",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Каскадная ул, 164",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "390S",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Портовая ул, 479/48",
+    "active": true,
+    "visited": true
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "4773",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Жмайлова ул, 21А",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "E882",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Каширская ул, 6А",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "Q385",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Таганрогская ул, 114И",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "33KF",
+    "network": "Пятерочка",
+    "address": "Ростовская обл, Ростов-на-Дону г, Магнитогорская ул, 2В",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "S800",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, Черкасская ул, 72/1",
+    "active": true,
+    "visited": true
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "36UR",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар, Писателя Знаменского проспект, 2",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "E288",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, им Героя Аверкиева А А ул, 28",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "33QG",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, им Валерия Гассия ул, 2А",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "31O3",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, Героев-Разведчиков ул, 15",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "31D6",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, им 40-летия Победы ул, 178",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "30LQ",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, Краевая (Пашковский жилой массив тер ) ул, 10",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "Q098",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, Российская ул, 65",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "O518",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, Ставропольская ул, 174/1",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "31P0",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, им Адмирала Серебрякова ул, 3",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "E328",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, им Мачуги В Н ул, 4",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "31QF",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, Карасунская ул, 86",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "35GL",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, Харьковская ул, 73",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "31QE",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, Южная ул, 28",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "38LM",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, им. Героя Яцкова И.В. ул, з/у 1/11",
+    "active": true,
+    "visited": true
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "D853",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, Домбайская ул, 59, пом.26,30",
+    "active": true,
+    "visited": true
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "34M7",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, Российская ул, 267А",
+    "active": true,
+    "visited": true
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "E427",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, Московская ул, 122",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "38CX",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар, Домбайская улица, 8",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "H225",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, Российский п, Ратной Славы ул, 89",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "34SN",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, Красная ул, /им Максима Горького ул, 81/96",
+    "active": true,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "33PD",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, им Григория Пономаренко ул, 41",
+    "active": true,
+    "visited": true
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "S157",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, Ставропольская ул, 97",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Краснодар",
+    "ttId": "30QQ",
+    "network": "Пятерочка",
+    "address": "Краснодарский край, Краснодар г, Уральская ул, 162/7",
+    "active": false,
+    "visited": false
+  },
+  {
+    "project": "Перспектива СМ",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
     "weekYear": 2026,
     "city": "Краснодар",
     "ttId": "38DH",
