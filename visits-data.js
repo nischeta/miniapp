@@ -1,15 +1,15 @@
 // Файл формируется ботом NISCHARD 2.2.10 после подтверждённой загрузки Excel.
 window.VISIT_DATA_META = {
-  "updatedAt": "2026-11-17T08:33:25+00:00",
+  "updatedAt": "2026-11-17T21:37:09+00:00",
   "sourceFile": "Свод.xlsx",
-  "recordCount": 4438,
-  "employeeCount": 51,
+  "recordCount": 4445,
+  "employeeCount": 53,
   "rejectedCount": 157,
   "coverageCount": 8038,
   "uniqueTtCount": 633,
-  "activeTtCount": 510,
-  "visitedTtCount": 489,
-  "verifiedCount": 5633
+  "activeTtCount": 515,
+  "visitedTtCount": 494,
+  "verifiedCount": 5756
 };
 window.VISIT_DATA = [
   {
@@ -57053,8 +57053,8 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2186",
     "plan": 3,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -57068,8 +57068,8 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2721",
     "plan": 3,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -57098,8 +57098,8 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "B215",
     "plan": 3,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -57143,8 +57143,8 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2481",
     "plan": 3,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -57233,8 +57233,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "355F",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -57263,7 +57263,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q691",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -57338,8 +57338,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31FL",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -57499,6 +57499,21 @@ window.VISIT_DATA = [
     "week": 47,
     "weekYear": 2026,
     "city": "Воронеж",
+    "merchandiser": "Козельцова Алена  Александровна",
+    "network": "Пятерочка",
+    "ttId": "31K2",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
     "merchandiser": "Неклюдова Анастасия Игоревна",
     "network": "Пятерочка",
     "ttId": "J469",
@@ -57563,8 +57578,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "30OC",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -57623,8 +57638,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "4409",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -57653,8 +57668,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "36RL",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -57683,8 +57698,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31BC",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -57715,6 +57730,21 @@ window.VISIT_DATA = [
     "plan": 2,
     "fact": 1,
     "verified": 1,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Козельцова Алена  Александровна",
+    "network": "Пятерочка",
+    "ttId": "372J",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
     "rejected": 0
   },
   {
@@ -58028,6 +58058,21 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31ED",
     "plan": 2,
+    "fact": 1,
+    "verified": 1,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Губанова Светлана",
+    "network": "Пятерочка",
+    "ttId": "7909",
+    "plan": 2,
     "fact": 0,
     "verified": 0,
     "rejected": 0
@@ -58088,8 +58133,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "3A9P",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58133,8 +58178,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "36Q8",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58178,8 +58223,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "L827",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58193,8 +58238,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "35ST",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58223,8 +58268,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "30JE",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58283,8 +58328,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "30PL",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58358,8 +58403,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "4411",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58387,6 +58432,21 @@ window.VISIT_DATA = [
     "merchandiser": "Неклюдова Анастасия Игоревна",
     "network": "Пятерочка",
     "ttId": "38A8",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Козельцова Алена  Александровна",
+    "network": "Пятерочка",
+    "ttId": "8343",
     "plan": 2,
     "fact": 0,
     "verified": 0,
@@ -58448,8 +58508,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "36R3",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58463,8 +58523,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "33CA",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58519,9 +58579,39 @@ window.VISIT_DATA = [
     "week": 47,
     "weekYear": 2026,
     "city": "Воронеж",
+    "merchandiser": "Губанова Светлана",
+    "network": "Пятерочка",
+    "ttId": "L686",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
     "merchandiser": "Неклюдова Анастасия Игоревна",
     "network": "Пятерочка",
     "ttId": "31F1",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Козельцова Алена  Александровна",
+    "network": "Пятерочка",
+    "ttId": "36U5",
     "plan": 2,
     "fact": 0,
     "verified": 0,
@@ -58643,8 +58733,8 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2191",
     "plan": 3,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58733,7 +58823,7 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "B053",
     "plan": 3,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -58763,8 +58853,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "34UC",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58793,8 +58883,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "L887",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58823,7 +58913,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "D282",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -58838,7 +58928,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "L918",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -58853,7 +58943,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q383",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -58928,7 +59018,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "6610",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -58958,8 +59048,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "35SU",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59063,8 +59153,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31D3",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59198,8 +59288,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "36M2",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59304,7 +59394,7 @@ window.VISIT_DATA = [
     "ttId": "35PL",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59423,8 +59513,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q400",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59468,8 +59558,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "J485",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59543,8 +59633,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "30XV",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59573,8 +59663,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "33SG",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59603,8 +59693,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "6611",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59723,8 +59813,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "H355",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59798,8 +59888,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q393",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59828,8 +59918,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "36WC",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59844,7 +59934,7 @@ window.VISIT_DATA = [
     "ttId": "37ME",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59873,7 +59963,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q384",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -60023,7 +60113,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "34JN",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -60068,8 +60158,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "E423",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60128,7 +60218,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "36HW",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -60158,8 +60248,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "L927",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60278,7 +60368,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "39D8",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -60428,8 +60518,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "39GM",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60518,8 +60608,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "5939",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60608,8 +60698,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "34L1",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60683,8 +60773,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "E882",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60743,8 +60833,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q385",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60803,8 +60893,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "O370",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60818,8 +60908,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "33KF",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60878,8 +60968,8 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "B034",
     "plan": 3,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60924,7 +61014,7 @@ window.VISIT_DATA = [
     "ttId": "B164",
     "plan": 3,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60969,7 +61059,7 @@ window.VISIT_DATA = [
     "ttId": "B451",
     "plan": 3,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60984,7 +61074,7 @@ window.VISIT_DATA = [
     "ttId": "S800",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60999,7 +61089,7 @@ window.VISIT_DATA = [
     "ttId": "33VK",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61014,7 +61104,7 @@ window.VISIT_DATA = [
     "ttId": "35M6",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61058,8 +61148,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "395B",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61074,7 +61164,7 @@ window.VISIT_DATA = [
     "ttId": "E288",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61104,7 +61194,7 @@ window.VISIT_DATA = [
     "ttId": "31O3",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61133,8 +61223,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "34CU",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61164,7 +61254,7 @@ window.VISIT_DATA = [
     "ttId": "31D6",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61193,8 +61283,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "367P",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61209,7 +61299,7 @@ window.VISIT_DATA = [
     "ttId": "30PQ",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61223,8 +61313,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "5931",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61253,8 +61343,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "7940",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61269,7 +61359,7 @@ window.VISIT_DATA = [
     "ttId": "38S8",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61283,8 +61373,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "35QO",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61298,8 +61388,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q098",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61314,7 +61404,7 @@ window.VISIT_DATA = [
     "ttId": "O518",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61328,8 +61418,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31P0",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61374,7 +61464,7 @@ window.VISIT_DATA = [
     "ttId": "E002",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61388,8 +61478,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "37PP",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61403,8 +61493,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "30AN",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61418,8 +61508,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "S154",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61434,7 +61524,7 @@ window.VISIT_DATA = [
     "ttId": "36WJ",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61448,8 +61538,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31YT",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61463,8 +61553,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "33CM",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61478,8 +61568,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "35QW",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61523,8 +61613,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "30U1",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61539,7 +61629,7 @@ window.VISIT_DATA = [
     "ttId": "Y982",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61554,7 +61644,7 @@ window.VISIT_DATA = [
     "ttId": "S236",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61568,8 +61658,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "35M3",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61583,8 +61673,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "L967",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61628,8 +61718,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31VA",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61658,8 +61748,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "37SM",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61689,7 +61779,7 @@ window.VISIT_DATA = [
     "ttId": "38LM",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61704,7 +61794,7 @@ window.VISIT_DATA = [
     "ttId": "3A9J",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61719,7 +61809,7 @@ window.VISIT_DATA = [
     "ttId": "D853",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61749,7 +61839,7 @@ window.VISIT_DATA = [
     "ttId": "36EP",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61779,7 +61869,7 @@ window.VISIT_DATA = [
     "ttId": "34M7",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61823,8 +61913,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "S430",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61868,8 +61958,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "38CX",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61898,8 +61988,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "341Y",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61914,7 +62004,7 @@ window.VISIT_DATA = [
     "ttId": "31MX",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61929,7 +62019,7 @@ window.VISIT_DATA = [
     "ttId": "6506",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61944,7 +62034,7 @@ window.VISIT_DATA = [
     "ttId": "Y039",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -61974,7 +62064,7 @@ window.VISIT_DATA = [
     "ttId": "34N7",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62033,8 +62123,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "36YG",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62094,7 +62184,7 @@ window.VISIT_DATA = [
     "ttId": "35X8",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62108,8 +62198,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "33VJ",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62124,7 +62214,7 @@ window.VISIT_DATA = [
     "ttId": "33PD",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62138,8 +62228,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "S831",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62153,8 +62243,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "O068",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62169,7 +62259,7 @@ window.VISIT_DATA = [
     "ttId": "S157",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62213,8 +62303,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "H445",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62258,8 +62348,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "344C",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62289,7 +62379,7 @@ window.VISIT_DATA = [
     "ttId": "338R",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62348,8 +62438,8 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2157",
     "plan": 3,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62438,8 +62528,8 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2255",
     "plan": 3,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62483,8 +62573,8 @@ window.VISIT_DATA = [
     "network": "Перекресток",
     "ttId": "2406",
     "plan": 3,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62529,7 +62619,7 @@ window.VISIT_DATA = [
     "ttId": "2806",
     "plan": 3,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62979,7 +63069,7 @@ window.VISIT_DATA = [
     "ttId": "Q434",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -63068,8 +63158,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "H147",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -63113,8 +63203,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "4791",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -63233,8 +63323,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "J746",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -63309,7 +63399,7 @@ window.VISIT_DATA = [
     "ttId": "37CP",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -63443,8 +63533,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "E595",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -63698,8 +63788,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "37BD",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -63713,8 +63803,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "3357",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -63788,8 +63878,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "37U6",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -63848,8 +63938,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "37YW",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -63923,8 +64013,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "O739",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -64103,8 +64193,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31UG",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -64117,6 +64207,21 @@ window.VISIT_DATA = [
     "merchandiser": "Ивонцина Елена Сергеевна",
     "network": "Пятерочка",
     "ttId": "34FY",
+    "plan": 2,
+    "fact": 0,
+    "verified": 0,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 11,
+    "week": 47,
+    "weekYear": 2026,
+    "city": "Воронеж",
+    "merchandiser": "Козельцова Алена  Александровна",
+    "network": "Пятерочка",
+    "ttId": "331X",
     "plan": 2,
     "fact": 0,
     "verified": 0,
@@ -65753,7 +65858,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "D282",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -65768,7 +65873,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "L918",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -65783,7 +65888,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q383",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -65918,8 +66023,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "36M2",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -65993,8 +66098,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "J485",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -66083,8 +66188,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "H355",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -66188,7 +66293,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "36HW",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -66323,8 +66428,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "Q385",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -66518,8 +66623,8 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "38CX",
     "plan": 2,
-    "fact": 0,
-    "verified": 0,
+    "fact": 1,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -66838,6 +66943,16 @@ window.VISIT_EMPLOYEES = [
     "project": "Холдинг Аква",
     "city": "Воронеж",
     "merchandiser": "Алексеевна Наталья Алексеевна"
+  },
+  {
+    "project": "Холдинг Аква",
+    "city": "Воронеж",
+    "merchandiser": "Козельцова Алена  Александровна"
+  },
+  {
+    "project": "Холдинг Аква",
+    "city": "Воронеж",
+    "merchandiser": "Губанова Светлана"
   }
 ];
 window.REJECTED_VISITS = [
@@ -162470,7 +162585,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Воронежская обл, Воронеж г, Средне-Московская ул, 32Б",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -162483,7 +162598,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Воронежская обл, Воронеж г, Переверткина ул, 1/9",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -162535,7 +162650,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Воронежская обл, Воронеж г, Ленинский пр-кт, 174П",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -162600,7 +162715,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Воронежская обл, Воронеж г, Ленинский пр-кт, 1Д",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -162717,7 +162832,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Грамши ул, 70",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -162756,7 +162871,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Матросова ул, 4",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -162847,7 +162962,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Ленинский пр-кт, 32",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -163028,7 +163143,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "31K2",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, 45 стрелковой дивизии ул, 259/3",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -163094,7 +163209,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Чапаева ул, 52",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -163159,7 +163274,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Зои Космодемьянской ул, 7",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -163198,7 +163313,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Ленинский проспект, 148",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -163224,7 +163339,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Переверткина ул, 1/1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -163262,7 +163377,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "372J",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, 45 стрелковой дивизии ул, 230А",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -163627,7 +163742,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Переверткина ул, 13",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -163639,7 +163754,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "7909",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Шишкова ул, 2Г",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -163692,7 +163807,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Остужева ул, 2Б",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -163731,7 +163846,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Херсонская улица, 21а",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -163796,7 +163911,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Ленинский пр-кт, 153",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -163809,7 +163924,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Острогожская ул, 170/1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -163835,7 +163950,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Матросова ул, 57",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -163887,7 +164002,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Беговая ул, 223/5",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164004,7 +164119,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Ленинский пр-кт, 82",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164081,7 +164196,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "8343",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Генерала Лизюкова ул, 12",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -164173,7 +164288,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Октябрьская ул, уч 463/1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164199,7 +164314,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Челюскинцев ул, 88А",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164315,7 +164430,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "L686",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, Московский пр-кт, 13/1",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -164354,7 +164469,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "36U5",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, 45-й Стрелковой Дивизии улица, 259\\14",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -164485,7 +164600,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Ростовская обл, Ростов-на-Дону г, Текучева ул, 139А",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164563,7 +164678,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Ростовская обл, Ростов-на-Дону г, Сельмаш пр-кт, 2",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164615,7 +164730,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Висаитова ул, 2/10, стр 2",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164654,7 +164769,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Соколова пр-кт, 72",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164680,7 +164795,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Таганрогская ул, 167/1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164693,7 +164808,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, 2-я Краснодарская ул, 145А",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164706,7 +164821,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, 2-я Краснодарская ул, 78/3",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164797,7 +164912,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Мечникова ул, 81/3",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164823,7 +164938,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Платона Кляты ул, 2",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -164914,7 +165029,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Мечникова ул, 31/106",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -165083,7 +165198,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл , Ростов-на-Дону г, Петренко ул, зд 3",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -165304,7 +165419,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Сельмаш пр-кт, 98/11",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -165356,7 +165471,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Петренко ул, 10",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -165421,7 +165536,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Доватора ул, 59В",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -165447,7 +165562,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Содружества ул, 58/124",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -165486,7 +165601,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Казахская ул, 88",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -165603,7 +165718,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Доватора ул, 144/28",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -165681,7 +165796,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Буденновский пр-кт, 80",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -165707,7 +165822,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, 10-й Лазоревый пер, з/у 57/46",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -165746,7 +165861,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Соборный пер, /Буденновский пр-кт, 91/104",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -165876,7 +165991,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Лермонтовская ул, 111",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -165928,7 +166043,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Творческая ул, 7",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -165993,7 +166108,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Мечникова улица, 63",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -166032,7 +166147,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Магнитогорская ул, 1А/25",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -166175,7 +166290,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Варфоломеева ул, 241/101",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -166357,7 +166472,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Металлургическая ул, 99/66",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -166435,7 +166550,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Селиванова ул, 49",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -166539,7 +166654,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Киргизская ул, 38/36",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -166604,7 +166719,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Каширская ул, 6А",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -166669,7 +166784,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Таганрогская ул, 114И",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -166721,7 +166836,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Димитрова ул, 61/2",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -166747,7 +166862,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Магнитогорская ул, 2В",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -166812,7 +166927,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Краснодарский край, Краснодар г, им Атарбекова ул, 1/1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -166994,7 +167109,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Дальний проезд, 11, к 1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167059,7 +167174,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, им Тургенева ул, 189/6",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167124,7 +167239,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, им Атарбекова ул, 38/1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167150,7 +167265,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, им Селезнева ул, 132",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167176,7 +167291,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, им Константина Образцова пр-кт, 27",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167202,7 +167317,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, им Григория Булгакова ул, 8, к 1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167215,7 +167330,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Российская ул, 65",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167241,7 +167356,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, им Адмирала Серебрякова ул, 3",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167293,7 +167408,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар, Уральская улица, 75\\6",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167306,7 +167421,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Зиповская ул, 34, к 1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167319,7 +167434,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Садовая ул, 81",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167358,7 +167473,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, им Академика Лукьяненко П П ул, 20",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167371,7 +167486,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Оливковая ул, 1, стр 1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167397,7 +167512,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, им Карякина ул, 10/1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167436,7 +167551,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Березовый п, Целиноградская ул, 6/1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167475,7 +167590,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Московская ул, 6А",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167488,7 +167603,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Сормовская ул, 208",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167527,7 +167642,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Старокубанская ул, 2/23, к 1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167553,7 +167668,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Героя Советского Союза Николая Воробьёва улица, 7\\1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167696,7 +167811,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Пригородная ул, 33",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167735,7 +167850,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар, Домбайская улица, 8",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167761,7 +167876,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, им Космонавта Гагарина ул, 170",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167878,7 +167993,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Толбухина улица, 118",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167943,7 +168058,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Красных Партизан ул, 145",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167969,7 +168084,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, им Стасова ул, 186",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -167982,7 +168097,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, им Симиренко ул, 37, к 4",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -168034,7 +168149,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Домбайская ул, 4/1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -168073,7 +168188,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Гаражная ул, 107, стр 1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -168164,7 +168279,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Самарская обл, Самара г, Зои Космодемьянской ул, 7",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -168320,7 +168435,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Самарская обл, Самара г, Дачная ул, 2",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -168372,7 +168487,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Перекресток",
     "address": "Самарская обл, Самара г, Аэродромная ул, 13",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -169113,7 +169228,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Самарская обл, Самара г, Крутые Ключи мкр, 10",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -169165,7 +169280,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Самарская обл, Самара г, Мориса Тореза ул, 13А",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -169386,7 +169501,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Самарская обл, Самара г, Карбышева ул, 64",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -169620,7 +169735,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Саратовская обл, Саратов г, Им Орджоникидзе Г К ул",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -169854,7 +169969,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Саратовская обл, Саратов г, Большая Садовая ул, 149А",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -169867,7 +169982,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Саратовская обл, Саратов г, Шелковичная ул, 186",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -169958,7 +170073,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Саратовская обл, Саратов г, Чернышевского улица, 4",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -170023,7 +170138,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Саратовская обл, Саратов г, Шелковичная улица, 177",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -170088,7 +170203,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Саратовская обл, Саратов г, им Чернышевского Н Г ул, 6",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -170257,7 +170372,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Саратовская обл, Саратов г, 2-й Детский проезд, 34",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
@@ -170295,7 +170410,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "331X",
     "network": "Пятерочка",
     "address": "Воронежская обл, Воронеж г, 45 стрелковой дивизии ул, 247/3",
-    "active": false,
+    "active": true,
     "visited": false
   },
   {
@@ -172545,7 +172660,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Таганрогская ул, 167/1",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -172558,7 +172673,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, 2-я Краснодарская ул, 145А",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -172571,7 +172686,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, 2-я Краснодарская ул, 78/3",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -172727,7 +172842,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл , Ростов-на-Дону г, Петренко ул, зд 3",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -172805,7 +172920,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Петренко ул, 10",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -172909,7 +173024,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Доватора ул, 144/28",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -173013,7 +173128,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Мечникова улица, 63",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -173195,7 +173310,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Ростовская обл, Ростов-на-Дону г, Таганрогская ул, 114И",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
@@ -173455,7 +173570,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар, Домбайская улица, 8",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Перспектива СМ",
