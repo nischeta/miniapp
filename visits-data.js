@@ -1,6 +1,6 @@
 // Файл формируется ботом NISCHARD 2.2.10 после подтверждённой загрузки Excel.
 window.VISIT_DATA_META = {
-  "updatedAt": "2026-11-17T21:37:09+00:00",
+  "updatedAt": "2026-11-18T05:24:25+00:00",
   "sourceFile": "Свод.xlsx",
   "recordCount": 4445,
   "employeeCount": 53,
@@ -9,7 +9,7 @@ window.VISIT_DATA_META = {
   "uniqueTtCount": 633,
   "activeTtCount": 515,
   "visitedTtCount": 494,
-  "verifiedCount": 5756
+  "verifiedCount": 5764
 };
 window.VISIT_DATA = [
   {
@@ -58914,7 +58914,7 @@ window.VISIT_DATA = [
     "ttId": "D282",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58929,7 +58929,7 @@ window.VISIT_DATA = [
     "ttId": "L918",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -58944,7 +58944,7 @@ window.VISIT_DATA = [
     "ttId": "Q383",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59019,7 +59019,7 @@ window.VISIT_DATA = [
     "ttId": "6610",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -59964,7 +59964,7 @@ window.VISIT_DATA = [
     "ttId": "Q384",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60114,7 +60114,7 @@ window.VISIT_DATA = [
     "ttId": "34JN",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60219,7 +60219,7 @@ window.VISIT_DATA = [
     "ttId": "36HW",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -60369,7 +60369,7 @@ window.VISIT_DATA = [
     "ttId": "39D8",
     "plan": 2,
     "fact": 1,
-    "verified": 0,
+    "verified": 1,
     "rejected": 0
   },
   {
@@ -62858,7 +62858,7 @@ window.VISIT_DATA = [
     "network": "Пятерочка",
     "ttId": "31KT",
     "plan": 2,
-    "fact": 0,
+    "fact": 1,
     "verified": 0,
     "rejected": 0
   },
@@ -168838,7 +168838,7 @@ window.TT_COVERAGE_DATA = [
     "network": "Пятерочка",
     "address": "Самарская обл, Самара г, Мехзавод п, 1-й кв-л, 29",
     "active": true,
-    "visited": false
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
