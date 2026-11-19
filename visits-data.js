@@ -1,6 +1,6 @@
-// Файл формируется ботом NISCHARD 2.2.10 после подтверждённой загрузки Excel.
+// Файл формируется ботом NISCHARD 2.2.12 после подтверждённой загрузки Excel.
 window.VISIT_DATA_META = {
-  "updatedAt": "2026-11-19T17:03:01+00:00",
+  "updatedAt": "2026-11-19T19:08:16+00:00",
   "sourceFile": "Свод.xlsx",
   "recordCount": 4449,
   "employeeCount": 54,
