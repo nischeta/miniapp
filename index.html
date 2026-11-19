@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f3f5f9">
-<title>NISCHARD — мини-приложение 1.18.15</title>
+<title>NISCHARD — мини-приложение 1.18.13</title>
 <style>
 :root{--bg:#f3f5f9;--card:#fff;--ink:#182230;--muted:#758195;--blue:#2869e8;--line:#e7ebf1;--green:#168653;--shadow:0 8px 28px #14213b0c}
 *{box-sizing:border-box}
@@ -192,27 +192,6 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
 @media(min-width:600px){#projectList{grid-template-columns:repeat(2,minmax(0,1fr))}.analytics-filters{grid-template-columns:repeat(3,minmax(0,1fr))}.analytics-kpis{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
 
-/* Зарплата и финансовые потери */
-.salary-kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}
-.salary-kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px;min-width:0}
-.salary-kpi small{display:block;color:var(--muted);font-size:11px}
-.salary-kpi b{display:block;font-size:22px;margin-top:5px;overflow-wrap:anywhere}
-.salary-kpi.loss b{color:#c14b42}
-.salary-note{padding:11px 13px;border:1px solid #ead9b5;background:#fff9eb;border-radius:12px;color:#75551e;font-size:12px;margin:10px 0}
-.salary-person{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin:10px 0;box-shadow:var(--shadow)}
-.salary-person-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-.salary-person-name{font-weight:750;font-size:14px}
-.salary-person-city{font-size:11px;color:var(--muted);margin-top:3px}
-.salary-person-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
-.salary-person-metric{background:#f7f9fc;border-radius:10px;padding:9px}
-.salary-person-metric small{display:block;font-size:10px;color:var(--muted)}
-.salary-person-metric b{display:block;font-size:16px;margin-top:3px}
-.salary-network{border-top:1px solid var(--line);margin-top:12px;padding-top:10px;font-size:12px}
-.salary-network-row{display:flex;justify-content:space-between;gap:10px;padding:5px 0}
-.salary-network-row span:last-child{text-align:right;font-weight:700}
-.salary-muted{font-size:11px;color:var(--muted);margin-top:8px}
-@media(min-width:600px){.salary-kpis{grid-template-columns:repeat(4,minmax(0,1fr))}#salaryEmployees{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}.salary-person{margin:0}}
-@media(min-width:1200px){#salaryEmployees{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
 @media(max-width:600px){#standardsViewer{height:calc(100dvh - 245px)!important;min-height:560px!important}}
 </style>
@@ -274,7 +253,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <article class="card">
     <h2 style="font-size:16px;margin:0 0 8px">4. Отклонённые визиты</h2>
     <p class="muted" style="margin:0;font-size:13px">В этом разделе отображается количество отклонённых визитов за выбранный период.</p>
-    <p style="font-size:13px;margin:9px 0 0"><b>Месяц и неделя</b> — по умолчанию открывается текущий календарный месяц целиком. При необходимости выберите другой месяц или отдельную неделю.</p>
+    <p style="font-size:13px;margin:9px 0 0"><b>Месяц и неделя</b> — используйте фильтры, чтобы выбрать нужный период.</p>
     <p class="muted" style="font-size:12px;margin:8px 0 0">Нажмите на сотрудника, чтобы увидеть его отклонённые визиты: дату, торговую сеть, адрес торговой точки и комментарий с причиной.</p>
   </article>
   <article class="card">
@@ -351,25 +330,6 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
 </section>
 
 
-<section id="salary" class="screen">
-  <button class="back" type="button" data-go="menu">← В рабочее меню</button>
-  <div class="crumb" id="salaryCrumb"></div>
-  <h1>Зарплата и потери</h1>
-  <p class="lead">Начисления только за проверенные визиты. Отклонения учитываются отдельно как финансовые потери.</p>
-  <div class="updated-note" id="salaryUpdatedAt">Последнее обновление данных: <b>ожидает загрузки Excel</b></div>
-  <div class="filters"><div><label for="salaryMonthFilter">Месяц</label><select id="salaryMonthFilter"></select></div></div>
-  <div class="salary-kpis" id="salaryKpis"></div>
-  <div id="salaryRulesNote" class="salary-note"></div>
-  <h2 style="font-size:16px;margin:18px 0 8px">Начисления и потери по сотрудникам</h2>
-  <div id="salaryEmployees"></div>
-  <div class="card" id="salaryExportCard">
-    <h2 style="font-size:16px;margin:0 0 8px">Выгрузка расчёта</h2>
-    <p class="muted" style="font-size:12px;margin:0 0 12px">Выгрузки учитывают выбранные проект, город и месяц.</p>
-    <button class="action" type="button" id="salaryExportDetail" style="width:100%;min-height:0;margin-bottom:8px"><b>Скачать детальную по ТТ</b><small>План, проверенные и отклонённые визиты, ставка и начисление по каждой торговой точке</small></button>
-    <button class="action" type="button" id="salaryExportSummary" style="width:100%;min-height:0"><b>Скачать сводную по сотрудникам</b><small>Итоги по каждому сотруднику и торговой сети</small></button>
-  </div>
-
-</section>
 
 <section id="analytics" class="screen">
   <button class="back" type="button" data-go="menu">← В рабочее меню</button>
@@ -404,7 +364,7 @@ button:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
   <div class="analytics-muted">Показатели рассчитываются по загруженным данным. Для годового покрытия в сводных карточках используется последний доступный месячный снимок базы, а график показывает помесячную динамику.</div>
 </section>
 
-<div class="footer">NISCHARD · Аналитика и план визитов · Источник данных: Excel · Версия 1.18.15</div>
+<div class="footer">NISCHARD · Аналитика и план визитов · Источник данных: Excel · Версия 1.18.13</div>
 </main>
 <script src="https://st.max.ru/js/max-web-app.js"></script>
 <script src="config.js"></script>
@@ -435,7 +395,6 @@ const APP_CONFIG = (() => {
   const defaultSections = [
     {id:"visits",name:"Выполнение визитов",icon:"✓",hint:"План и фактическое выполнение"},
     {id:"rejected",name:"Отклонённые визиты",icon:"!",hint:"Причины и список отклонений"},
-    {id:"salary",name:"Зарплата",icon:"₽",hint:"Начисления и потери по сотрудникам"},
     {id:"standards",name:"Стандарты выкладки",icon:"▤",hint:"Материалы и правила работы с ассортиментом"}
   ];
   return {...source, projects, sections:Array.isArray(source.sections) && source.sections.length ? source.sections : defaultSections};
@@ -505,10 +464,7 @@ function renderMenu() {
   byId("selectedCrumb").textContent = `${selectedProject.name} · ${cityLabel()}`;
   const grid = byId("sectionGrid");
   grid.replaceChildren();
-  const availableSections = APP_CONFIG.sections.filter(section =>
-    section.id !== "salary" || selectedProject.id === "holding_aqua"
-  );
-  availableSections.forEach(section => {
+  APP_CONFIG.sections.forEach(section => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "action";
@@ -517,8 +473,7 @@ function renderMenu() {
     const icon = document.createElement("span");
     icon.className = "ico";
     icon.textContent = section.id === "visits" ? "📍" :
-      section.id === "rejected" ? "⚠️" :
-      section.id === "salary" ? "💰" : "▤";
+      section.id === "rejected" ? "⚠️" : "▤";
     const title = document.createElement("b");
     title.textContent = section.name;
     const hint = document.createElement("small");
@@ -563,16 +518,6 @@ function openSection(section) {
     byId("rejectedDetailView").hidden = true;
     renderRejectedDashboard();
     show("rejected");
-    return;
-  }
-  if (section.id === "salary") {
-    if (selectedProject.id !== "holding_aqua") {
-      show("menu");
-      return;
-    }
-    byId("salaryCrumb").textContent = `${selectedProject.name} · ${selectedCity === ALL_CITIES ? "Все города" : selectedCity}`;
-    renderSalaryDashboard();
-    show("salary");
     return;
   }
   if (section.id === "standards") {
@@ -1008,125 +953,6 @@ byId("analyticsPanel").addEventListener("click",event=>{const b=event.target.clo
 // ------------------ конец аналитики v15 ------------------
 
 
-const SALARY_RULES = {
-  "Пятерочка": {base: 2000, norm: 9, specialCount: 8, specialPlan: 8, specialMode: "gte"},
-  "Пятёрочка": {base: 2000, norm: 9, specialCount: 8, specialPlan: 8, specialMode: "gte"},
-  "Перекресток": {base: 2500, norm: 13, specialCount: 12, specialPlan: 12, specialMode: "gt"},
-  "Перекрёсток": {base: 2500, norm: 13, specialCount: 12, specialPlan: 12, specialMode: "gt"}
-};
-function salaryCanonicalNetwork(name){return /перекр/i.test(String(name||""))?"Перекрёсток":/пятер|пятёр/i.test(String(name||""))?"Пятёрочка":String(name||"");}
-function salaryRuleFor(network, month){const canonical=salaryCanonicalNetwork(network),base=SALARY_RULES[canonical]||SALARY_RULES[network];if(!base)return null;const imported=window.SALARY_TARIFFS||{};const active=imported[`${month}|||${canonical}`];return active?{...base,...active}:base;}
-
-const salaryRub = value => new Intl.NumberFormat("ru-RU",{style:"currency",currency:"RUB",maximumFractionDigits:2}).format(Number(value)||0);
-const salaryNum = value => Number(value)||0;
-function escapeSalary(value){return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));}
-function salaryKpi(label,value,kind=""){return `<div class="salary-kpi ${kind}"><small>${escapeSalary(label)}</small><b>${escapeSalary(value)}</b></div>`;}
-function salaryRate(rule, fact, plan){
-  if(!rule || fact<=0) return rule ? rule.base/rule.norm : 0;
-  const specialPlanOk = rule.specialMode === "gt" ? plan > rule.specialPlan : plan >= rule.specialPlan;
-  if(fact===rule.specialCount && specialPlanOk) return rule.base/rule.specialCount;
-  if(fact>rule.norm) return rule.base/fact;
-  return rule.base/rule.norm;
-}
-function renderSalaryDashboard() {
-  if (selectedProject?.id !== "holding_aqua") {
-    byId("salaryKpis").replaceChildren();
-    byId("salaryEmployees").replaceChildren();
-    byId("salaryRulesNote").textContent = "Для проекта «Перспектива СМ» зарплатный расчёт не применяется.";
-    return;
-  }
-  const raw=window.VISIT_DATA_META?.updatedAt||window.VISIT_DATA_UPDATED_AT||null;
-  const target=byId("salaryUpdatedAt");
-  if(raw&&!Number.isNaN(new Date(raw).getTime())) target.innerHTML=`Последнее обновление данных: <b>${new Intl.DateTimeFormat("ru-RU",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"}).format(new Date(raw))}</b>`;
-  else target.innerHTML='Последнее обновление данных: <b>ожидает загрузки Excel</b>';
-
-  const projectRows=(window.VISIT_DATA||[]).filter(r=>r.project===selectedProject.name&&(selectedCity===ALL_CITIES||r.city===selectedCity));
-  const rejectedAll=(window.REJECTED_VISITS||[]).filter(r=>r.project===selectedProject.name&&(selectedCity===ALL_CITIES||r.city===selectedCity));
-  const monthSelect=byId("salaryMonthFilter");
-  const months=[...new Set([...projectRows.map(r=>`${r.year}-${r.month}`),...rejectedAll.map(r=>`${r.year}-${r.month}`)])].sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}));
-  const previous=monthSelect.value,now=new Date(),current=`${now.getFullYear()}-${now.getMonth()+1}`;
-  const names=["","Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
-  monthSelect.replaceChildren();
-  months.forEach(key=>{const [y,m]=key.split("-"),o=document.createElement("option");o.value=key;o.textContent=`${names[Number(m)]} ${y}`;monthSelect.append(o);});
-  if(months.includes(previous))monthSelect.value=previous;else if(months.includes(current))monthSelect.value=current;else if(months.length)monthSelect.value=months[months.length-1];
-  const selected=monthSelect.value;
-  const rows=projectRows.filter(r=>`${r.year}-${r.month}`===selected), rejected=rejectedAll.filter(r=>`${r.year}-${r.month}`===selected);
-  const verifiedDataAvailable=rows.some(r=>r.verified!==undefined&&r.verified!==null);
-  const peopleMap=new Map(), getPerson=(city,name)=>`${city}|||${name}`;
-  const ensurePerson=(city,name)=>{const key=getPerson(city,name);if(!peopleMap.has(key))peopleMap.set(key,{city,name,ttGroups:new Map()});return peopleMap.get(key);};
-  const ensureTT=(person,network,ttId)=>{const key=`${network}|||${String(ttId||"__unknown__").trim().toLocaleLowerCase("ru")}`;if(!person.ttGroups.has(key))person.ttGroups.set(key,{network,ttId,plan:0,verified:0,rejected:0,hasVerified:false});return person.ttGroups.get(key);};
-  rows.forEach(r=>{
-    const person=ensurePerson(r.city,r.merchandiser||"Не назначен"),tt=ensureTT(person,r.network||"Не указана",r.ttId);
-    tt.plan+=salaryNum(r.plan);
-    if(r.verified!==undefined&&r.verified!==null){tt.verified+=salaryNum(r.verified);tt.hasVerified=true;}
-  });
-  rejected.forEach(r=>{
-    const person=ensurePerson(r.city,r.merchandiser||"Не назначен"),tt=ensureTT(person,r.network||"Не указана",r.ttId);
-    tt.rejected++;
-  });
-  const people=[...peopleMap.values()].sort((a,b)=>a.name.localeCompare(b.name,"ru"));
-  let verifiedTotal=0,rejectedTotal=rejected.length,salaryTotal=0,lossTotal=0,unknown=0,verifiedFieldMissing=false;
-  const list=byId("salaryEmployees");list.replaceChildren();
-  people.forEach(p=>{
-    let vTotal=0,rTotal=0,payTotal=0,lossPerson=0;const networks=new Map();
-    for(const tt of p.ttGroups.values()){
-      const network=tt.network,rule=salaryRuleFor(network,selected);
-      vTotal+=tt.verified;rTotal+=tt.rejected;
-      if(tt.verified>0&&!tt.hasVerified)verifiedFieldMissing=true;
-      if(rule&&tt.ttId&&verifiedDataAvailable){
-        const fact=tt.verified+tt.rejected,rate=salaryRate(rule,fact,tt.plan),pay=rate*tt.verified,loss=rate*tt.rejected;
-        payTotal+=pay;lossPerson+=loss;
-        if(!networks.has(network))networks.set(network,{verified:0,rejected:0,pay:0,loss:0,ttCount:0});
-        const n=networks.get(network);n.verified+=tt.verified;n.rejected+=tt.rejected;n.pay+=pay;n.loss+=loss;n.ttCount++;
-      }else if(tt.verified||tt.rejected){unknown++;}
-    }
-    let netHtml="";
-    for(const [network,b] of networks){
-      netHtml+=`<div class="salary-network-row"><span>${escapeSalary(network)} <span class="salary-muted">(${b.ttCount} ТТ)</span></span><span>${b.verified} провер. · ${b.rejected} откл.<br>${salaryRub(b.pay)} начислено<br>${salaryRub(b.loss)} потери</span></div>`;
-    }
-    if(!netHtml)netHtml='<div class="salary-muted">Нет данных по настроенным тарифам.</div>';
-    verifiedTotal+=vTotal;salaryTotal+=payTotal;lossTotal+=lossPerson;
-    const card=document.createElement("article");card.className="salary-person";
-    card.innerHTML=`<div class="salary-person-head"><div><div class="salary-person-name">${escapeSalary(p.name)}</div><div class="salary-person-city">${escapeSalary(p.city)}</div></div></div>
-      <div class="salary-person-grid">
-        <div class="salary-person-metric"><small>Проверенные визиты</small><b>${vTotal}</b></div>
-        <div class="salary-person-metric"><small>Отклонённые визиты</small><b>${rTotal}</b></div>
-        <div class="salary-person-metric"><small>Начислено</small><b>${salaryRub(payTotal)}</b></div>
-        <div class="salary-person-metric"><small>Финансовые потери</small><b style="color:#c14b42">${salaryRub(lossPerson)}</b></div>
-      </div><div class="salary-network">${netHtml}</div>`;
-    list.append(card);
-  });
-  byId("salaryKpis").innerHTML=[salaryKpi("Проверенные визиты",verifiedTotal),salaryKpi("Отклонённые визиты",rejectedTotal),salaryKpi("Начислено по настроенным тарифам",salaryRub(salaryTotal)),salaryKpi("Потери по настроенным тарифам",salaryRub(lossTotal),"loss")].join("");
-  const formatTariffAmount=value=>new Intl.NumberFormat("ru-RU",{maximumFractionDigits:2}).format(Number(value)||0);
-  const tariffCondition=rule=>rule.specialMode==="gt"?`план > ${formatTariffAmount(rule.specialPlan)}`:`план ≥ ${formatTariffAmount(rule.specialPlan)}`;
-  const tariffDescription=(network,label)=>{
-    const rule=salaryRuleFor(network,selected);
-    if(!rule)return `«${label}»: тариф для выбранного месяца не настроен.`;
-    const base=formatTariffAmount(rule.base),norm=formatTariffAmount(rule.norm),special=formatTariffAmount(rule.specialCount);
-    return `«${label}»: база ${base} ₽, норма ${norm} визитов; при ${special} проверенных и условии ${tariffCondition(rule)} — ставка ${base}/${special}; при 1–${norm} (кроме спецусловия) — ${base}/${norm}; свыше ${norm} — ${base}/число проверенных.`;
-  };
-  const selectedMonthLabel=selected?(()=>{const [y,m]=selected.split("-");return `${names[Number(m)]} ${y}`;})():"месяц не выбран";
-  const notes=[`Тарифные условия на ${selectedMonthLabel}. Тарифы загружаются администратором через Excel-лист «Тарифы». Расчёт выполняется отдельно по каждой уникальной ТТ за месяц и затем суммируется по сотруднику. Факт для определения ставки = проверенные + отклонённые визиты; оплачиваются только проверенные, отклонённые учитываются как потери. ${tariffDescription("Пятёрочка","Пятёрочка")} ${tariffDescription("Перекрёсток","Перекрёсток")} Оплачиваются только «Проверена»; отклонённые показываются отдельно как потери по расчётной ставке ТТ.`];
-  if(rows.length&&!verifiedDataAvailable)notes.push("В текущей базе нет отдельного количества проверенных визитов. Для точного расчёта загрузите исходный Excel «Свод ХА» через бота.");
-  if(unknown&&verifiedDataAvailable)notes.push("Для части записей отсутствует поддерживаемый тариф или данные о ТТ; суммы по ним не рассчитаны.");
-  if(!rows.length&&!rejected.length)notes.push("За выбранный месяц нет данных.");
-  byId("salaryRulesNote").textContent=notes.join(" ");
-}
-function salaryBuildRows(){
- if(selectedProject?.id!=="holding_aqua")return [];
- const projectRows=(window.VISIT_DATA||[]).filter(r=>r.project===selectedProject.name&&(selectedCity===ALL_CITIES||r.city===selectedCity));
- const rejectedAll=(window.REJECTED_VISITS||[]).filter(r=>r.project===selectedProject.name&&(selectedCity===ALL_CITIES||r.city===selectedCity));
- const month=byId("salaryMonthFilter").value,rows=projectRows.filter(r=>`${r.year}-${r.month}`===month),rejected=rejectedAll.filter(r=>`${r.year}-${r.month}`===month);
- const map=new Map(),key=(r)=>[r.city,r.merchandiser||"Не назначен",salaryCanonicalNetwork(r.network),String(r.ttId||"__unknown__").trim().toLocaleLowerCase("ru")].join("|||");
- rows.forEach(r=>{const k=key(r);if(!map.has(k))map.set(k,{project:r.project,city:r.city,employee:r.merchandiser||"Не назначен",network:salaryCanonicalNetwork(r.network),ttId:r.ttId||"",plan:0,verified:0,rejected:0});const x=map.get(k);x.plan+=salaryNum(r.plan);x.verified+=salaryNum(r.verified);});
- rejected.forEach(r=>{const k=key(r);if(!map.has(k))map.set(k,{project:r.project,city:r.city,employee:r.merchandiser||"Не назначен",network:salaryCanonicalNetwork(r.network),ttId:r.ttId||"",plan:0,verified:0,rejected:0});map.get(k).rejected++;});
- return [...map.values()].map(x=>{const fact=x.verified+x.rejected,rule=salaryRuleFor(x.network,month),rate=rule?salaryRate(rule,fact,x.plan):0;return {...x,fact,base:rule?.base??0,norm:rule?.norm??0,rate,pay:rate*x.verified,loss:rate*x.rejected};});
-}
-function salaryDownloadCsv(filename,rows){const csv="\uFEFF"+rows.map(row=>row.map(v=>'"'+String(v??"").replace(/"/g,'""')+'"').join(";")).join("\r\n");const blob=new Blob([csv],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-function salaryExportDetail(){if(selectedProject?.id!=="holding_aqua")return;const data=salaryBuildRows(),out=[["Проект","Город","Сотрудник","Сеть","Код ТТ","План визитов","Проверенные визиты","Отклонённые визиты","Факт визитов (проверенные + отклонённые)","Базовая сумма, ₽","Норматив","Ставка за визит, ₽","Начисление, ₽","Потери, ₽"]];data.forEach(x=>out.push([x.project,x.city,x.employee,x.network,x.ttId,x.plan,x.verified,x.rejected,x.fact,x.base,x.norm,+x.rate.toFixed(4),+x.pay.toFixed(2),+x.loss.toFixed(2)]));salaryDownloadCsv(`NISCHARD_salary_detail_${byId("salaryMonthFilter").value}.csv`,out);}
-function salaryExportSummary(){if(selectedProject?.id!=="holding_aqua")return;const grouped=new Map();salaryBuildRows().forEach(x=>{const k=[x.project,x.city,x.employee].join("|||");if(!grouped.has(k))grouped.set(k,{project:x.project,city:x.city,employee:x.employee,tt:new Set(),plan:0,verified:0,rejected:0,fact:0,pyat:0,cross:0,loss:0});const a=grouped.get(k);a.tt.add(x.ttId);a.plan+=x.plan;a.verified+=x.verified;a.rejected+=x.rejected;a.fact+=x.fact;if(x.network==="Пятёрочка")a.pyat+=x.pay;if(x.network==="Перекрёсток")a.cross+=x.pay;a.loss+=x.loss;});const out=[["Проект","Город","Сотрудник","Количество ТТ","План визитов","Проверенные визиты","Отклонённые визиты","Факт визитов (проверенные + отклонённые)","Пятёрочка, ₽","Перекрёсток, ₽","Итого зарплата, ₽","Финансовые потери, ₽"]];[...grouped.values()].sort((a,b)=>a.employee.localeCompare(b.employee,"ru")).forEach(a=>out.push([a.project,a.city,a.employee,a.tt.size,a.plan,a.verified,a.rejected,a.fact,+a.pyat.toFixed(2),+a.cross.toFixed(2),+(a.pyat+a.cross).toFixed(2),+a.loss.toFixed(2)]));salaryDownloadCsv(`NISCHARD_salary_summary_${byId("salaryMonthFilter").value}.csv`,out);}
-byId("salaryMonthFilter")?.addEventListener("change",renderSalaryDashboard);
-byId("salaryExportDetail")?.addEventListener("click",salaryExportDetail);byId("salaryExportSummary")?.addEventListener("click",salaryExportSummary);
 
 
 function renderRejectedUpdatedAt() {
@@ -1143,9 +969,9 @@ function renderRejectedDashboard() {
   const all = (window.REJECTED_VISITS || []).filter(r => r.project === selectedProject.name &&
     (selectedCity === ALL_CITIES || r.city === selectedCity));
   const monthSelect = byId("rejectedMonthFilter"), weekSelect = byId("rejectedWeekFilter");
-  const now = new Date(), currentMonthKey = `${now.getFullYear()}-${now.getMonth()+1}`;
-  const months = [...new Set([...all.map(r => `${r.year}-${r.month}`), currentMonthKey])].sort();
+  const months = [...new Set(all.map(r => `${r.year}-${r.month}`))].sort();
   const previousMonth = monthSelect.value;
+  const now = new Date(), currentMonthKey = `${now.getFullYear()}-${now.getMonth()+1}`;
   monthSelect.replaceChildren();
   months.forEach(key => {
     const [year,month] = key.split("-"); const opt=document.createElement("option");
