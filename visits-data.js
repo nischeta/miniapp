@@ -1,6 +1,6 @@
 // Файл формируется ботом NISCHARD 2.2.18 после подтверждённой загрузки Excel.
 window.VISIT_DATA_META = {
-  "updatedAt": "2026-11-21T15:17:31+00:00",
+  "updatedAt": "2026-11-21T16:49:38+00:00",
   "sourceFile": "Свод.xlsx",
   "recordCount": 4470,
   "employeeCount": 55,
@@ -9,7 +9,7 @@ window.VISIT_DATA_META = {
   "uniqueTtCount": 633,
   "activeTtCount": 528,
   "visitedTtCount": 505,
-  "verifiedCount": 6203
+  "verifiedCount": 6202
 };
 window.VISIT_DATA = [
   {
@@ -1015,21 +1015,6 @@ window.VISIT_DATA = [
     "plan": 3,
     "fact": 1,
     "verified": 1,
-    "rejected": 0
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
-    "month": 9,
-    "week": 37,
-    "weekYear": 2026,
-    "city": "Ростов-на-Дону",
-    "merchandiser": "Агарков Олег Михайлович",
-    "network": "Перекресток",
-    "ttId": "B075",
-    "plan": 3,
-    "fact": 4,
-    "verified": 4,
     "rejected": 0
   },
   {
@@ -4582,6 +4567,21 @@ window.VISIT_DATA = [
     "merchandiser": "Омаров Влад Айдынович",
     "network": "Перекресток",
     "ttId": "2192",
+    "plan": 3,
+    "fact": 3,
+    "verified": 3,
+    "rejected": 0
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 9,
+    "week": 37,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "merchandiser": "Агарков Олег Михайлович",
+    "network": "Перекресток",
+    "ttId": "B075",
     "plan": 3,
     "fact": 3,
     "verified": 3,
@@ -71824,19 +71824,6 @@ window.TT_COVERAGE_DATA = [
   {
     "project": "Холдинг Аква",
     "year": 2026,
-    "month": 9,
-    "week": 37,
-    "weekYear": 2026,
-    "city": "Ростов-на-Дону",
-    "ttId": "B075",
-    "network": "Перекресток",
-    "address": "Ростовская обл, Ростов-на-Дону г, Береговая ул, 6",
-    "active": true,
-    "visited": true
-  },
-  {
-    "project": "Холдинг Аква",
-    "year": 2026,
     "month": 8,
     "week": 36,
     "weekYear": 2026,
@@ -81830,6 +81817,19 @@ window.TT_COVERAGE_DATA = [
     "address": "Ростовская обл, Ростов-на-Дону г, Красноармейская ул, 105",
     "active": false,
     "visited": false
+  },
+  {
+    "project": "Холдинг Аква",
+    "year": 2026,
+    "month": 9,
+    "week": 37,
+    "weekYear": 2026,
+    "city": "Ростов-на-Дону",
+    "ttId": "B075",
+    "network": "Перекресток",
+    "address": "Ростовская обл, Ростов-на-Дону г, Береговая ул, 6",
+    "active": true,
+    "visited": true
   },
   {
     "project": "Холдинг Аква",
