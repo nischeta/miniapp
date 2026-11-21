@@ -1,9 +1,9 @@
 // Файл формируется ботом NISCHARD 2.2.18 после подтверждённой загрузки Excel.
 window.VISIT_DATA_META = {
-  "updatedAt": "2026-11-21T16:49:38+00:00",
+  "updatedAt": "2026-11-21T18:13:01+00:00",
   "sourceFile": "Свод.xlsx",
-  "recordCount": 4470,
-  "employeeCount": 55,
+  "recordCount": 4469,
+  "employeeCount": 54,
   "rejectedCount": 167,
   "coverageCount": 8038,
   "uniqueTtCount": 633,
@@ -65191,21 +65191,6 @@ window.VISIT_DATA = [
     "project": "Перспектива СМ",
     "year": 2026,
     "month": 11,
-    "week": 45,
-    "weekYear": 2026,
-    "city": "Краснодар",
-    "merchandiser": "Мещеряков Александр Иванович",
-    "network": "Пятерочка",
-    "ttId": "38DH",
-    "plan": 1,
-    "fact": 0,
-    "verified": 0,
-    "rejected": 0
-  },
-  {
-    "project": "Перспектива СМ",
-    "year": 2026,
-    "month": 11,
     "week": 46,
     "weekYear": 2026,
     "city": "Ростов-на-Дону",
@@ -67332,12 +67317,6 @@ window.VISIT_EMPLOYEES = [
     "city": "Краснодар",
     "merchandiser": "Елетина Каролина Юрьевна",
     "max_id": "138005915"
-  },
-  {
-    "project": "Перспектива СМ",
-    "city": "Краснодар",
-    "merchandiser": "Мещеряков Александр Иванович",
-    "max_id": "128988995"
   },
   {
     "project": "Перспектива СМ",
@@ -172165,7 +172144,7 @@ window.TT_COVERAGE_DATA = [
     "ttId": "38DH",
     "network": "Пятерочка",
     "address": "Краснодарский край, Краснодар г, Российская улица, 608",
-    "active": true,
+    "active": false,
     "visited": false
   },
   {
