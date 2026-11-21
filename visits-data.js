@@ -1,6 +1,6 @@
 // Файл формируется ботом NISCHARD 2.2.18 после подтверждённой загрузки Excel.
 window.VISIT_DATA_META = {
-  "updatedAt": "2026-11-21T14:53:51+00:00",
+  "updatedAt": "2026-11-21T14:54:52+00:00",
   "sourceFile": "Свод.xlsx",
   "recordCount": 4470,
   "employeeCount": 55,
@@ -67372,8 +67372,7 @@ window.VISIT_EMPLOYEES = [
   {
     "project": "Холдинг Аква",
     "city": "Воронеж",
-    "merchandiser": "Губанова Светлана",
-    "max_id": "0"
+    "merchandiser": "Губанова Светлана"
   },
   {
     "project": "Холдинг Аква",
@@ -67384,8 +67383,7 @@ window.VISIT_EMPLOYEES = [
   {
     "project": "Холдинг Аква",
     "city": "Воронеж",
-    "merchandiser": "Маринина  Вера Владимировна",
-    "max_id": "0"
+    "merchandiser": "Маринина  Вера Владимировна"
   }
 ];
 window.REJECTED_VISITS = [
